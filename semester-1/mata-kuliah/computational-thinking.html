@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Computational Thinking - E-Portofolio PPG Prajabatan Informatika Faridatul Badriyah, Universitas Negeri Malang">
+    <meta name="author" content="Faridatul Badriyah">
+    <title>Computational Thinking | PPG E-Portofolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS UTAMA -->
+    <link rel="stylesheet" href="../../css/styles.css">
+    
+    <style>
+        /* ============================================
+           EFEK HOVER CARD - SEPERTI DI HALAMAN BERANDA
+           ============================================ */
+        
+        /* Card untuk About */
+        .about-copy-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: default;
+            padding: 32px 40px;
+            border-radius: var(--radius-lg);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+        }
+        
+        .about-copy-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .about-copy-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .about-copy-card:hover h2 {
+            color: #1a1215 !important;
+        }
+        
+        .about-copy-card:hover p {
+            color: #2d2d2d !important;
+            opacity: 0.85 !important;
+        }
+        
+        .about-copy-card:hover .fa-users {
+            color: var(--color-primary) !important;
+        }
+        
+        /* Card untuk Topic Accordion - diubah menjadi card biasa dengan hover */
+        .topic-accordion {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--glass-shadow);
+            overflow: hidden;
+            cursor: default;
+        }
+        
+        .topic-accordion:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .topic-accordion:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .topic-accordion:hover details summary h3 {
+            color: #1a1215 !important;
+        }
+        
+        .topic-accordion:hover details summary span[style*="color: var(--color-primary)"] {
+            color: var(--color-primary) !important;
+        }
+        
+        .topic-accordion:hover details summary span[style*="color: var(--color-secondary)"] {
+            color: #4a4a4a !important;
+        }
+        
+        .topic-accordion:hover details div p {
+            color: #2d2d2d !important;
+            opacity: 0.85 !important;
+        }
+        
+        .topic-accordion:hover details div h4 {
+            color: var(--color-primary) !important;
+        }
+        
+        .topic-accordion:hover details div div a {
+            color: #ffffff !important;
+        }
+        
+        /* Card untuk Refleksi (di bawah PDF) */
+        .reflection-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 32px 28px;
+            border-radius: var(--radius-lg);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            cursor: default;
+        }
+        
+        .reflection-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .reflection-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .reflection-card:hover h3 {
+            color: #1a1215 !important;
+        }
+        
+        .reflection-card:hover p {
+            color: #2d2d2d !important;
+            opacity: 0.85 !important;
+        }
+        
+        .reflection-card:hover p[style*="border-left"] {
+            border-left-color: var(--color-primary) !important;
+            background: rgba(0, 0, 0, 0.02) !important;
+        }
+        
+        [data-theme="dark"] .reflection-card:hover p[style*="border-left"] {
+            background: rgba(0, 0, 0, 0.04) !important;
+        }
+        
+        /* Card untuk Info Box */
+        .info-box {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 40px 48px;
+            border-radius: var(--radius-lg);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            text-align: center;
+            position: relative;
+            cursor: default;
+        }
+        
+        .info-box:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .info-box:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .info-box:hover h3 {
+            color: #1a1215 !important;
+        }
+        
+        .info-box:hover p {
+            color: #2d2d2d !important;
+            opacity: 0.85 !important;
+        }
+        
+        /* Card untuk PDF Viewer */
+        .pdf-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 24px;
+            border-radius: var(--radius-lg);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            cursor: default;
+        }
+        
+        .pdf-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .pdf-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .pdf-card:hover h3 {
+            color: #1a1215 !important;
+        }
+        
+        .pdf-card:hover p {
+            color: #2d2d2d !important;
+            opacity: 0.85 !important;
+        }
+        
+        .pdf-card:hover a.btn-outline {
+            background: var(--color-primary) !important;
+            color: #ffffff !important;
+            border-color: var(--color-primary) !important;
+        }
+        
+        /* Dark mode hover untuk tombol */
+        [data-theme="dark"] .pdf-card:hover a.btn-outline {
+            background: var(--color-primary) !important;
+            color: #ffffff !important;
+            border-color: var(--color-primary) !important;
+        }
+
+        /* ============================================
+           STYLE KHUSUS UNTUK PDF VIEWER - RASIO A4
+           ============================================ */
+        .pdf-viewer-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 794px;
+            margin: 0 auto;
+            padding-bottom: 112%;
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--radius-sm);
+            background: #f5f2ef;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .pdf-viewer-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: var(--radius-sm);
+            background: #f5f2ef;
+        }
+
+        /* Dark mode untuk PDF viewer */
+        [data-theme="dark"] .pdf-viewer-wrapper {
+            background: #2a2426;
+        }
+
+        [data-theme="dark"] .pdf-viewer-wrapper iframe {
+            background: #2a2426;
+        }
+
+        /* Topic Accordion Styles */
+        .topic-accordion details > summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        .topic-accordion details summary .fa-chevron-down {
+            transition: transform 0.3s ease;
+        }
+        
+        .topic-accordion details[open] summary .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+        
+        /* Dark mode adjustments for topic accordion */
+        [data-theme="dark"] .topic-accordion {
+            background: rgba(26, 18, 21, 0.60) !important;
+            border-color: rgba(238, 228, 218, 0.05) !important;
+        }
+        
+        [data-theme="dark"] .topic-accordion details summary h3 {
+            color: var(--color-text);
+        }
+        
+        [data-theme="dark"] .topic-accordion details summary span[style*="color: var(--color-primary)"] {
+            color: var(--color-secondary) !important;
+        }
+        
+        [data-theme="dark"] .topic-accordion details summary span[style*="color: var(--color-secondary)"] {
+            color: var(--color-text-light) !important;
+        }
+
+        [data-theme="dark"] .topic-accordion details div h4 {
+            color: var(--color-secondary) !important;
+        }
+        
+        [data-theme="dark"] .topic-accordion details div div div {
+            background: rgba(238, 228, 218, 0.03) !important;
+            border-color: rgba(238, 228, 218, 0.05) !important;
+        }
+
+        [data-theme="dark"] .topic-accordion details div div div a {
+            color: var(--color-secondary) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         BACKGROUND LAYER (Blobs/Orbs)
+         ============================================ -->
+    <div class="bg-layer" aria-hidden="true">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="hexagon-grid">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         NAVBAR
+         ============================================ -->
+    <nav class="navbar" id="siteHeader">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Faridatul Badriyah</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="../../index.html#home" class="nav-link">Beranda</a></li>
+                    <li><a href="../../pages/tentang-saya.html" class="nav-link">Tentang Saya</a></li>
+                    <li><a href="../../index.html#skills" class="nav-link">Keterampilan</a></li>
+                    <li class="dropdown">
+                        <a href="#projects" class="nav-link dropdown-toggle active">
+                            Proyek <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../../semester1.html" class="dropdown-link active">Semester 1</a></li>
+                            <li><a href="../../semester-2/mata-kuliah.html" class="dropdown-link">Semester 2</a></li>
+                            <li><a href="../siklus-1.html" class="dropdown-link">PPL Terbimbing</a></li>
+                            <li><a href="../../semester-2/ppl-mandiri.html" class="dropdown-link">PPL Mandiri</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="theme-toggle" id="themeToggle" title="Ubah tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="semester-page" id="home">
+        <div class="container">
+            <div class="semester-hero">
+                <span class="badge">SEMESTER 1</span>
+                <h1><span>Computational</span> Thinking</h1>
+                <p>Halaman dokumentasi untuk mata kuliah Computational Thinking (CT). Berisi deskripsi mata kuliah, topik pembelajaran, dan refleksi.</p>
+                <div style="margin-top: 24px;">
+                    <a href="../../semester1.html" class="btn btn-outline" style="gap: 8px;">
+                        <i class="fas fa-arrow-left"></i> Kembali ke Semester 1
+                    </a>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 DESKRIPSI SINGKAT (Card Tengah)
+                 ============================================ -->
+            <div style="max-width: 780px; margin: 0 auto 64px;">
+                <div class="about-copy-card" style="text-align: center;">
+                    <h2><i class="fas fa-code"></i> Deskripsi Singkat</h2>
+                    <p>Mata kuliah Computational Thinking (CT) dirancang untuk membekali mahasiswa dengan literasi baru abad ke-21 yang menjadi bagian integral dari Kurikulum Merdeka. Mahasiswa akan menyelami proses berpikir untuk memformulasikan persoalan dan menyusun strategi solusi yang efektif, efisien, dan optimal, yang dapat dijalankan baik oleh manusia maupun komputer. CT bukan sekadar tentang pemrograman atau "berpikir seperti komputer", melainkan tentang bagaimana menerapkan fondasi ilmu informatika dalam menyelesaikan berbagai persoalan kompleks sehari-hari.</p>
+                    <p style="margin-top: 12px; font-style: italic; color: var(--color-secondary);">
+                        Pengalaman awal: Mata kuliah ini membuka wawasan bahwa CT adalah kerangka berpikir sistematis yang dapat diterapkan di berbagai bidang, tidak hanya dalam pemrograman.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 TOPIK PEMBELAJARAN (7 TOPIK) - SESUAI CT
+                 ============================================ -->
+            <div class="section-heading" style="margin-bottom: 40px;">
+                <span class="eyebrow">TOPIK PEMBELAJARAN</span>
+                <h2>Topik <span class="accent">Perkuliahan</span></h2>
+                <p>Tujuh topik utama yang dibahas dalam mata kuliah Computational Thinking.</p>
+            </div>
+
+            <!-- Topik 1: Pendalaman Pemahaman CT -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
+                <details open>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">01</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">TOPIK 1</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">Pendalaman Pemahaman Computational Thinking</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div style="padding: 0 28px 28px;">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <h4 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 8px;">Deskripsi Singkat</h4>
+                                <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8;">
+                                    Topik ini membahas konsep dasar CT, perbedaan CT dengan ICT, digital literacy, dan Informatika, serta miskonsepsi yang terjadi di masyarakat. Mahasiswa diajak memahami empat fondasi CT yang tidak terpisahkan: dekomposisi, abstraksi, berpikir algoritmik, dan pengenalan pola, serta disposisi CT pada permasalahan sehari-hari.
+                                </p>
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <a href="https://drive.google.com/drive/folders/1S6eSHc4vnkKt8eZXGcl0ElB7MHGFT4n7?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                    <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Topik 2: CT dalam Problem Solving Persoalan Sehari-hari -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
+                <details>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">02</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">TOPIK 2</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">CT dalam Problem Solving Persoalan Sehari-hari</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div style="padding: 0 28px 28px;">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <h4 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 8px;">Deskripsi Singkat</h4>
+                                <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8;">
+                                    Topik ini mengajak mahasiswa menerapkan CT untuk problem solving pada persoalan sehari-hari. Mahasiswa belajar menggali, menstrukturkan, dan mengkomunikasikan cara berpikir saat menyelesaikan soal, termasuk soal Tantangan Bebras. Pendekatan yang digunakan adalah flipped learning.
+                                </p>
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <a href="https://drive.google.com/drive/folders/13jC1WVnJgfyHwTLFw6_tfGdfrKbuxWxe?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                    <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Topik 3: CT dalam Problem Solving pada Literasi dan Numerasi -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
+                <details>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">03</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">TOPIK 3</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">CT dalam Problem Solving pada Literasi &amp; Numerasi</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div style="padding: 0 28px 28px;">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <h4 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 8px;">Deskripsi Singkat</h4>
+                                <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8;">
+                                    Topik ini membahas penerapan CT untuk problem solving pada literasi dan numerasi, khususnya pada soal Tes PISA atau AKM. Mahasiswa belajar menggali, menstrukturkan, dan mengkomunikasikan cara berpikir saat menyelesaikan soal literasi dan numerasi dengan pendekatan CT.
+                                </p>
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <a href="https://drive.google.com/drive/folders/1iIBbIxDzBDPGctXuaEQ1mY_-m6fx76vh?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                    <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Topik 4: CT dalam Kurikulum -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
+                <details>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">04</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">TOPIK 4</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">CT dalam Kurikulum</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div style="padding: 0 28px 28px;">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <h4 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 8px;">Deskripsi Singkat</h4>
+                                <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8;">
+                                    Topik ini membahas posisi dan peran CT dalam Kurikulum Merdeka, kaitannya dengan Informatika dan CP Berpikir Komputasional dari K7 s.d. K12, serta posisi CT dalam tatanan global (framework, literacy). Mahasiswa menelaah Capaian Pembelajaran CT pada setiap fase dengan terperinci.
+                                </p>
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <a href="https://drive.google.com/drive/folders/1gNvpk78zO-F-dB7Al9xZfjhBtqXXFfvz?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                    <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Topik 5: CT dan Projek -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
+                <details>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">05</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">TOPIK 5</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">CT dan Projek</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div style="padding: 0 28px 28px;">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <h4 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 8px;">Deskripsi Singkat</h4>
+                                <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8;">
+                                    Topik ini membahas integrasi CT pada Projek STEM/STEAM. Mahasiswa memilih sebuah projek STEM yang belum mengintegrasikan CT untuk dirancang ulang sehingga dihasilkan projek STEM dengan integrasi CT di dalamnya. Dosen berperan menuntun mahasiswa merancang ulang projek yang dikerjakan.
+                                </p>
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <a href="https://drive.google.com/drive/folders/1WiGJqSA5a9hII49izi857JBFTX1tqMBN?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                    <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Topik 6: Integrasi CT dalam Mata Pelajaran -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
+                <details>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">06</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">TOPIK 6</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">Integrasi CT dalam Mata Pelajaran</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div style="padding: 0 28px 28px;">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <h4 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 8px;">Deskripsi Singkat</h4>
+                                <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8;">
+                                    Topik ini membekali mahasiswa untuk memilih, menganalisis, merancang, dan menerapkan aktivitas/topik/materi pada mata pelajaran dengan mengintegrasikan CT. Mahasiswa bekerja dalam kelompok kecil dan besar untuk merancang integrasi CT pada mata pelajaran yang akan diampu.
+                                </p>
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <a href="https://drive.google.com/drive/folders/1tS3ibSlXYGXxXEab8lLuWI5kfY5VwN1Q?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                    <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Topik 7: Restrukturisasi Portofolio -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
+                <details>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">07</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">TOPIK 7</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">Restrukturisasi Portofolio</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div style="padding: 0 28px 28px;">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <h4 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 8px;">Deskripsi Singkat</h4>
+                                <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8;">
+                                    Topik ini memberi panduan terkait restrukturisasi komponen-komponen portofolio yang sudah ditabung sejak pertemuan pertama. Terdiri dari dua pertemuan: penjelasan restrukturisasi portofolio dan sesi pameran portofolio serta penilaian.
+                                </p>
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <a href="https://drive.google.com/drive/folders/10nk_lI31FKyqNBu-3J2OngNXvsH5sGHL?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                    <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- ============================================
+                 REFLEKSI MATA KULIAH
+                 ============================================ -->
+            <div style="margin-top: 72px;">
+                <div class="section-heading" style="margin-bottom: 40px;">
+                    <span class="eyebrow">REFLEKSI</span>
+                    <h2>Refleksi <span class="accent">Mata Kuliah</span></h2>
+                    <p>Dokumen refleksi pembelajaran dan pengembangan diri selama mengikuti mata kuliah Computational Thinking.</p>
+                </div>
+
+                <!-- ============================================
+                     PDF VIEWER - GOOGLE DRIVE
+                     ============================================ -->
+                <div style="max-width: 1100px; margin: 0 auto 40px;">
+                    <div class="pdf-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div style="font-size: 1.8rem;">📄</div>
+                                <div>
+                                    <h3 style="font-family: var(--font-heading); color: var(--color-primary); margin: 0; font-size: 1.1rem;">Dokumen Refleksi Pembelajaran</h3>
+                                </div>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1siPH5YIxRf6IVHuQaHQHstPqAKnS_j7Y/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="gap: 8px; font-size: 0.85rem; padding: 8px 18px;">
+                                <i class="fas fa-external-link-alt"></i> Buka di Drive
+                            </a>
+                        </div>
+                        <!-- PDF Viewer dengan rasio A4 -->
+                        <div class="pdf-viewer-wrapper">
+                            <iframe 
+                                src="https://drive.google.com/file/d/1siPH5YIxRf6IVHuQaHQHstPqAKnS_j7Y/preview"
+                                allow="autoplay"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p style="color: var(--color-text); opacity: 0.5; font-size: 0.75rem; margin-top: 12px; text-align: center;">
+                            <i class="fas fa-info-circle"></i> Geser atau scroll untuk melihat seluruh dokumen. Klik "Buka di Drive" untuk tampilan penuh.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ============================================
+                     CARD REFLEKSI (Di bawah PDF) - DARI FILE CT
+                     ============================================ -->
+                <div style="max-width: 1100px; margin: 0 auto;">
+                    <div class="reflection-card">
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                            <div style="font-size: 2.4rem;">💭</div>
+                            <h3 style="font-family: var(--font-heading); color: var(--color-primary); margin: 0;">Refleksi Pengalaman Belajar</h3>
+                        </div>
+                        <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8; font-style: italic; padding: 16px 20px; border-left: 4px solid var(--color-primary); background: var(--color-accent-glow); border-radius: var(--radius-sm);">
+                            Mata kuliah Computational Thinking mengajarkan saya bahwa CT bukan sekadar konsep pemrograman, melainkan kerangka berpikir sistematis yang dapat diterapkan pada berbagai persoalan, termasuk persoalan belajar siswa, melalui empat fondasi: dekomposisi, pengenalan pola, abstraksi, dan algoritma. Pemahaman ini diperkuat oleh artefak-artefak yang telah saya susun, mulai dari analisis kasus penurunan prestasi belajar siswa, perancangan kegiatan turnamen, penyelesaian Soal Bebras, hingga refleksi pribadi, yang menunjukkan bahwa saya mampu menerapkan CT tidak hanya secara teoritis tetapi juga praktis pada konteks yang beragam. Ke depan, saya berkomitmen membiasakan diri menggunakan keempat fondasi CT saat menghadapi permasalahan belajar siswa di kelas, agar dapat menganalisis masalah secara lebih terstruktur dan mengambil keputusan pedagogis yang tepat sebagai calon guru Informatika.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 INFO BOX - SESUAI CT
+                 ============================================ -->
+            <div class="info-section" style="padding: 60px 0 40px;">
+                <div class="info-box" style="max-width: 780px; margin: 0 auto;">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--color-primary); margin-bottom: 10px;">Computational Thinking untuk Pemecahan Masalah</h3>
+                    <p style="font-size: 1rem; line-height: 1.8; color: var(--color-text); opacity: 0.85;">"Computational Thinking adalah keterampilan berpikir untuk memformulasikan persoalan dan menyusun strategi solusi yang efektif, efisien, dan optimal."</p>
+                    <p style="font-size: 0.9rem; line-height: 1.8; color: var(--color-text); opacity: 0.7; margin-top: 12px;">
+                        Mata kuliah ini mengajak mahasiswa untuk menguasai empat fondasi CT: dekomposisi, pengenalan pola, abstraksi, dan algoritma, serta menerapkannya dalam berbagai konteks pemecahan masalah. Melalui latihan soal Bebras, PISA/AKM, dan projek STEM, calon guru dibekali kemampuan untuk mengintegrasikan CT dalam mata pelajaran yang diampu. Dengan pendekatan ini, guru tidak hanya mengajarkan konten, tetapi juga membekali murid dengan pola pikir sistematis yang esensial untuk menghadapi tantangan di era digital dan VUCA.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 NAVIGASI KEMBALI
+                 ============================================ -->
+            <div style="text-align: center; padding: 20px 0 40px;">
+                <a href="../../semester1.html" class="btn btn-outline" style="gap: 8px;">
+                    <i class="fas fa-arrow-left"></i> Kembali ke Semester 1
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BACK TO TOP
+         ============================================ -->
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Kolom 1: Brand -->
+                <div>
+                    <h2>E-Portofolio Farida</h2>
+                    <p>Dokumentasi perjalanan dan pengembangan profesional Faridatul Badriyah sebagai mahasiswa PPG Prajabatan Informatika.</p>
+                </div>
+                
+                <!-- Kolom 2: Informasi Kontak -->
+                <div>
+                    <h3>Informasi Kontak</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>faridatul.badriyah.2531537@students.um.ac.id</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>253153743889</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-university"></i>
+                        <span>Universitas Negeri Malang</span>
+                    </div>
+                </div>
+                
+                <!-- Kolom 3: Navigasi -->
+                <div>
+                    <h3>Navigasi</h3>
+                    <div class="footer-links">
+                        <a href="../../index.html#home">Beranda</a>
+                        <a href="../../pages/tentang-saya.html">Tentang Saya</a>
+                        <a href="../../index.html#skills">Keterampilan</a>
+                        <a href="../../index.html#projects">Proyek</a>
+                    </div>
+                </div>
+                
+                <!-- Kolom 4: PPG -->
+                <div>
+                    <h3>PPG</h3>
+                    <div class="footer-links">
+                        <a href="../siklus-1.html">PPL Terbimbing</a>
+                        <a href="../../semester-2/ppl-mandiri.html">PPL Mandiri</a>
+                        <a href="../../pengembangan-diri/artefak.html">Artefak</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2024</span> Faridatul Badriyah • PPG E-Portofolio</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="../../js/script.js"></script>
+</body>
+</html>

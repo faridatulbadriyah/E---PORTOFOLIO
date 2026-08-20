@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Filosofi Pendidikan & Pendidikan Nilai - E-Portofolio PPG Prajabatan Informatika Faridatul Badriyah, Universitas Negeri Malang">
+    <meta name="author" content="Faridatul Badriyah">
+    <title>Filosofi Pendidikan & Pendidikan Nilai | PPG E-Portofolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS UTAMA -->
+    <link rel="stylesheet" href="../../css/styles.css">
+    
+    <style>
+        /* ============================================
+           EFEK HOVER CARD - SEPERTI DI HALAMAN BERANDA
+           ============================================ */
+        
+        /* Card untuk About */
+        .about-copy-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: default;
+            padding: 32px 40px;
+            border-radius: var(--radius-lg);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+        }
+        
+        .about-copy-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .about-copy-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .about-copy-card:hover h2 {
+            color: #1a1215 !important;
+        }
+        
+        .about-copy-card:hover p {
+            color: #2d2d2d !important;
+            opacity: 0.85 !important;
+        }
+        
+        .about-copy-card:hover .fa-book {
+            color: var(--color-primary) !important;
+        }
+        
+        /* Card untuk Topic Accordion - diubah menjadi card biasa dengan hover */
+        .topic-accordion {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--glass-shadow);
+            overflow: hidden;
+            cursor: default;
+        }
+        
+        .topic-accordion:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .topic-accordion:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .topic-accordion:hover details summary h3 {
+            color: #1a1215 !important;
+        }
+        
+        .topic-accordion:hover details summary span[style*="color: var(--color-primary)"] {
+            color: var(--color-primary) !important;
+        }
+        
+        .topic-accordion:hover details summary span[style*="color: var(--color-secondary)"] {
+            color: #4a4a4a !important;
+        }
+        
+        .topic-accordion:hover details div p {
+            color: #2d2d2d !important;
+            opacity: 0.85 !important;
+        }
+        
+        .topic-accordion:hover details div h4 {
+            color: var(--color-primary) !important;
+        }
+        
+        .topic-accordion:hover details div div a {
+            color: #ffffff !important;
+        }
+        
+        /* Card untuk Refleksi (di bawah PDF) */
+        .reflection-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 32px 28px;
+            border-radius: var(--radius-lg);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            cursor: default;
+        }
+        
+        .reflection-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .reflection-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .reflection-card:hover h3 {
+            color: #1a1215 !important;
+        }
+        
+        .reflection-card:hover p {
+            color: #2d2d2d !important;
+            opacity: 0.85 !important;
+        }
+        
+        .reflection-card:hover p[style*="border-left"] {
+            border-left-color: var(--color-primary) !important;
+            background: rgba(0, 0, 0, 0.02) !important;
+        }
+        
+        [data-theme="dark"] .reflection-card:hover p[style*="border-left"] {
+            background: rgba(0, 0, 0, 0.04) !important;
+        }
+        
+        /* Card untuk Info Box */
+        .info-box {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 40px 48px;
+            border-radius: var(--radius-lg);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            text-align: center;
+            position: relative;
+            cursor: default;
+        }
+        
+        .info-box:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .info-box:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .info-box:hover h3 {
+            color: #1a1215 !important;
+        }
+        
+        .info-box:hover p {
+            color: #2d2d2d !important;
+            opacity: 0.85 !important;
+        }
+        
+        /* Card untuk PDF Viewer */
+        .pdf-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 24px;
+            border-radius: var(--radius-lg);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            cursor: default;
+        }
+        
+        .pdf-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .pdf-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .pdf-card:hover h3 {
+            color: #1a1215 !important;
+        }
+        
+        .pdf-card:hover p {
+            color: #2d2d2d !important;
+            opacity: 0.85 !important;
+        }
+        
+        .pdf-card:hover a.btn-outline {
+            background: var(--color-primary) !important;
+            color: #ffffff !important;
+            border-color: var(--color-primary) !important;
+        }
+        
+        /* Dark mode hover untuk tombol */
+        [data-theme="dark"] .pdf-card:hover a.btn-outline {
+            background: var(--color-primary) !important;
+            color: #ffffff !important;
+            border-color: var(--color-primary) !important;
+        }
+
+        /* ============================================
+           STYLE KHUSUS UNTUK PDF VIEWER - RASIO A4
+           ============================================ */
+        .pdf-viewer-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 794px;
+            margin: 0 auto;
+            padding-bottom: 112%;
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--radius-sm);
+            background: #f5f2ef;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .pdf-viewer-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: var(--radius-sm);
+            background: #f5f2ef;
+        }
+
+        /* Dark mode untuk PDF viewer */
+        [data-theme="dark"] .pdf-viewer-wrapper {
+            background: #2a2426;
+        }
+
+        [data-theme="dark"] .pdf-viewer-wrapper iframe {
+            background: #2a2426;
+        }
+
+        /* Topic Accordion Styles */
+        .topic-accordion details > summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        .topic-accordion details summary .fa-chevron-down {
+            transition: transform 0.3s ease;
+        }
+        
+        .topic-accordion details[open] summary .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+        
+        /* Dark mode adjustments for topic accordion */
+        [data-theme="dark"] .topic-accordion {
+            background: rgba(26, 18, 21, 0.60) !important;
+            border-color: rgba(238, 228, 218, 0.05) !important;
+        }
+        
+        [data-theme="dark"] .topic-accordion details summary h3 {
+            color: var(--color-text);
+        }
+        
+        [data-theme="dark"] .topic-accordion details summary span[style*="color: var(--color-primary)"] {
+            color: var(--color-secondary) !important;
+        }
+        
+        [data-theme="dark"] .topic-accordion details summary span[style*="color: var(--color-secondary)"] {
+            color: var(--color-text-light) !important;
+        }
+
+        [data-theme="dark"] .topic-accordion details div h4 {
+            color: var(--color-secondary) !important;
+        }
+        
+        [data-theme="dark"] .topic-accordion details div div div {
+            background: rgba(238, 228, 218, 0.03) !important;
+            border-color: rgba(238, 228, 218, 0.05) !important;
+        }
+
+        [data-theme="dark"] .topic-accordion details div div div a {
+            color: var(--color-secondary) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         BACKGROUND LAYER (Blobs/Orbs)
+         ============================================ -->
+    <div class="bg-layer" aria-hidden="true">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="hexagon-grid">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         NAVBAR
+         ============================================ -->
+    <nav class="navbar" id="siteHeader">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Faridatul Badriyah</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="../../index.html#home" class="nav-link">Beranda</a></li>
+                    <li><a href="../../pages/tentang-saya.html" class="nav-link">Tentang Saya</a></li>
+                    <li><a href="../../index.html#skills" class="nav-link">Keterampilan</a></li>
+                    <li class="dropdown">
+                        <a href="#projects" class="nav-link dropdown-toggle active">
+                            Proyek <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../../semester1.html" class="dropdown-link active">Semester 1</a></li>
+                            <li><a href="../../semester-2/mata-kuliah.html" class="dropdown-link">Semester 2</a></li>
+                            <li><a href="../siklus-1.html" class="dropdown-link">PPL Terbimbing</a></li>
+                            <li><a href="../../semester-2/ppl-mandiri.html" class="dropdown-link">PPL Mandiri</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="theme-toggle" id="themeToggle" title="Ubah tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="semester-page" id="home">
+        <div class="container">
+            <div class="semester-hero">
+                <span class="badge">SEMESTER 1</span>
+                <h1>Filosofi Pendidikan &amp; <span>Pendidikan Nilai</span></h1>
+                <p>Halaman dokumentasi untuk mata kuliah Filosofi Pendidikan &amp; Pendidikan Nilai. Berisi deskripsi mata kuliah, topik pembelajaran, dan refleksi.</p>
+                <div style="margin-top: 24px;">
+                    <a href="../../semester1.html" class="btn btn-outline" style="gap: 8px;">
+                        <i class="fas fa-arrow-left"></i> Kembali ke Semester 1
+                    </a>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 DESKRIPSI SINGKAT (Card Tengah)
+                 ============================================ -->
+            <div style="max-width: 780px; margin: 0 auto 64px;">
+                <div class="about-copy-card" style="text-align: center;">
+                    <h2><i class="fas fa-book"></i> Deskripsi Singkat</h2>
+                    <p>Mata kuliah Filosofi Pendidikan dan Pendidikan Nilai (FPPN) ini, membekali peserta PPG sebagai calon guru dengan kemampuan untuk memahami filosofi pendidikan Indonesia, menginternalisasi nilai-nilai ke-Indonesia-an dalam menjalankan tugas sebagai pendidik dan dalam kehidupan keseharian, serta berkomitmen pada nilai-nilai moral dan etika, dasar-dasar kepemimpinan, dan sebagai pembelajar sepanjang hayat.</p>
+                    <p style="margin-top: 12px; font-style: italic; color: var(--color-secondary);">
+                        Pengalaman awal: Mata kuliah ini membuka wawasan tentang bagaimana filosofi pendidikan, nilai, dan etika menjadi landasan dalam memahami, merancang, dan menjalankan proses pendidikan.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 TOPIK PEMBELAJARAN (1-4)
+                 ============================================ -->
+            <div class="section-heading" style="margin-bottom: 40px;">
+                <span class="eyebrow">TOPIK PEMBELAJARAN</span>
+                <h2>Topik <span class="accent">Perkuliahan</span></h2>
+                <p>Empat topik utama yang dibahas dalam mata kuliah Filosofi Pendidikan &amp; Pendidikan Nilai.</p>
+            </div>
+
+            <!-- Topik 1 -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
+                <details open>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">01</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">TOPIK 1</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">Landasan Filosofi Pendidikan Nasional</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div style="padding: 0 28px 28px;">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <h4 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 8px;">Deskripsi Singkat</h4>
+                                <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8;">
+                                    Topik ini membahas filosofi pendidikan Indonesia dengan mengkaji pokok-pokok pemikiran Ki Hadjar Dewantara serta keterkaitannya dengan Filsafat Pancasila sebagai landasan pendidikan nasional. Pembelajaran diarahkan untuk memahami tujuan pendidikan, prinsip pendidikan yang berpusat pada peserta didik, serta penerapannya dalam merancang pembelajaran yang kontekstual, efektif,
+                                    dan sesuai dengan karakteristik peserta didik serta tantangan pendidikan di era saat ini.
+                                </p>
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <a href="https://drive.google.com/drive/folders/14dchHpNnPV9zaP7P069PoFNS7wbqhjDU?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                    <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Topik 2 -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
+                <details>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">02</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">TOPIK 2</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">Pola Pikir Bertumbuh dalam Pendidikan Nasional</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div style="padding: 0 28px 28px;">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <h4 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 8px;">Deskripsi Singkat</h4>
+                                <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8;">
+                                    Topik ini membahas konsep growth mindset atau pola pikir bertumbuh sebagai landasan penting dalam membangun sikap positif terhadap proses belajar dan pengembangan diri. Mahasiswa diajak memahami pentingnya meyakini bahwa kemampuan dapat terus berkembang melalui usaha, strategi, pengalaman,
+                                    dan pembelajaran dari kesalahan, serta mengaitkannya dengan konteks pendidikan nasional. Pembelajaran juga mendorong mahasiswa untuk merefleksikan penerapan growth mindset dalam proses belajarnya sebagai calon pendidik.
+                                </p>
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <a href="https://drive.google.com/drive/folders/15hZNRExDT6GxNZLjIvSgvr1SLHj9T-EP?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                    <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Topik 3 -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
+                <details>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">03</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">TOPIK 3</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">Pendidikan Nilai dalam Kerangka Pendidikan Nasional</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div style="padding: 0 28px 28px;">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <h4 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 8px;">Deskripsi Singkat</h4>
+                                <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8;">
+                                    Topik ini membahas Pendidikan Nilai sebagai pondasi dalam membentuk karakter bangsa yang kuat dan adaptif. Mahasiswa diajak memahami urgensi pendidikan nilai, berbagai strategi internalisasi dan pengembangan nilai, serta penerapannya dalam pembelajaran secara kontekstual dan efektif. Selain itu, mahasiswa melakukan refleksi dan merancang strategi pengembangan diri agar mampu menjadi guru yang tidak hanya mengajarkan nilai,
+                                    tetapi juga menjadi role model dalam menghidupkan dan menerapkan nilai-nilai tersebut dalam kehidupan sehari-hari.
+                                </p>
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <a href="https://drive.google.com/drive/folders/1iTjI3KUCNmluEw1e2HwMD4gsygbxSWiP?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                    <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Topik 4 -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
+                <details>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">04</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">TOPIK 4</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">Kode Etik Guru</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div style="padding: 0 28px 28px;">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <h4 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 8px;">Deskripsi Singkat</h4>
+                                <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8;">
+                                    Topik ini membahas kode etik profesi guru sebagai landasan dalam menjalankan tugas dan tanggung jawab secara profesional, etis, dan konsisten. Mahasiswa diajak memahami prinsip-prinsip kode etik guru serta pentingnya menerapkannya dalam setiap tindakan profesional, baik dalam berinteraksi dengan peserta didik, sesama pendidik, maupun lingkungan sekolah. Pembelajaran juga mengaitkan penerapan kode etik dengan penguatan pendidikan nilai dan pembentukan karakter di sekolah.
+                                </p>
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <a href="https://drive.google.com/drive/folders/1n8Rutufv5lnAcg5_aE_blALYbeHuAtcm?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                    <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- ============================================
+                 REFLEKSI MATA KULIAH
+                 ============================================ -->
+            <div style="margin-top: 72px;">
+                <div class="section-heading" style="margin-bottom: 40px;">
+                    <span class="eyebrow">REFLEKSI</span>
+                    <h2>Refleksi <span class="accent">Mata Kuliah</span></h2>
+                    <p>Dokumen refleksi pembelajaran dan pengembangan diri selama mengikuti mata kuliah ini.</p>
+                </div>
+
+                <!-- ============================================
+                     PDF VIEWER - GOOGLE DRIVE (DIPERBAIKI)
+                     ============================================ -->
+                <div style="max-width: 1100px; margin: 0 auto 40px;">
+                    <div class="pdf-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div style="font-size: 1.8rem;">📄</div>
+                                <div>
+                                    <h3 style="font-family: var(--font-heading); color: var(--color-primary); margin: 0; font-size: 1.1rem;">Dokumen Refleksi Pembelajaran</h3>
+                                </div>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1fhK-8qCW_gPWtaRU8LePbHhIOKkptKqu/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="gap: 8px; font-size: 0.85rem; padding: 8px 18px;">
+                                <i class="fas fa-external-link-alt"></i> Buka di Drive
+                            </a>
+                        </div>
+                        <!-- PDF Viewer dengan rasio A4 -->
+                        <div class="pdf-viewer-wrapper">
+                            <iframe 
+                                src="https://drive.google.com/file/d/1fhK-8qCW_gPWtaRU8LePbHhIOKkptKqu/preview"
+                                allow="autoplay"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p style="color: var(--color-text); opacity: 0.5; font-size: 0.75rem; margin-top: 12px; text-align: center;">
+                            <i class="fas fa-info-circle"></i> Geser atau scroll untuk melihat seluruh dokumen. Klik "Buka di Drive" untuk tampilan penuh.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ============================================
+                     CARD REFLEKSI (Di bawah PDF)
+                     ============================================ -->
+                <div style="max-width: 1100px; margin: 0 auto;">
+                    <div class="reflection-card">
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                            <div style="font-size: 2.4rem;">💭</div>
+                            <h3 style="font-family: var(--font-heading); color: var(--color-primary); margin: 0;">Refleksi Pengalaman Belajar</h3>
+                        </div>
+                        <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8; font-style: italic; padding: 16px 20px; border-left: 4px solid var(--color-primary); background: var(--color-accent-glow); border-radius: var(--radius-sm);">
+                            Perkuliahan ini telah membuka wawasan saya tentang hakikat pendidikan yang sesungguhnya. Saya mempelajari empat konsep utama yang saling berkaitan, yaitu Landasan Filosofis, Pola Pikir Bertumbuh, Pendidikan Nilai, dan Kode Etik Guru. Saya menyadari bahwa tugas guru bukan sekadar mengajar dan mengejar target kurikulum, tetapi menuntun murid sesuai dengan kodratnya agar tumbuh menjadi pribadi yang berkarakter. Saya juga mulai meninggalkan kebiasaan mengkategorikan siswa sebagai anak pandai atau bodoh, karena saya percaya setiap anak memiliki potensi untuk berkembang melalui usaha dan dukungan yang tepat.<br><br>
+                            Ke depan, saya berkomitmen untuk menjadi guru yang tidak hanya fokus pada aspek kognitif, tetapi juga mengintegrasikan nilai-nilai luhur dalam pembelajaran secara kontekstual. Saya akan selalu merenungkan setiap keputusan yang saya ambil agar sesuai dengan kode etik guru, serta berusaha menjadi pribadi yang layak diteladani oleh murid. Meskipun tantangan seperti menjaga konsistensi dan menghadapi tekanan sistem pasti akan datang, saya percaya bahwa dengan bekal pemahaman ini dan kemauan untuk terus belajar, saya dapat menjalankan peran sebagai pendidik sejati yang membawa dampak positif bagi peserta didik.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 INFO BOX
+                 ============================================ -->
+            <div class="info-section" style="padding: 60px 0 40px;">
+                <div class="info-box" style="max-width: 780px; margin: 0 auto;">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--color-primary); margin-bottom: 10px;">Filosofi sebagai Fondasi Pendidikan</h3>
+                    <p style="font-size: 1rem; line-height: 1.8; color: var(--color-text); opacity: 0.85;">"Filosofi memberi arah pada pendidikan, sementara nilai memberi makna pada setiap prosesnya."</p>
+                    <p style="font-size: 0.9rem; line-height: 1.8; color: var(--color-text); opacity: 0.7; margin-top: 12px;">
+                        Mata kuliah ini mengajak mahasiswa memahami filosofi pendidikan Indonesia
+                        melalui pemikiran Ki Hadjar Dewantara dan Pancasila, sekaligus menghayati pentingnya pendidikan nilai, growth mindset, serta kode etik profesi guru. Melalui pemahaman, refleksi, dan penerapan, mahasiswa diarahkan untuk membangun landasan berpikir dan nilai yang kuat sebagai bekal menjadi pendidik yang profesional, berkarakter, dan mampu menjadi role model bagi peserta didik.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 NAVIGASI KEMBALI
+                 ============================================ -->
+            <div style="text-align: center; padding: 20px 0 40px;">
+                <a href="../../semester1.html" class="btn btn-outline" style="gap: 8px;">
+                    <i class="fas fa-arrow-left"></i> Kembali ke Semester 1
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BACK TO TOP
+         ============================================ -->
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Kolom 1: Brand -->
+                <div>
+                    <h2>E-Portofolio Farida</h2>
+                    <p>Dokumentasi perjalanan dan pengembangan profesional Faridatul Badriyah sebagai mahasiswa PPG Prajabatan Informatika.</p>
+                </div>
+                
+                <!-- Kolom 2: Informasi Kontak -->
+                <div>
+                    <h3>Informasi Kontak</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>faridatul.badriyah.2531537@students.um.ac.id</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>253153743889</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-university"></i>
+                        <span>Universitas Negeri Malang</span>
+                    </div>
+                </div>
+                
+                <!-- Kolom 3: Navigasi -->
+                <div>
+                    <h3>Navigasi</h3>
+                    <div class="footer-links">
+                        <a href="../../index.html#home">Beranda</a>
+                        <a href="../../pages/tentang-saya.html">Tentang Saya</a>
+                        <a href="../../index.html#skills">Keterampilan</a>
+                        <a href="../../index.html#projects">Proyek</a>
+                    </div>
+                </div>
+                
+                <!-- Kolom 4: PPG -->
+                <div>
+                    <h3>PPG</h3>
+                    <div class="footer-links">
+                        <a href="../siklus-1.html">PPL Terbimbing</a>
+                        <a href="../../semester-2/ppl-mandiri.html">PPL Mandiri</a>
+                        <a href="../../pengembangan-diri/artefak.html">Artefak</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2024</span> Faridatul Badriyah • PPG E-Portofolio</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="../../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kumpulan mata kuliah dan PPL Terbimbing Semester 1 PPG Prajabatan Informatika Faridatul Badriyah.">
+    <meta name="author" content="Faridatul Badriyah">
+    <title>Semester 1 | Faridatul Badriyah</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* ============================================
+           EFEK HOVER - CARD MENJADI PUTIH
+           ============================================ */
+        
+        /* Card untuk Course List */
+        .course-link {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--glass-shadow);
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+            color: var(--color-text);
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .course-link:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .course-link:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .course-link:hover .course-number {
+            color: var(--color-primary) !important;
+        }
+        
+        .course-link:hover .course-icon {
+            color: var(--color-primary) !important;
+        }
+        
+        .course-link:hover .course-info strong {
+            color: #1a1215 !important;
+        }
+        
+        .course-link:hover .course-info small {
+            color: #4a4a4a !important;
+            opacity: 0.85 !important;
+        }
+        
+        .course-link:hover .course-arrow {
+            color: var(--color-primary) !important;
+            transform: translateX(4px);
+        }
+        
+        /* Card untuk PPL List */
+        .ppl-link {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--glass-shadow);
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .ppl-link:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .ppl-link:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .ppl-link:hover span {
+            color: #1a1215 !important;
+        }
+        
+        .ppl-link:hover i {
+            color: var(--color-primary) !important;
+            transform: translateX(4px);
+        }
+        
+        .ppl-link:hover .fa-1,
+        .ppl-link:hover .fa-2,
+        .ppl-link:hover .fa-3 {
+            color: var(--color-primary) !important;
+        }
+        
+        /* Dark mode untuk text pada hover */
+        [data-theme="dark"] .course-link:hover .course-info strong {
+            color: #1a1215 !important;
+        }
+        
+        [data-theme="dark"] .course-link:hover .course-info small {
+            color: #4a4a4a !important;
+        }
+        
+        [data-theme="dark"] .ppl-link:hover span {
+            color: #1a1215 !important;
+        }
+        
+        /* Style untuk icon angka pada PPL */
+        .ppl-link .fa-1,
+        .ppl-link .fa-2,
+        .ppl-link .fa-3 {
+            color: var(--color-primary);
+            margin-right: 8px;
+        }
+        
+        /* Dark mode default */
+        [data-theme="dark"] .course-link {
+            background: rgba(26, 18, 21, 0.60) !important;
+            border-color: rgba(238, 228, 218, 0.05) !important;
+        }
+        
+        [data-theme="dark"] .ppl-link {
+            background: rgba(26, 18, 21, 0.60) !important;
+            border-color: rgba(238, 228, 218, 0.05) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-layer" aria-hidden="true">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+
+    <nav class="navbar" id="siteHeader">
+        <div class="container">
+            <div class="nav-content">
+                <a class="logo" href="index.html">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Faridatul Badriyah</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html#home" class="nav-link">Beranda</a></li>
+                    <li><a href="pages/tentang-saya.html" class="nav-link">Tentang Saya</a></li>
+                    <li><a href="index.html#skills" class="nav-link">Keterampilan</a></li>
+                    <li class="dropdown">
+                        <a href="index.html#projects" class="nav-link dropdown-toggle active">Proyek <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="semester1.html" class="dropdown-link active">Semester 1</a></li>
+                            <li><a href="semester-2/mata-kuliah.html" class="dropdown-link">Semester 2</a></li>
+                            <li><a href="semester-1/siklus-1.html" class="dropdown-link">PPL Terbimbing</a></li>
+                            <li><a href="semester-2/ppl-mandiri.html" class="dropdown-link">PPL Mandiri</a></li>
+                        </ul>
+                    </li>
+                    <li><button class="theme-toggle" id="themeToggle" type="button" title="Ubah tema" aria-label="Ubah tema"><i class="fas fa-moon"></i></button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="semester-page">
+        <div class="container">
+            <section class="semester-hero" aria-labelledby="semester-title">
+                <span class="badge">PPG PRAJABATAN • SEMESTER 1</span>
+                <h1 id="semester-title">Kumpulan <span>Mata Kuliah</span></h1>
+                <p>Dokumentasi pembelajaran, refleksi, dan pengalaman praktik selama Semester 1 PPG Prajabatan Informatika.</p>
+            </section>
+
+            <div class="semester-layout">
+                <section class="semester-section" aria-labelledby="courses-title">
+                    <div class="section-heading">
+                        <span class="eyebrow">Pembelajaran Akademik</span>
+                        <h2 id="courses-title">Mata Kuliah <span class="accent">Semester 1</span></h2>
+                        <p>Pilih mata kuliah untuk melihat dokumentasi dan refleksi pembelajaran.</p>
+                    </div>
+                    <div class="course-list">
+                        <a class="course-link" href="semester-1/mata-kuliah/filosofi-pendidikan-dan-pendidikan-nilai.html">
+                            <span class="course-number">01</span><span class="course-icon"><i class="fas fa-book-open"></i></span>
+                            <span class="course-info"><strong>Filosofi Pendidikan dan Pendidikan Nilai</strong><small>Refleksi dan pemahaman nilai pendidikan</small></span><i class="fas fa-arrow-right course-arrow"></i>
+                        </a>
+                        <a class="course-link" href="semester-1/mata-kuliah/pemahaman-peserta-didik-dan-pembelajaran.html">
+                            <span class="course-number">02</span><span class="course-icon"><i class="fas fa-users"></i></span>
+                            <span class="course-info"><strong>Pemahaman tentang Peserta Didik dan Pembelajaran</strong><small>Memahami kebutuhan dan proses belajar murid</small></span><i class="fas fa-arrow-right course-arrow"></i>
+                        </a>
+                        <a class="course-link" href="semester-1/mata-kuliah/pma-dasar.html">
+                            <span class="course-number">03</span><span class="course-icon"><i class="fas fa-chalkboard-teacher"></i></span>
+                            <span class="course-info"><strong>Pembelajaran Mendalam dan Asesmen (PMA) Dasar</strong><small>Perencanaan pembelajaran dan asesmen bermakna</small></span><i class="fas fa-arrow-right course-arrow"></i>
+                        </a>
+                        <a class="course-link" href="semester-1/mata-kuliah/growth-mindset-dalam-pembelajaran.html">
+                            <span class="course-number">04</span><span class="course-icon"><i class="fas fa-seedling"></i></span>
+                            <span class="course-info"><strong>Pola Pikir Bertumbuh (Growth Mindset) dalam Pembelajaran</strong><small>Membangun sikap belajar yang adaptif dan reflektif</small></span><i class="fas fa-arrow-right course-arrow"></i>
+                        </a>
+                        <a class="course-link" href="semester-1/mata-kuliah/computational-thinking.html">
+                            <span class="course-number">05</span><span class="course-icon"><i class="fas fa-laptop-code"></i></span>
+                            <span class="course-info"><strong>Computational Thinking</strong><small>Berpikir komputasional untuk pemecahan masalah</small></span><i class="fas fa-arrow-right course-arrow"></i>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="semester-section ppl-section" aria-labelledby="ppl-title">
+                    <div class="section-heading">
+                        <span class="eyebrow">Praktik Pengalaman Lapangan</span>
+                        <h2 id="ppl-title">PPL <span class="accent">Terbimbing</span></h2>
+                        <p>Dokumentasi praktik pembelajaran dalam tiga siklus.</p>
+                    </div>
+                    <div class="ppl-list">
+                        <a class="ppl-link" href="semester-1/siklus-1.html"><span><i class="fas fa-1"></i> Siklus 1</span><i class="fas fa-arrow-right"></i></a>
+                        <a class="ppl-link" href="semester-1/siklus-2.html"><span><i class="fas fa-2"></i> Siklus 2</span><i class="fas fa-arrow-right"></i></a>
+                        <a class="ppl-link" href="semester-1/siklus-3.html"><span><i class="fas fa-3"></i> Siklus 3</span><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Kembali ke atas"><i class="fas fa-arrow-up"></i></button>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2024</span> Faridatul Badriyah • PPG E-Portofolio</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="E-Portofolio PPG Prajabatan Informatika Faridatul Badriyah, Universitas Negeri Malang">
+    <meta name="author" content="Faridatul Badriyah">
+    <title>PPG E-Portofolio | Faridatul Badriyah</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS UTAMA -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ============================================
+         BACKGROUND LAYER (Blobs/Orbs)
+         ============================================ -->
+    <div class="bg-layer" aria-hidden="true">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+
+    <!-- ============================================
+         NAVBAR
+         ============================================ -->
+    <nav class="navbar" id="siteHeader">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Faridatul Badriyah</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+    <li><a href="#home" class="nav-link active">Beranda</a></li>
+    <li><a href="pages/tentang-saya.html" class="nav-link">Tentang Saya</a></li>
+    <li><a href="#skills" class="nav-link">Keterampilan</a></li>
+    <li class="dropdown">
+        <a href="#projects" class="nav-link dropdown-toggle">
+            Proyek <i class="fas fa-chevron-down"></i>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="semester1.html" class="dropdown-link">Semester 1</a></li>
+            <li><a href="semester-2/mata-kuliah.html" class="dropdown-link">Semester 2</a></li>
+            <li><a href="semester-1/siklus-1.html" class="dropdown-link">PPL Terbimbing</a></li>
+            <li><a href="semester-2/ppl-mandiri.html" class="dropdown-link">PPL Mandiri</a></li>
+        </ul>
+    </li>
+    <li>
+        <button class="theme-toggle" id="themeToggle" title="Ubah tema">
+            <i class="fas fa-moon"></i>
+        </button>
+    </li>
+</ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="badge">PPG PRAJABATAN • INFORMATIKA</span>
+                    <h1 class="hero-title">
+                        E-Portofolio
+                        <br>
+                        <span class="highlight-name">Faridatul Badriyah</span>
+                    </h1>
+                    <p class="hero-subtitle">Mahasiswa PPG Prajabatan Informatika</p>
+                    <p class="hero-meta">Universitas Negeri Malang • 253153743889</p>
+                    <div class="hero-intro-box">
+                        <p>
+                           Saya berharap dapat menjadi guru yang tidak hanya mengajarkan ilmu, tetapi juga mendampingi, memotivasi, dan membentuk karakter murid. Saya ingin menciptakan pembelajaran yang inklusif, bermakna, dan menyenangkan, serta memberikan kesempatan yang setara bagi setiap murid untuk berkembang dan meraih potensi terbaiknya.
+                        </p>
+                    </div>
+                    <div class="hero-highlights">
+                        <span>Belajar</span>
+                        <span>Bertumbuh</span>
+                        <span>Berdampak</span>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="pages/tentang-saya.html" class="btn btn-primary">Pelajari Lebih Lanjut →</a>
+                        <a href="#projects" class="btn btn-outline">Lihat Proyek</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-placeholder">
+                        <img src="assets/images/Foto-Farida.jpg" alt="Foto Faridatul Badriyah" class="hero-photo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT / IDENTIFIKASI DIRI
+         ============================================ -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Identifikasi Diri</span>
+                <h2>Memahami Konteks &amp; <span class="accent">Visi Profesional</span></h2>
+                <p>Memahami konteks pendidikan Indonesia dan visi profesional sebagai calon guru Informatika.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-placeholder-small">
+                        <img src="assets/images/Foto-Farida.jpg" alt="Foto Faridatul Badriyah">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Faridatul Badriyah</h3>
+                    <p class="about-role">Mahasiswa PPG Prajabatan Informatika</p>
+                    <p class="about-description">
+                        Saya adalah calon guru yang memiliki semangat untuk terus belajar, bertumbuh, dan memberikan dampak positif bagi murid.
+                        Melalui program PPG, saya akan terus mengembangkan kompetensi dan belajar menjadi pendidik yang profesional,
+                        reflektif, dan mampu menciptakan pembelajaran yang bermakna bagi setiap murid.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Vision Cards -->
+            <div class="vision-container">
+                <div class="vision-card">
+                    <span class="vision-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </span>
+                    <h3>Visi Pendidikan Indonesia</h3>
+                    <p>
+                        Mewujudkan ekosistem pendidikan Indonesia yang berkeadilan dan tanpa sekat,
+                        di mana kualitas pembelajaran, penguatan soft skill, dan pembentukan karakter
+                        tidak lagi ditentukan oleh status ekonomi maupun letak geografis,
+                        termasuk daerah 3T (Terdepan, Terluar, Tertinggal). Saya memiliki visi agar setiap anak Indonesia,
+                        baik yang berada di kota, pinggiran, maupun pelosok desa, memperoleh porsi pendidikan yang setara,
+                        sebab saya meyakini bahwa potensi kognitif mereka sama besarnya. Kesenjangan yang perlu diatasi
+                        hanyalah keterbatasan akses dan fasilitas belajar yang bermakna.
+                    </p>
+                </div>
+                <div class="vision-card">
+                    <span class="vision-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </span>
+                    <h3>Visi Calon Guru Profesional</h3>
+                    <p>
+                     Menjadi pendidik profesional yang mampu menciptakan pembelajaran yang inklusif,
+                     humanis, dan bermakna. Saya ingin terus mengembangkan kompetensi pedagogik,
+                     kepribadian, sosial, dan profesional, sekaligus menjadi teladan dalam akhlak dan semangat belajar.
+                     Sebagai guru Informatika, saya berharap dapat memberikan kesempatan yang setara bagi setiap murid
+                     untuk berkembang dan mencapai potensi terbaiknya,
+                     terutama mereka yang memiliki keterbatasan akses pendidikan.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SKILLS / KETERAMPILAN (Misi Profesional)
+         ============================================ -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Misi Profesional</span>
+                <h2>Misi Sebagai Calon Guru <span class="accent">Informatika</span></h2>
+                <p>Komitmen dan misi dalam mengembangkan praktik pembelajaran yang bermakna dan berdampak.</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Bertumbuh</h3>
+                    <p>Terus meningkatkan kompetensi melalui belajar, refleksi, dan kolaborasi.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Belajar</span>
+                        <span class="tag">Refleksi</span>
+                        <span class="tag">Kolaborasi</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Berinovasi</h3>
+                    <p>Menciptakan pembelajaran yang bermakna, kontekstual, dan berpusat pada murid.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Kreatif</span>
+                        <span class="tag">Kontekstual</span>
+                        <span class="tag">Bermakna</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Mendampingi</h3>
+                    <p>Memanfaatkan teknologi untuk meningkatkan literasi digital dan kemandirian murid.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Teknologi</span>
+                        <span class="tag">Literasi</span>
+                        <span class="tag">Adaptif</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Mengabdi</h3>
+                    <p>Mendedikasikan diri untuk memperluas akses pendidikan bagi setiap murid.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Peduli</span>
+                        <span class="tag">Merata</span>
+                        <span class="tag">Berdedikasi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PROJECTS / PROYEK (Semester 1 & 2)
+         ============================================ -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Semester 1 &amp; 2</span>
+                <h2>Perjalanan <span class="accent">PPG</span></h2>
+                <p>Dokumentasi kegiatan pembelajaran dan pengalaman selama mengikuti Program PPG.</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Semester 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-badge">Semester 1</span>
+                        <h3>PPL Terbimbing</h3>
+                        <p class="project-category">Praktik Pengalaman Lapangan</p>
+                        <p class="project-description">
+                            Dokumentasi pelaksanaan PPL Terbimbing yang terdiri dari tiga siklus pembelajaran.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Siklus 1</span>
+                            <span class="tag">Siklus 2</span>
+                            <span class="tag">Siklus 3</span>
+                        </div>
+                        <a href="semester-1/siklus-1.html" class="project-link">Lihat Dokumentasi <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-badge">Semester 1</span>
+                        <h3>Mata Kuliah Semester 1</h3>
+                        <p class="project-category">Akademik</p>
+                        <p class="project-description">
+                            Dokumentasi refleksi dan pembelajaran dari mata kuliah yang ditempuh selama Semester 1.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Computational Thinking</span>
+                            <span class="tag">Pembelajaran</span>
+                            <span class="tag">Filosofi</span>
+                        </div>
+                        <a href="semester1.html" class="project-link">Lihat Mata Kuliah <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Semester 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-chalkboard-user"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-badge">Semester 2</span>
+                        <h3>PPL Mandiri</h3>
+                        <p class="project-category">Praktik Pengalaman Lapangan</p>
+                        <p class="project-description">
+                            Dokumentasi pelaksanaan PPL Mandiri, perangkat pembelajaran, dan kegiatan mengajar di sekolah.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Mengajar</span>
+                            <span class="tag">Perangkat</span>
+                            <span class="tag">Sekolah</span>
+                        </div>
+                        <a href="semester-2/ppl-mandiri.html" class="project-link">Lihat Dokumentasi <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-badge">Semester 2</span>
+                        <h3>Mata Kuliah Semester 2</h3>
+                        <p class="project-category">Akademik</p>
+                        <p class="project-description">
+                            Daftar mata kuliah utama yang ditempuh pada Semester 2 PPG.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">PMA Lanjut</span>
+                            <span class="tag">Kepemimpinan</span>
+                            <span class="tag">Etika</span>
+                        </div>
+                        <a href="semester-2/mata-kuliah.html" class="project-link">Lihat Mata Kuliah <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Pengembangan Diri -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-badge">Pengembangan Diri</span>
+                        <h3>Artefak</h3>
+                        <p class="project-category">Karya &amp; Dokumentasi</p>
+                        <p class="project-description">
+                            Kumpulan karya dan artefak yang dihasilkan selama proses pembelajaran dan pengembangan kompetensi.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Karya</span>
+                            <span class="tag">Dokumentasi</span>
+                            <span class="tag">Portofolio</span>
+                        </div>
+                        <a href="pengembangan-diri/artefak.html" class="project-link">Lihat Artefak <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-badge">Pengembangan Diri</span>
+                        <h3>Model Guru yang Dituju</h3>
+                        <p class="project-category">Profil Guru</p>
+                        <p class="project-description">
+                            Gambaran nilai, karakter, kompetensi, dan profil guru yang ingin dikembangkan.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Nilai</span>
+                            <span class="tag">Karakter</span>
+                            <span class="tag">Kompetensi</span>
+                        </div>
+                        <a href="pengembangan-diri/model-guru.html" class="project-link">Lihat Model Guru <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         INFO BOX (Refleksi)
+         ============================================ -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-box">
+                <h3>🌱 Belajar, Bertumbuh, dan Berefleksi</h3>
+                <p>
+                    Perjalanan PPG bukan hanya tentang menghasilkan perangkat pembelajaran,
+                    tetapi juga tentang memahami proses belajar peserta didik, mengevaluasi
+                    praktik pembelajaran, menerima umpan balik, dan terus mengembangkan diri
+                    sebagai calon guru profesional.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BACK TO TOP
+         ============================================ -->
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Kolom 1: Brand -->
+            <div>
+                <h2>E-Portofolio Farida</h2>
+                <p>Dokumentasi perjalanan dan pengembangan profesional Faridatul Badriyah sebagai mahasiswa PPG Prajabatan Informatika.</p>
+            </div>
+            
+            <!-- Kolom 2: Informasi Kontak (FOOTNOTE) - BARU DITAMBAHKAN -->
+            <div>
+                <h3>Informasi Kontak</h3>
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>faridatul.badriyah.2531537@students.um.ac.id</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>253153743889</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-university"></i>
+                    <span>Universitas Negeri Malang</span>
+                </div>
+            </div>
+            
+            <!-- Kolom 3: Navigasi -->
+            <div>
+                <h3>Navigasi</h3>
+                <div class="footer-links">
+                    <a href="#home">Beranda</a>
+                    <a href="pages/tentang-saya.html">Tentang Saya</a>
+                    <a href="#skills">Keterampilan</a>
+                    <a href="#projects">Proyek</a>
+                </div>
+            </div>
+            
+            <!-- Kolom 4: PPG -->
+            <div>
+                <h3>PPG</h3>
+                <div class="footer-links">
+                    <a href="semester-1/siklus-1.html">PPL Terbimbing</a>
+                    <a href="semester-2/ppl-mandiri.html">PPL Mandiri</a>
+                    <a href="pengembangan-diri/artefak.html">Artefak</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear">2024</span> Faridatul Badriyah • PPG E-Portofolio</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dokumentasi PPL Terbimbing Siklus 1 - Faridatul Badriyah, PPG Prajabatan Informatika Universitas Negeri Malang">
+    <meta name="author" content="Faridatul Badriyah">
+    <title>Siklus 1 | PPL Terbimbing - Faridatul Badriyah</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS UTAMA -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <!-- ============================================
+         BACKGROUND LAYER (Blobs/Orbs)
+         ============================================ -->
+    <div class="bg-layer" aria-hidden="true">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+
+    <!-- ============================================
+         NAVBAR
+         ============================================ -->
+    <nav class="navbar" id="siteHeader">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Faridatul Badriyah</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="../index.html#home" class="nav-link">Beranda</a></li>
+                    <li><a href="../pages/tentang-saya.html" class="nav-link">Tentang Saya</a></li>
+                    <li><a href="../index.html#skills" class="nav-link">Keterampilan</a></li>
+                    <li class="dropdown">
+                        <a href="../index.html#projects" class="nav-link dropdown-toggle active">
+                            Proyek <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../semester1.html" class="dropdown-link">Semester 1</a></li>
+                            <li><a href="../semester-2/mata-kuliah.html" class="dropdown-link">Semester 2</a></li>
+                            <li><a href="siklus-1.html" class="dropdown-link active">PPL Terbimbing</a></li>
+                            <li><a href="../semester-2/ppl-mandiri.html" class="dropdown-link">PPL Mandiri</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="theme-toggle" id="themeToggle" title="Ubah tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION (Siklus 1)
+         ============================================ -->
+    <section class="hero" id="siklus1">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="badge">📘 SIKLUS 1 • PPL TERBIMBING</span>
+                    <h1 class="hero-title">
+                        Siklus 1:
+                        <br>
+                        <span class="highlight-name">Perencanaan &amp; Implementasi Awal</span>
+                    </h1>
+                    <p class="hero-subtitle">Praktik Pengalaman Lapangan Terbimbing</p>
+                    <p class="hero-meta">Universitas Negeri Malang • PPG Prajabatan Informatika</p>
+                    <div class="hero-intro-box">
+                        <p>
+                            Dokumentasi lengkap pelaksanaan PPL Terbimbing Siklus 1, mencakup perangkat pembelajaran,
+                            media yang digunakan, hasil kerja mahasiswa, dan refleksi penilaian. Siklus ini menjadi
+                            fondasi awal dalam praktik mengajar di kelas.
+                        </p>
+                    </div>
+                    <div class="hero-highlights">
+                        <span>Perangkat</span>
+                        <span>Media</span>
+                        <span>Hasil Kerja</span>
+                        <span>Penilaian</span>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="../index.html#projects" class="btn btn-outline">
+                            <i class="fas fa-arrow-left"></i> Kembali ke Proyek
+                        </a>
+                        <a href="siklus-2.html" class="btn btn-primary">
+                            Siklus 2 <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-placeholder">
+                        <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg, var(--primary-light), var(--primary)); border-radius:50%; color:white; font-size:4rem;">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         RINCIAN SIKLUS 1
+         ============================================ -->
+    <section class="about" id="rincian">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Artefak Pembelajaran</span>
+                <h2>Rincian <span class="accent">Siklus 1</span></h2>
+                <p>
+                    Berikut adalah komponen-komponen yang didokumentasikan dalam Siklus 1, mulai dari
+                    perencanaan hingga evaluasi. Setiap bagian dilengkapi dengan deskripsi dan tautan unduh.
+                </p>
+            </div>
+
+            <!-- Grid Artefak -->
+            <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <!-- Perangkat Pembelajaran -->
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #4A90D9, #357ABD);">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-badge">Perangkat</span>
+                        <h3>Perangkat Pembelajaran</h3>
+                        <p class="project-category">RPP • Modul • LKPD</p>
+                        <p class="project-description">
+                            Rencana Pelaksanaan Pembelajaran (RPP), modul ajar, dan lembar kerja peserta didik (LKPD)
+                            yang digunakan pada pertemuan Siklus 1.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">RPP</span>
+                            <span class="tag">Modul Ajar</span>
+                            <span class="tag">LKPD</span>
+                        </div>
+                        <a href="#" class="project-link">Unduh Perangkat <i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+
+                <!-- Media Pembelajaran -->
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #27AE60, #1E8449);">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-badge">Media</span>
+                        <h3>Media Pembelajaran</h3>
+                        <p class="project-category">Slide • Video • Interaktif</p>
+                        <p class="project-description">
+                            Slide presentasi, video pendukung, dan alat bantu interaktif yang
+                            digunakan saat proses belajar mengajar.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Slide</span>
+                            <span class="tag">Video</span>
+                            <span class="tag">Kuis</span>
+                        </div>
+                        <a href="#" class="project-link">Lihat Media <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Hasil Kerja Mahasiswa -->
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #F39C12, #D68910);">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-badge">Hasil Kerja</span>
+                        <h3>Hasil Kerja Mahasiswa</h3>
+                        <p class="project-category">Tugas • Proyek • Refleksi</p>
+                        <p class="project-description">
+                            Contoh tugas, proyek, dan partisipasi mahasiswa selama Siklus 1,
+                            disertai dengan umpan balik dari dosen pembimbing.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Tugas</span>
+                            <span class="tag">Proyek</span>
+                            <span class="tag">Refleksi</span>
+                        </div>
+                        <a href="#" class="project-link">Lihat Hasil <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Penilaian & Refleksi -->
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #8E44AD, #6C3483);">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-badge">Penilaian</span>
+                        <h3>Penilaian &amp; Refleksi</h3>
+                        <p class="project-category">Rubrik • Nilai • Refleksi</p>
+                        <p class="project-description">
+                            Instrumen penilaian, rubrik, serta refleksi dari mahasiswa dan dosen
+                            pembimbing terhadap pelaksanaan Siklus 1.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Rubrik</span>
+                            <span class="tag">Nilai</span>
+                            <span class="tag">Refleksi</span>
+                        </div>
+                        <a href="#" class="project-link">Lihat Penilaian <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabel Ringkasan Pelaksanaan -->
+            <div style="margin-top: 4rem;">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <span class="eyebrow">Ringkasan</span>
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem;">Pelaksanaan <span class="accent">Siklus 1</span></h3>
+                </div>
+                <div style="overflow-x: auto; background: var(--card-bg); border-radius: 20px; padding: 1.5rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                        <thead>
+                            <tr style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; border-radius: 12px;">
+                                <th style="padding: 1rem 1.5rem; text-align: left; border-radius: 12px 0 0 0;">Pertemuan</th>
+                                <th style="padding: 1rem 1.5rem; text-align: left;">Topik</th>
+                                <th style="padding: 1rem 1.5rem; text-align: left;">Media</th>
+                                <th style="padding: 1rem 1.5rem; text-align: left; border-radius: 0 12px 0 0;">Catatan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 0.8rem 1.5rem; font-weight: 600;">1</td>
+                                <td style="padding: 0.8rem 1.5rem;">Pengenalan Konsep Dasar</td>
+                                <td style="padding: 0.8rem 1.5rem;">Slide, Video</td>
+                                <td style="padding: 0.8rem 1.5rem;">Respon mahasiswa aktif</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 0.8rem 1.5rem; font-weight: 600;">2</td>
+                                <td style="padding: 0.8rem 1.5rem;">Praktik Kelompok</td>
+                                <td style="padding: 0.8rem 1.5rem;">LKPD, Kuis</td>
+                                <td style="padding: 0.8rem 1.5rem;">Kerjasama baik</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.8rem 1.5rem; font-weight: 600;">3</td>
+                                <td style="padding: 0.8rem 1.5rem;">Presentasi &amp; Diskusi</td>
+                                <td style="padding: 0.8rem 1.5rem;">Proyek, Rubrik</td>
+                                <td style="padding: 0.8rem 1.5rem;">Perlu peningkatan waktu</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Navigasi Antar Siklus -->
+            <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem; flex-wrap: wrap;">
+                <a href="../index.html#projects" class="btn btn-outline" style="flex:1; text-align: center;">
+                    <i class="fas fa-arrow-left"></i> Semua Proyek
+                </a>
+                <a href="siklus-2.html" class="btn btn-primary" style="flex:1; text-align: center;">
+                    Lanjut ke Siklus 2 <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         INFO BOX (Refleksi Siklus 1)
+         ============================================ -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-box">
+                <h3>📝 Refleksi Siklus 1</h3>
+                <p>
+                    Siklus 1 menjadi langkah awal yang penting dalam perjalanan PPL Terbimbing.
+                    Dari siklus ini, saya belajar tentang pentingnya perencanaan yang matang,
+                    fleksibilitas dalam menghadapi dinamika kelas, dan nilai dari umpan balik
+                    untuk perbaikan berkelanjutan. Siklus ini mengajarkan bahwa menjadi guru
+                    adalah proses belajar sepanjang hayat.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BACK TO TOP
+         ============================================ -->
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Kolom 1: Brand -->
+                <div>
+                    <h2>E-Portofolio Farida</h2>
+                    <p>Dokumentasi perjalanan dan pengembangan profesional Faridatul Badriyah sebagai mahasiswa PPG Prajabatan Informatika.</p>
+                </div>
+
+                <!-- Kolom 2: Informasi Kontak -->
+                <div>
+                    <h3>Informasi Kontak</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>faridatul.badriyah.2531537@students.um.ac.id</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>253153743889</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-university"></i>
+                        <span>Universitas Negeri Malang</span>
+                    </div>
+                </div>
+
+                <!-- Kolom 3: Navigasi -->
+                <div>
+                    <h3>Navigasi</h3>
+                    <div class="footer-links">
+                        <a href="../index.html#home">Beranda</a>
+                        <a href="../pages/tentang-saya.html">Tentang Saya</a>
+                        <a href="../index.html#skills">Keterampilan</a>
+                        <a href="../index.html#projects">Proyek</a>
+                    </div>
+                </div>
+
+                <!-- Kolom 4: PPG -->
+                <div>
+                    <h3>PPG</h3>
+                    <div class="footer-links">
+                        <a href="siklus-1.html" class="active">PPL Terbimbing</a>
+                        <a href="../semester-2/ppl-mandiri.html">PPL Mandiri</a>
+                        <a href="../pengembangan-diri/artefak.html">Artefak</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2024</span> Faridatul Badriyah • PPG E-Portofolio</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="../js/script.js"></script>
+</body>
+</html>
