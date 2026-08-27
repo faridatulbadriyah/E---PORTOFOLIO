@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dokumentasi Praktik Pengalaman Lapangan (PPL) Terbimbing semester 1 untuk mahasiswa PPG. Berisi rangkuman tiga siklus pembelajaran.">
+    <meta name="author" content="Faridatul Badriyah">
+    <title>PPL Terbimbing | PPG E-Portofolio - Faridatul Badriyah</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS UTAMA - DIPERBAIKI (naik 1 level ke folder utama) -->
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <style>
+        /* ============================================
+           EFEK HOVER CARD - SEPERTI DI HALAMAN BERANDA
+           ============================================ */
+        
+        /* Card untuk Deskripsi Singkat */
+        .about-copy-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: default;
+            padding: 32px 40px;
+            border-radius: var(--radius-lg);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+        }
+        
+        .about-copy-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .about-copy-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .about-copy-card:hover h2 {
+            color: #1a1215 !important;
+        }
+        
+        .about-copy-card:hover p {
+            color: #2d2d2d !important;
+            opacity: 0.85 !important;
+        }
+        
+        .about-copy-card:hover .fa-chalkboard-user {
+            color: var(--color-primary) !important;
+        }
+        
+        /* Card untuk Siklus */
+        .siklus-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--glass-shadow);
+            overflow: hidden;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .siklus-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-8px);
+        }
+        
+        [data-theme="dark"] .siklus-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .siklus-card:hover .siklus-icon {
+            background: var(--color-primary) !important;
+            color: #ffffff !important;
+        }
+        
+        .siklus-card:hover .siklus-title {
+            color: #1a1215 !important;
+        }
+        
+        .siklus-card:hover .siklus-desc {
+            color: #2d2d2d !important;
+            opacity: 0.85 !important;
+        }
+        
+        .siklus-card:hover .siklus-btn {
+            background: var(--color-primary) !important;
+            color: #ffffff !important;
+            border-color: var(--color-primary) !important;
+        }
+        
+        /* Card Header & Body */
+        .siklus-card-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg-tertiary));
+        }
+        
+        [data-theme="dark"] .siklus-card-header {
+            background: linear-gradient(135deg, var(--color-bg-primary), var(--color-bg-secondary));
+        }
+        
+        .siklus-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-md);
+            background: var(--color-surface);
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            transition: var(--transition-smooth);
+        }
+        
+        [data-theme="dark"] .siklus-icon {
+            background: var(--color-bg-tertiary);
+            color: var(--color-secondary);
+        }
+        
+        .siklus-header-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .siklus-number {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--color-secondary);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        
+        .siklus-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin: 0;
+            transition: var(--transition-smooth);
+        }
+        
+        .siklus-card-body {
+            padding: 1.5rem 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .siklus-desc {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--color-text);
+            opacity: 0.8;
+            flex: 1;
+            transition: var(--transition-smooth);
+        }
+        
+        .siklus-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: var(--radius-pill);
+            text-decoration: none;
+            transition: var(--transition-soft);
+            cursor: pointer;
+            border: 2px solid var(--color-accent-border);
+            background: transparent;
+            color: var(--color-primary);
+            align-self: flex-start;
+        }
+        
+        [data-theme="dark"] .siklus-btn {
+            color: var(--color-secondary);
+            border-color: var(--color-secondary);
+        }
+        
+        .siklus-btn i {
+            font-size: 0.8rem;
+        }
+        
+        /* Dark mode default */
+        [data-theme="dark"] .about-copy-card,
+        [data-theme="dark"] .siklus-card {
+            background: rgba(26, 18, 21, 0.60) !important;
+            border-color: rgba(238, 228, 218, 0.05) !important;
+        }
+        
+        /* Grid Layout */
+        .siklus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 3rem auto 0;
+        }
+        
+        @media (max-width: 768px) {
+            .siklus-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         BACKGROUND LAYER (Blobs/Orbs)
+         ============================================ -->
+    <div class="bg-layer" aria-hidden="true">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="hexagon-grid">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         NAVBAR - PATH SUDAH DIPERBAIKI
+         ============================================ -->
+    <nav class="navbar" id="siteHeader">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Faridatul Badriyah</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="../index.html#home" class="nav-link">Beranda</a></li>
+                    <li><a href="../pages/tentang-saya.html" class="nav-link">Tentang Saya</a></li>
+                    <li><a href="../index.html#skills" class="nav-link">Keterampilan</a></li>
+                    <li class="dropdown">
+                        <a href="../index.html#projects" class="nav-link dropdown-toggle active">
+                            Proyek <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../semester1.html" class="dropdown-link active">Semester 1</a></li>
+                            <li><a href="../semester-2/mata-kuliah.html" class="dropdown-link">Semester 2</a></li>
+                            <li><a href="pplterbimbing.html" class="dropdown-link active">PPL Terbimbing</a></li>
+                            <li><a href="../semester-2/ppl-mandiri.html" class="dropdown-link">PPL Mandiri</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="theme-toggle" id="themeToggle" title="Ubah tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO & CONTENT SECTION
+         ============================================ -->
+    <section class="semester-page" id="home">
+        <div class="container">
+            <div class="semester-hero">
+                <span class="badge">PPL TERBIMBING • SEMESTER 1</span>
+                <h1>Praktik Pengalaman <span>Lapangan</span></h1>
+                <p>Ringkasan dokumentasi Praktik Pengalaman Lapangan (PPL) Terbimbing yang dilaksanakan di sekolah mitra. Pilih salah satu siklus untuk melihat detail lengkapnya.</p>
+                <div style="margin-top: 24px;">
+                    <a href="../semester1.html" class="btn btn-outline" style="gap: 8px;">
+                        <i class="fas fa-arrow-left"></i> Kembali ke Semester 1
+                    </a>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 DESKRIPSI SINGKAT (Card Tengah)
+                 ============================================ -->
+            <div style="max-width: 780px; margin: 0 auto 64px;">
+                <div class="about-copy-card" style="text-align: center;">
+                    <h2><i class="fas fa-chalkboard-user"></i> Deskripsi Singkat</h2>
+                    <p>PPL Terbimbing merupakan wadah bagi mahasiswa untuk mengasah keterampilan profesional melalui pengalaman langsung di sekolah mitra. Prosesnya mencakup tahapan observasi, asistensi, hingga praktik mengajar yang didampingi oleh guru pamong. Mata kuliah ini dirancang untuk memperkuat kompetensi pedagogik dan profesional mahasiswa dengan menerapkan prinsip Pembelajaran Mendalam serta mengintegrasikan teori-teori dari berbagai mata kuliah lain. Melalui praktik ini, mahasiswa diarahkan untuk mampu merancang dan melaksanakan pembelajaran yang tidak hanya efektif, tetapi juga kritis, reflektif, dan berdiferensiasi sesuai kebutuhan murid.</p>
+                    <p style="margin-top: 12px; font-style: italic; color: var(--color-secondary);">
+                        Pengalaman awal: Melalui PPL Terbimbing, saya dapat merasakan langsung dinamika nyata di dalam kelas dan belajar bagaimana menerapkan teori yang telah dipelajari untuk menyelesaikan permasalahan pembelajaran yang kompleks.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 GRID SIKLUS
+                 ============================================ -->
+            <div class="section-heading" style="margin-bottom: 40px;">
+                <span class="eyebrow">DOKUMENTASI PRAKTIK</span>
+                <h2>Siklus <span class="accent">Pembelajaran</span></h2>
+                <p>Jelajahi dokumentasi lengkap dari setiap siklus PPL Terbimbing yang telah dilaksanakan.</p>
+            </div>
+
+            <div class="siklus-grid">
+                <!-- Card Siklus 1 - PATH DIPERBAIKI -->
+                <a href="ppl-terbimbing/siklus-1.html" class="siklus-card">
+                    <div class="siklus-card-header">
+                        <div class="siklus-icon">
+                            <i class="fas fa-1"></i>
+                        </div>
+                        <div class="siklus-header-text">
+                            <span class="siklus-number">Siklus 1</span>
+                            <h3 class="siklus-title">Eksplorasi Awal</h3>
+                        </div>
+                    </div>
+                    <div class="siklus-card-body">
+                        <p class="siklus-desc">
+                            Dokumentasi pelaksanaan PPL Siklus 1 yang berfokus pada observasi mendalam terhadap karakteristik peserta didik dan lingkungan belajar, serta penerapan strategi pembelajaran dasar yang telah direncanakan.
+                        </p>
+                        <span class="siklus-btn">Lihat Detail <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Card Siklus 2 - PATH DIPERBAIKI -->
+                <a href="ppl-terbimbing/siklus-2.html" class="siklus-card">
+                    <div class="siklus-card-header">
+                        <div class="siklus-icon">
+                            <i class="fas fa-2"></i>
+                        </div>
+                        <div class="siklus-header-text">
+                            <span class="siklus-number">Siklus 2</span>
+                            <h3 class="siklus-title">Pengembangan Praktik</h3>
+                        </div>
+                    </div>
+                    <div class="siklus-card-body">
+                        <p class="siklus-desc">
+                            Tahap pengembangan kemampuan mengajar. Berisi refleksi dari Siklus 1 dan implementasi perbaikan perangkat pembelajaran serta strategi yang lebih adaptif terhadap kebutuhan murid.
+                        </p>
+                        <span class="siklus-btn">Lihat Detail <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Card Siklus 3 - PATH DIPERBAIKI -->
+                <a href="ppl-terbimbing/siklus-3.html" class="siklus-card">
+                    <div class="siklus-card-header">
+                        <div class="siklus-icon">
+                            <i class="fas fa-3"></i>
+                        </div>
+                        <div class="siklus-header-text">
+                            <span class="siklus-number">Siklus 3</span>
+                            <h3 class="siklus-title">Refleksi &amp; Konsolidasi</h3>
+                        </div>
+                    </div>
+                    <div class="siklus-card-body">
+                        <p class="siklus-desc">
+                            Tahap akhir PPL yang menekankan pada refleksi menyeluruh dari seluruh proses pembelajaran, konsolidasi strategi yang paling efektif, dan perencanaan tindak lanjut untuk pengembangan profesional berkelanjutan.
+                        </p>
+                        <span class="siklus-btn">Lihat Detail <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- ============================================
+                 NAVIGASI KEMBALI - PATH DIPERBAIKI
+                 ============================================ -->
+            <div style="text-align: center; padding: 40px 0 40px; margin-top: 40px;">
+                <a href="../semester1.html" class="btn btn-outline" style="gap: 8px;">
+                    <i class="fas fa-arrow-left"></i> Kembali ke Semester 1
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BACK TO TOP
+         ============================================ -->
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================
+         FOOTER - PATH SUDAH DIPERBAIKI
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Kolom 1: Brand -->
+                <div>
+                    <h2>E-Portofolio Farida</h2>
+                    <p>Dokumentasi perjalanan dan pengembangan profesional Faridatul Badriyah sebagai mahasiswa PPG Prajabatan Informatika.</p>
+                </div>
+                
+                <!-- Kolom 2: Informasi Kontak -->
+                <div>
+                    <h3>Informasi Kontak</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>faridatul.badriyah.2531537@students.um.ac.id</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>253153743889</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-university"></i>
+                        <span>Universitas Negeri Malang</span>
+                    </div>
+                </div>
+                
+                <!-- Kolom 3: Navigasi -->
+                <div>
+                    <h3>Navigasi</h3>
+                    <div class="footer-links">
+                        <a href="../index.html#home">Beranda</a>
+                        <a href="../pages/tentang-saya.html">Tentang Saya</a>
+                        <a href="../index.html#skills">Keterampilan</a>
+                        <a href="../index.html#projects">Proyek</a>
+                    </div>
+                </div>
+                
+                <!-- Kolom 4: PPG -->
+                <div>
+                    <h3>PPG</h3>
+                    <div class="footer-links">
+                        <a href="pplterbimbing.html">PPL Terbimbing</a>
+                        <a href="../semester-2/ppl-mandiri.html">PPL Mandiri</a>
+                        <a href="../pengembangan-diri/artefak.html">Artefak</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2024</span> Faridatul Badriyah • PPG E-Portofolio</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT - PATH SUDAH DIPERBAIKI -->
+    <script src="../js/script.js"></script>
+</body>
+</html>
