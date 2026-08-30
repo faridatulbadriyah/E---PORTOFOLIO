@@ -813,14 +813,15 @@
             border-color: var(--color-primary);
         }
 
+        /* PERBAIKAN: Google Form Container - disamakan tinggi dengan PDF viewer */
         .google-form-frame {
             width: 100%;
-            height: 600px;
+            height: 350px; /* Diubah dari 600px menjadi 350px agar konsisten */
             border: 1px solid var(--glass-border);
             border-radius: var(--radius-md);
             overflow: hidden;
             background: var(--color-bg-secondary);
-            margin-top: 0.5rem;
+            margin: 0.5rem 0 0.75rem 0;
         }
 
         [data-theme="dark"] .google-form-frame {
@@ -985,20 +986,20 @@
                 </div>
 
                 <div class="perangkat-grid" style="max-width: 1100px; margin: 0 auto;">
-                    <!-- Card 1: Modul Materi -->
+                    <!-- Card 1: Modul Ajar -->
                     <div class="perangkat-card">
                         <div class="card-header">
                             <i class="fas fa-book"></i>
-                            <h3>Modul Materi</h3>
+                            <h3>Modul Ajar</h3>
                         </div>
                         <div class="card-body">
-                            <p>Modul materi Siklus 3 untuk review mandiri tentang Insert Table, Symbol, dan Equation Editor pada Microsoft Word.</p>
+                            <p>Modul ajar Siklus 3 untuk asesmen daring tentang Insert Table, Symbol, dan Equation Editor pada Microsoft Word.</p>
                             <div class="pdf-viewer">
-                                <iframe src="https://drive.google.com/file/d/1yf6zoqxJTtiCyrvWYXn7vg7mdPydxLWo/preview" allow="autoplay"></iframe>
+                                <iframe src="https://drive.google.com/file/d/1Ukj-4wzhNBSaMEAamKKa7hzqqtbcYxfN/preview" allow="autoplay"></iframe>
                             </div>
                         </div>
                         <div class="card-footer">
-                            <a href="https://drive.google.com/file/d/1yf6zoqxJTtiCyrvWYXn7vg7mdPydxLWo/view?usp=sharing" target="_blank" class="btn-sm btn-sm-primary">
+                            <a href="https://drive.google.com/file/d/1Ukj-4wzhNBSaMEAamKKa7hzqqtbcYxfN/view?usp=drive_link" target="_blank" class="btn-sm btn-sm-primary">
                                 <i class="fab fa-google-drive"></i> Buka di Drive
                             </a>
                         </div>
@@ -1008,35 +1009,36 @@
                     <div class="perangkat-card">
                         <div class="card-header">
                             <i class="fas fa-file-alt"></i>
-                            <h3>Soal Penugasan (Google Form)</h3>
+                            <h3>LKPD</h3>
                         </div>
                         <div class="card-body">
-                            <p>Google Form berisi 10 soal Pilihan Ganda, 5 Isian Singkat, dan 3 Uraian untuk mengukur pemahaman peserta didik.</p>
+                            <p>Google Form berisi soal asesmen untuk mengukur pemahaman peserta didik tentang Insert Table, Symbol, dan Equation Editor.</p>
+                            <!-- PERBAIKAN: Google Form container sudah memiliki height 350px -->
                             <div class="google-form-frame">
-                                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSezFqGtS9b9DZzJ3gJYcF8k1Jx8LrE7p0q2w4u6y8t0a2c4e6g8i0k/viewform?embedded=true" allow="autoplay"></iframe>
+                                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdfqFcSg6OTyDSLhEwk9LF7OD17SH1edglOEc9UgNV7P0qJEg/viewform?embedded=true" allow="autoplay"></iframe>
                             </div>
                         </div>
                         <div class="card-footer">
-                            <a href="https://forms.gle/yZ6RhBio46zDgrcz7" target="_blank" class="btn-sm btn-sm-primary">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdfqFcSg6OTyDSLhEwk9LF7OD17SH1edglOEc9UgNV7P0qJEg/viewform?usp=sharing" target="_blank" class="btn-sm btn-sm-primary">
                                 <i class="fas fa-external-link-alt"></i> Buka Form
                             </a>
                         </div>
                     </div>
 
-                    <!-- Card 3: Rubrik Penilaian -->
+                    <!-- Card 3: Materi Ajar -->
                     <div class="perangkat-card">
                         <div class="card-header">
                             <i class="fas fa-clipboard-check"></i>
-                            <h3>Rubrik Penilaian</h3>
+                            <h3>Materi Ajar</h3>
                         </div>
                         <div class="card-body">
-                            <p>Rubrik penilaian untuk soal uraian (Bagian C) yang mencakup langkah-langkah Insert Symbol, alasan penggunaan tabel, dan pembuatan laporan nilai.</p>
+                            <p>Materi ajar pendukung untuk asesmen Siklus 3 tentang Insert Table, Symbol, dan Equation Editor.</p>
                             <div class="pdf-viewer">
-                                <iframe src="https://drive.google.com/file/d/1dkLmq5ocifge2ZfStnBeWJDP6Bidx3BC/preview" allow="autoplay"></iframe>
+                                <iframe src="https://drive.google.com/file/d/1It_6LqJ6Vl4lR762T6SEQONRV_5kH2rN/preview" allow="autoplay"></iframe>
                             </div>
                         </div>
                         <div class="card-footer">
-                            <a href="https://drive.google.com/file/d/1dkLmq5ocifge2ZfStnBeWJDP6Bidx3BC/view?usp=sharing" target="_blank" class="btn-sm btn-sm-primary">
+                            <a href="https://drive.google.com/file/d/1It_6LqJ6Vl4lR762T6SEQONRV_5kH2rN/view?usp=drive_link" target="_blank" class="btn-sm btn-sm-primary">
                                 <i class="fab fa-google-drive"></i> Buka di Drive
                             </a>
                         </div>
@@ -1183,10 +1185,10 @@
                         </span>
                     </div>
                     <div class="refleksi-pdf-viewer">
-                        <iframe src="https://drive.google.com/file/d/1dkLmq5ocifge2ZfStnBeWJDP6Bidx3BC/preview" allow="autoplay"></iframe>
+                        <iframe src="https://drive.google.com/file/d/1cGJlQbWH7t-DUOPJcR8ydJh3Nfas0yKE/preview" allow="autoplay"></iframe>
                     </div>
                     <div class="refleksi-pdf-footer">
-                        <a href="https://drive.google.com/file/d/1dkLmq5ocifge2ZfStnBeWJDP6Bidx3BC/view?usp=sharing" target="_blank" class="btn-sm btn-sm-primary">
+                        <a href="https://drive.google.com/file/d/1cGJlQbWH7t-DUOPJcR8ydJh3Nfas0yKE/view?usp=drive_link" target="_blank" class="btn-sm btn-sm-primary">
                             <i class="fab fa-google-drive"></i> Buka di Google Drive
                         </a>
                     </div>
@@ -1211,27 +1213,40 @@
                         <!-- Slide 1 -->
                         <div class="carousel-slide">
                             <div class="slide-media" style="background: linear-gradient(135deg, #E8F0FE, #D4E2F7); color:#4A90D9; position: relative;">
-                                <img src="../../assets/images/pembelajaran siklus 1.jpg" 
+                                <img src="../../assets/images/Hasil tugas siswa siklus 3.jpg" 
                                     alt="Suasana asesmen daring Siklus 3" 
                                     style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
                                 <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.5)); padding:20px 16px 12px;">
                                     <span style="color:#fff; font-weight:600; text-shadow:0 2px 8px rgba(0,0,0,0.5);">📸</span>
                                 </div>
                             </div>
-                            <p class="slide-caption">Asesmen Daring Siklus 3 | 5 Mei 2026</p>
+                            <p class="slide-caption">Hasil tugas siswa Siklus 3</p>
                         </div>
 
                         <!-- Slide 2 -->
                         <div class="carousel-slide">
                             <div class="slide-media" style="background: linear-gradient(135deg, #F3E5F5, #E1BEE7); color:#8E44AD; position: relative;">
-                                <img src="../../assets/images/Hasil tugas siswa siklus1.jpg" 
+                                <img src="../../assets/images/Rekapitulasi jawaban murid.jpg" 
                                     alt="Contoh jawaban uraian peserta didik" 
                                     style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
                                 <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.5)); padding:20px 16px 12px;">
                                     <span style="color:#fff; font-weight:600; text-shadow:0 2px 8px rgba(0,0,0,0.5);">📸</span>
                                 </div>
                             </div>
-                            <p class="slide-caption">Contoh jawaban uraian dari peserta didik</p>
+                            <p class="slide-caption">Rekapitulasi jawaban murid di spreadsheet</p>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide">
+                            <div class="slide-media" style="background: linear-gradient(135deg, #F3E5F5, #E1BEE7); color:#8E44AD; position: relative;">
+                                <img src="../../assets/images/interaksi dengan murid.jpg" 
+                                    alt="Contoh jawaban uraian peserta didik" 
+                                    style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+                                <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.5)); padding:20px 16px 12px;">
+                                    <span style="color:#fff; font-weight:600; text-shadow:0 2px 8px rgba(0,0,0,0.5);">📸</span>
+                                </div>
+                            </div>
+                            <p class="slide-caption">Pengiriman link GForm dan modul serta sesi tanya jawab dengan peserta didik melalui pesan pribadi</p>
                         </div>
                     </div>
                     <button class="carousel-btn next" id="nextSlide" aria-label="Slide berikutnya">
@@ -1241,6 +1256,7 @@
                 <div class="carousel-dots" id="carouselDots">
                     <button class="dot active" data-index="0" aria-label="Slide 1"></button>
                     <button class="dot" data-index="1" aria-label="Slide 2"></button>
+                    <button class="dot" data-index="2" aria-label="Slide 3"></button>
                 </div>
             </div>
 
