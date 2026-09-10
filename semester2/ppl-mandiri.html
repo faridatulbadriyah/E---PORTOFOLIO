@@ -1,0 +1,713 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PPL Mandiri: 13 praktik, satu perjalanan menjadi guru.">
+    <meta name="author" content="Faridatul Badriyah">
+    <title>PPL Mandiri | 13 Praktik, Satu Perjalanan Menjadi Guru</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        .ppl-index {
+            padding: 7rem 0 4rem;
+        }
+
+        .ppl-hero {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .ppl-hero h1 {
+            margin: 1rem 0;
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 7vw, 5.5rem);
+            line-height: 1.08;
+            color: var(--color-text);
+        }
+
+        .ppl-hero h1 span,
+        .journey-heading span {
+            color: var(--color-secondary);
+        }
+
+        .ppl-hero p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--color-text-light);
+            font-size: 1.05rem;
+        }
+
+        .ppl-hero .quote {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.65rem 1.25rem;
+            border-left: 3px solid var(--color-secondary);
+            color: var(--color-primary);
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        .index-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.25rem;
+            max-width: 1080px;
+            margin: 0 auto 3rem;
+        }
+
+        .index-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 190px;
+            padding: 1.5rem;
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            background: var(--glass-bg);
+            box-shadow: var(--glass-shadow);
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-smooth);
+        }
+
+        .index-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--color-secondary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .index-card.featured { grid-column: span 7; }
+        .index-card.profile { grid-column: span 5; }
+        .index-card.full { grid-column: span 12; }
+        .index-card.half { grid-column: span 6; }
+
+        .index-card-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1rem;
+            border-radius: var(--radius-sm);
+            background: var(--color-accent-glow);
+            color: var(--color-primary);
+            font-size: 1.25rem;
+        }
+
+        .index-card h2,
+        .index-card h3 {
+            margin-bottom: 0.4rem;
+            color: var(--color-text);
+            font-family: var(--font-heading);
+        }
+
+        .index-card p {
+            color: var(--color-text-light);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .card-arrow {
+            margin-top: auto;
+            padding-top: 1rem;
+            color: var(--color-secondary);
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .practice-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.65rem;
+            margin-top: 1rem;
+        }
+
+        .practice-link {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            min-height: 42px;
+            padding: 0.6rem 0.75rem;
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-sm);
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 0.84rem;
+            transition: var(--transition-soft);
+        }
+
+        .practice-link:hover {
+            border-color: var(--color-secondary);
+            background: var(--color-accent-glow);
+        }
+
+        .practice-link i {
+            color: var(--color-secondary);
+            font-size: 0.75rem;
+        }
+
+        .status {
+            align-self: flex-start;
+            margin-top: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: var(--radius-pill);
+            background: var(--color-accent-glow);
+            color: var(--color-secondary);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .topic-accordion details {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--glass-shadow);
+            transition: var(--transition-smooth);
+        }
+
+        .topic-accordion details:hover {
+            border-color: var(--color-secondary);
+        }
+
+        .topic-accordion details[open] {
+            border-color: var(--color-secondary);
+        }
+
+        .topic-accordion summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .topic-accordion details[open] summary i.fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        .pdf-card {
+            padding: 28px 32px;
+            border-radius: var(--radius-lg);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: var(--transition-smooth);
+        }
+
+        .pdf-card:hover {
+            border-color: var(--color-secondary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pdf-viewer-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 70.7%;
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--radius-sm);
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--glass-border);
+        }
+
+        .pdf-viewer-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .reflection-card {
+            padding: 32px 36px;
+            border-radius: var(--radius-lg);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: var(--transition-smooth);
+        }
+
+        .reflection-card:hover {
+            border-color: var(--color-secondary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .reflection-card blockquote {
+            padding: 20px 24px;
+            border-left: 4px solid var(--color-primary);
+            background: var(--color-accent-glow);
+            border-radius: var(--radius-sm);
+            margin: 0;
+            font-style: italic;
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+
+        [data-theme="dark"] .reflection-card blockquote {
+            background: rgba(238, 228, 218, 0.04);
+            border-left-color: var(--color-secondary);
+        }
+
+        .info-box {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 40px 48px;
+            border-radius: var(--radius-lg);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            text-align: center;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .info-box:hover {
+            border-color: var(--color-secondary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .info-box::before,
+        .info-box::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--color-accent-border);
+            opacity: 0.08;
+        }
+
+        [data-theme="dark"] .info-box::before,
+        [data-theme="dark"] .info-box::after {
+            border-color: var(--color-secondary);
+            opacity: 0.05;
+        }
+
+        .info-box::before {
+            top: 12px;
+            left: 12px;
+            border-right: none;
+            border-bottom: none;
+            border-radius: 6px 0 0 0;
+        }
+
+        .info-box::after {
+            bottom: 12px;
+            right: 12px;
+            border-left: none;
+            border-top: none;
+            border-radius: 0 0 6px 0;
+        }
+
+        .info-box h3 {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+        }
+
+        [data-theme="dark"] .info-box h3 {
+            color: var(--color-secondary);
+        }
+
+        .info-box p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--color-text);
+            opacity: 0.85;
+        }
+
+        .ppl-footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .topic-content {
+            padding: 0 28px 28px;
+        }
+
+        .topic-content p {
+            color: var(--color-text);
+            opacity: 0.85;
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+
+        .topic-content .btn-wrap {
+            margin-top: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .ppl-index { padding-top: 5.5rem; }
+            .index-card.featured,
+            .index-card.profile,
+            .index-card.full,
+            .index-card.half { grid-column: span 12; }
+            .practice-list { grid-template-columns: 1fr 1fr; }
+            .info-box { padding: 28px 20px; }
+            .reflection-card { padding: 24px 20px; }
+            .pdf-card { padding: 20px 16px; }
+            .topic-content { padding: 0 20px 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .practice-list { grid-template-columns: 1fr; }
+            .topic-accordion details summary {
+                padding: 16px 20px !important;
+            }
+            .topic-accordion details summary h3 {
+                font-size: 0.95rem !important;
+            }
+            .reflection-card blockquote {
+                padding: 16px 18px;
+                font-size: 0.9rem;
+            }
+            .topic-content { padding: 0 16px 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-layer" aria-hidden="true">
+        <div class="blob"></div><div class="blob"></div><div class="blob"></div><div class="blob"></div>
+        <div class="hexagon-grid">
+            <div class="hexagon"></div><div class="hexagon"></div><div class="hexagon"></div>
+            <div class="hexagon"></div><div class="hexagon"></div><div class="hexagon"></div>
+            <div class="hexagon"></div><div class="hexagon"></div><div class="hexagon"></div>
+        </div>
+    </div>
+
+    <nav class="navbar" id="siteHeader">
+        <div class="container">
+            <div class="nav-content">
+                <a class="logo" href="../../index.html">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Faridatul Badriyah</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Buka menu"><span></span><span></span><span></span></button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="../../index.html#home" class="nav-link">Beranda</a></li>
+                    <li><a href="../../pages/tentang-saya.html" class="nav-link">Tentang Saya</a></li>
+                    <li class="dropdown">
+                        <a href="../../index.html#projects" class="nav-link dropdown-toggle active">Proyek <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../../semester1.html" class="dropdown-link">Semester 1</a></li>
+                            <li><a href="../../semester2.html" class="dropdown-link">Semester 2</a></li>
+                            <li><a href="../../semester-1/pplterbimbing.html" class="dropdown-link">PPL Terbimbing</a></li>
+                            <li><a href="../ppl-mandiri.html" class="dropdown-link active">PPL Mandiri</a></li>
+                        </ul>
+                    </li>
+                    <li><button class="theme-toggle" id="themeToggle" title="Ubah tema" aria-label="Ubah tema"><i class="fas fa-moon"></i></button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="ppl-index">
+        <div class="container">
+
+            <header class="ppl-hero">
+                <span class="badge">PPL MANDIRI | SEMESTER 2</span>
+                <h1>13 Praktik, <span>Satu Perjalanan</span> Menjadi Guru</h1>
+                <p>Ruang dokumentasi untuk merekam proses belajar, mencoba, merefleksikan, dan bertumbuh selama PPL Mandiri.</p>
+                <span class="quote">"Setiap praktik adalah langkah kecil menuju guru yang lebih peka."</span>
+            </header>
+
+            <section class="index-grid" aria-label="Navigasi PPL Mandiri">
+                <div class="index-card full" id="perjalanan-praktik">
+                    <div class="index-card-icon"><i class="fas fa-route"></i></div>
+                    <h2>Jejak Karya PPL Mandiri</h2>
+                    <p class="journey-heading">Dari pengamatan awal menuju <span>praktik yang reflektif.</span></p>
+                    <span class="status">13 praktik terdokumentasi</span>
+                    <div class="practice-list">
+                        <a class="practice-link" href="#topik-1"><i class="fas fa-compass"></i> Topik 1: Orientasi</a>
+                        <a class="practice-link" href="#topik-2"><i class="fas fa-eye"></i> Topik 2: Observasi</a>
+                        <a class="practice-link" href="#topik-3"><i class="fas fa-hands-helping"></i> Topik 3: Praktik Terbimbing</a>
+                        <a class="practice-link" href="#topik-4"><i class="fas fa-user-graduate"></i> Topik 4: Praktik Mandiri</a>
+                        <a class="practice-link" href="#topik-5"><i class="fas fa-brain"></i> Topik 5: Refleksi Akhir</a>
+                        <a class="practice-link" href="#refleksi-mk"><i class="fas fa-book-open"></i> Refleksi Mata Kuliah</a>
+                    </div>
+                    <span class="card-arrow">Jelajahi perjalanan <i class="fas fa-arrow-right"></i></span>
+                </div>
+
+                <div class="index-card half" id="uts">
+                    <div class="index-card-icon"><i class="fas fa-bookmark"></i></div>
+                    <h3>UTS</h3>
+                    <p>Praktik terbaik Siklus 1.</p>
+                    <span class="status">Segera hadir</span>
+                </div>
+                <div class="index-card half" id="uas">
+                    <div class="index-card-icon"><i class="fas fa-bookmark"></i></div>
+                    <h3>UAS</h3>
+                    <p>Praktik terbaik Siklus 2–4.</p>
+                    <span class="status">Segera hadir</span>
+                </div>
+            </section>
+
+            <!-- ==========================================
+            LIMA TOPIK PPL MANDIRI
+            ========================================== -->
+            <div class="section-heading" style="margin-bottom: 40px;">
+                <span class="eyebrow">TOPIK PERKULIAHAN</span>
+                <h2>Lima Topik <span class="accent">PPL Mandiri</span></h2>
+                <p>Lima topik utama yang dibahas dalam mata kuliah Praktik Pengalaman Lapangan Mandiri.</p>
+            </div>
+
+            <!-- TOPIK 1: ORIENTASI -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;" id="topik-1">
+                <details open>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px; border-radius: var(--radius-md);">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">01</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">TOPIK 1</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">Orientasi PPL Mandiri</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div class="topic-content">
+                        <p>Topik ini memberikan pemahaman kepada mahasiswa PPG tentang bentuk kegiatan PPL Mandiri, tagihan, dan sistem evaluasinya melalui pembekalan oleh pengelola PPG di LPTK. Kegiatan dilaksanakan pada Minggu ke-1 dengan mengerjakan Tugas 1 Orientasi PPL Mandiri dan Observasi Manajemen Sekolah pada LK 1.</p>
+                        <div class="btn-wrap">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px; opacity: 0.5; cursor: not-allowed; font-size: 0.85rem; padding: 8px 20px;">
+                                <i class="fab fa-google-drive"></i> Materi (menyusul)
+                            </a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- TOPIK 2: OBSERVASI -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;" id="topik-2">
+                <details>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px; border-radius: var(--radius-md);">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">02</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">TOPIK 2</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">Observasi Karakteristik Murid &amp; Lingkungan Belajar</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div class="topic-content">
+                        <p>Observasi difokuskan pada karakteristik murid, terutama aspek psikologis dan permasalahan studi yang akan ditindaklanjuti dengan layanan konseling. Mahasiswa juga mengamati pelaksanaan pembelajaran, interaksi guru-murid, antarmurid, dan interaksi dengan sumber belajar. Kegiatan dilaksanakan pada Minggu ke-2 melalui tugas terintegrasi dengan MK Pemahaman Peserta Didik dan Layanan BK menggunakan LK.2 Observasi Lingkungan Belajar.</p>
+                        <div class="btn-wrap">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px; opacity: 0.5; cursor: not-allowed; font-size: 0.85rem; padding: 8px 20px;">
+                                <i class="fab fa-google-drive"></i> Materi (menyusul)
+                            </a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- TOPIK 3: PRAKTIK TERBIMBING -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;" id="topik-3">
+                <details>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px; border-radius: var(--radius-md);">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">03</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">TOPIK 3</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">Praktik Pembelajaran Terbimbing</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div class="topic-content">
+                        <p>Mahasiswa melaksanakan 1 siklus praktik pembelajaran terbimbing dengan minimal 2 kali praktik mengajar menggunakan format lesson study (plan, do, and see) serta refleksi dan tindak lanjut. Hasil siklus ini wajib digunakan sebagai bahan pengembangan siklus pembelajaran pada praktik mandiri.</p>
+                        <div class="btn-wrap">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px; opacity: 0.5; cursor: not-allowed; font-size: 0.85rem; padding: 8px 20px;">
+                                <i class="fab fa-google-drive"></i> Materi (menyusul)
+                            </a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- TOPIK 4: PRAKTIK MANDIRI & NON MENGAJAR -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;" id="topik-4">
+                <details>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px; border-radius: var(--radius-md);">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">04</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">TOPIK 4</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">Praktik Pembelajaran Mandiri &amp; Non Mengajar</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div class="topic-content">
+                        <p>Praktik mengajar dilakukan sebanyak 4 siklus (Siklus 1-3 masing-masing 3 praktik, Siklus 4 sebanyak 2 praktik = total 13 praktik). Selain itu, mahasiswa wajib melaksanakan kegiatan non mengajar seperti manajemen sekolah, rapat guru, piket, ekstrakurikuler, dan konseling selama 2,5 jam per minggu.</p>
+                        <div style="margin-top: 8px;">
+                            <p style="font-size: 0.9rem; opacity: 0.7;"><strong>Jadwal:</strong> Siklus 1 (Minggu 5-7) | Siklus 2 (Minggu 8-10) | Siklus 3 (Minggu 11-13) | Siklus 4 (Minggu 14-15)</p>
+                        </div>
+                        <div class="btn-wrap">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px; opacity: 0.5; cursor: not-allowed; font-size: 0.85rem; padding: 8px 20px;">
+                                <i class="fab fa-google-drive"></i> Materi (menyusul)
+                            </a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- TOPIK 5: REFLEKSI AKHIR -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;" id="topik-5">
+                <details>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px; border-radius: var(--radius-md);">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">05</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">TOPIK 5</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">Refleksi Akhir PPL Mandiri</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div class="topic-content">
+                        <p>Diskusi refleksi akhir bertujuan membangun sense profesional mahasiswa dengan bukti-bukti akuntabel dalam merancang, melaksanakan, dan mengevaluasi pembelajaran. Hasil diskusi disajikan dalam e-portfolio 2 sebagai penugasan UAS, kelanjutan dari e-portfolio 1 yang dikumpulkan saat UTS.</p>
+                        <div class="btn-wrap">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px; opacity: 0.5; cursor: not-allowed; font-size: 0.85rem; padding: 8px 20px;">
+                                <i class="fab fa-google-drive"></i> Materi (menyusul)
+                            </a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- ==========================================
+            REFLEKSI MATA KULIAH
+            ========================================== -->
+            <div style="margin-top: 72px;" id="refleksi-mk">
+                <div class="section-heading" style="margin-bottom: 40px;">
+                    <span class="eyebrow">REFLEKSI</span>
+                    <h2>Refleksi <span class="accent">Mata Kuliah PPL Mandiri</span></h2>
+                    <p>Dokumen refleksi pembelajaran dan pengembangan diri selama mengikuti mata kuliah PPL Mandiri.</p>
+                </div>
+
+                <div style="max-width: 1100px; margin: 0 auto 40px;">
+                    <div class="pdf-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div style="font-size: 1.8rem;">📄</div>
+                                <div>
+                                    <h3 style="font-family: var(--font-heading); color: var(--color-primary); margin: 0; font-size: 1.1rem;">Dokumen Refleksi Pembelajaran PPL Mandiri</h3>
+                                </div>
+                            </div>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="gap: 8px; font-size: 0.85rem; padding: 8px 18px; opacity: 0.5; cursor: not-allowed;">
+                                <i class="fas fa-external-link-alt"></i> Buka di Drive (kosong)
+                            </a>
+                        </div>
+                        <div class="pdf-viewer-wrapper">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: var(--color-bg-secondary); color: var(--color-text-light); font-size: 1rem; opacity: 0.6; border-radius: var(--radius-sm);">
+                                <span>📄 Dokumen refleksi akan segera diunggah</span>
+                            </div>
+                        </div>
+                        <p style="color: var(--color-text); opacity: 0.5; font-size: 0.75rem; margin-top: 12px; text-align: center;">
+                            <i class="fas fa-info-circle"></i> Dokumen refleksi PPL Mandiri akan segera tersedia.
+                        </p>
+                    </div>
+                </div>
+
+                <div style="max-width: 1100px; margin: 0 auto;">
+                    <div class="reflection-card">
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                            <div style="font-size: 2.4rem;">💭</div>
+                            <h3 style="font-family: var(--font-heading); color: var(--color-primary); margin: 0;">Refleksi Pengalaman PPL Mandiri</h3>
+                        </div>
+                        <blockquote>
+                            PPL Mandiri telah menjadi perjalanan yang sangat berharga dalam membentuk identitas saya sebagai calon guru. Melalui lima topik yang dilalui—orientasi, observasi, praktik terbimbing, praktik mandiri, hingga refleksi akhir—saya semakin memahami bahwa mengajar adalah proses yang dinamis dan membutuhkan kepekaan terhadap kebutuhan peserta didik. Pendekatan TaRL dan CRT yang saya praktikkan membuka mata saya bahwa setiap anak memiliki cara belajar yang unik, dan tugas guru adalah menuntun mereka sesuai dengan kodratnya.
+                            <br><br>
+                            Saya juga belajar bahwa kegiatan di luar kelas—seperti piket, rapat guru, dan ekstrakurikuler—memberikan perspektif utuh tentang peran guru dalam ekosistem sekolah. Dari 13 praktik mengajar yang saya lalui, setiap siklus mengajarkan saya untuk lebih reflektif dan terbuka terhadap masukan. Ke depan, saya berkomitmen untuk terus mengembangkan growth mindset, menjadikan setiap tantangan sebagai peluang belajar, dan menjadi guru yang tidak hanya mengajar, tetapi juga menginspirasi.
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==========================================
+            INFO BOX
+            ========================================== -->
+            <div class="info-section" style="padding: 60px 0 40px;">
+                <div class="info-box" style="max-width: 780px; margin: 0 auto;">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--color-primary); margin-bottom: 10px;">PPL Mandiri sebagai Ruang Bertumbuh</h3>
+                    <p style="font-size: 1rem; line-height: 1.8; color: var(--color-text); opacity: 0.85;">"Setiap praktik adalah kesempatan untuk belajar, setiap refleksi adalah langkah untuk bertumbuh."</p>
+                    <p style="font-size: 0.9rem; line-height: 1.8; color: var(--color-text); opacity: 0.7; margin-top: 12px;">
+                        PPL Mandiri dirancang untuk menguatkan keterampilan profesional calon guru dalam merancang dan melaksanakan perangkat pembelajaran serta asesmen secara mandiri di lingkungan sekolah. Melalui tahapan orientasi, observasi, praktik terbimbing, praktik mandiri (13 praktik), dan refleksi akhir, mahasiswa diharapkan mampu menunjukkan kapasitas sebagai pendidik profesional yang reflektif, adaptif, dan mampu merancang pembelajaran bermakna secara mandiri. Proses pembelajaran terintegrasi dengan mata kuliah Pembelajaran Mendalam dan Asesmen Lanjut (PMA Lanjut) serta Pembelajaran Sosial Emosional (PSE).
+                    </p>
+                </div>
+            </div>
+
+            <div class="ppl-footer-nav">
+                <a href="../../semester2.html" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Kembali ke Semester 2</a>
+            </div>
+
+        </div>
+    </main>
+
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Kembali ke atas"><i class="fas fa-arrow-up"></i></button>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2024</span> Faridatul Badriyah | PPG E-Portofolio</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+
+            if (dropdownToggle && dropdownMenu) {
+                dropdownToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdownMenu.classList.toggle('open');
+                    dropdownToggle.classList.toggle('active');
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!dropdownToggle.closest('.dropdown').contains(e.target)) {
+                        dropdownMenu.classList.remove('open');
+                        dropdownToggle.classList.remove('active');
+                    }
+                });
+            }
+
+            document.querySelectorAll('.topic-accordion details').forEach(detail => {
+                detail.addEventListener('toggle', function() {
+                    const icon = this.querySelector('summary i.fa-chevron-down');
+                    if (icon) {
+                        icon.style.transform = this.open ? 'rotate(180deg)' : 'rotate(0deg)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
