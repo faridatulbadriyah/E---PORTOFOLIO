@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -337,14 +337,14 @@
         }
 
         .analisis-card ul li::before {
-            content: 'â€¢';
+            content: '\2022';
             position: absolute;
             left: 0;
             color: var(--color-secondary);
             font-weight: 700;
         }
 
-        /* Refleksi - Style yang sudah diperbaiki */
+        /* Refleksi */
         .refleksi-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -381,7 +381,6 @@
             margin-bottom: 0.75rem;
         }
 
-        /* Style untuk card refleksi */
         .refleksi-card {
             background: var(--glass-bg);
             backdrop-filter: blur(8px);
@@ -433,7 +432,6 @@
             font-weight: 600;
         }
 
-        /* Card dengan border-left berwarna */
         .refleksi-card.kendala {
             border-left: 4px solid #E74C3C;
             background: rgba(231, 76, 60, 0.05);
@@ -466,9 +464,7 @@
             background: rgba(52, 152, 219, 0.08);
         }
 
-        /* ============================================
-           PDF REFLEKSI - DIPERBAIKI
-           ============================================ */
+        /* PDF Refleksi */
         .refleksi-pdf-wrapper {
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
@@ -538,7 +534,6 @@
             border-color: rgba(210, 175, 148, 0.05);
         }
 
-        /* Navigasi Siklus */
         .nav-siklus {
             display: flex;
             justify-content: space-between;
@@ -554,7 +549,6 @@
             justify-content: center;
         }
 
-        /* Semester Hero */
         .semester-page {
             padding: 140px 0 80px;
             position: relative;
@@ -614,7 +608,6 @@
             line-height: 1.8;
         }
 
-        /* Carousel */
         .carousel-container {
             position: relative;
             max-width: 800px;
@@ -730,7 +723,6 @@
             background: var(--color-secondary);
         }
 
-        /* Responsive tambahan */
         @media (max-width: 640px) {
             .semester-page {
                 padding-top: 120px;
@@ -782,7 +774,6 @@
             }
         }
 
-        /* Tambahan untuk tombol */
         .btn-sm {
             display: inline-flex;
             align-items: center;
@@ -907,7 +898,7 @@
         <div class="container">
 
             <div class="semester-hero">
-                <span class="badge">SIKLUS 1 â€¢ PPL TERBIMBING</span>
+                <span class="badge">SIKLUS 1 &bull; PPL TERBIMBING</span>
                 <h1>Siklus 1: <span>Menyisipkan Objek pada Microsoft Word</span></h1>
                 <p>Dokumentasi lengkap pelaksanaan PPL Terbimbing Siklus 1 dengan topik "Menyisipkan Picture, Shape, dan WordArt pada Microsoft Word". Siklus ini dilaksanakan dalam 1 pertemuan (2 JP) dengan pendekatan Discovery Learning dan metode gamifikasi.</p>
                 <div>
@@ -1033,7 +1024,7 @@
             </div>
 
             <!-- ============================================
-                 ANALISIS ARTEFAK - Tujuan TETAP dipertahankan
+                 ANALISIS ARTEFAK
                  ============================================ -->
             <div style="margin-top: 72px;">
                 <div class="section-heading">
@@ -1055,7 +1046,6 @@
                         </p>
                     </div>
 
-                    <!-- Tujuan TETAP dipertahankan -->
                     <div class="analisis-card">
                         <span class="analisis-icon"><i class="fas fa-bullseye"></i></span>
                         <h4>Tujuan</h4>
@@ -1093,7 +1083,7 @@
             </div>
 
             <!-- ============================================
-                 REFLEKSI SIKLUS 1 - Tujuan DIHAPUS dari sini
+                 REFLEKSI SIKLUS 1
                  ============================================ -->
             <div style="margin-top: 72px;">
                 <div class="section-heading">
@@ -1119,22 +1109,22 @@
                             <li>
                                 <span class="kendala" style="color: #E74C3C;">Kendala:</span> Transisi antar kegiatan kurang berkesinambungan
                                 <br>
-                                <span class="solusi" style="color: #27AE60;">â†’ Solusi:</span> Merancang kalimat penghubung yang jelas
+                                <span class="solusi" style="color: #27AE60;">&rarr; Solusi:</span> Merancang kalimat penghubung yang jelas
                             </li>
                             <li>
                                 <span class="kendala" style="color: #E74C3C;">Kendala:</span> Komponen penutup tidak terlaksana
                                 <br>
-                                <span class="solusi" style="color: #27AE60;">â†’ Solusi:</span> Alokasikan waktu minimal 5 menit khusus penutup
+                                <span class="solusi" style="color: #27AE60;">&rarr; Solusi:</span> Alokasikan waktu minimal 5 menit khusus penutup
                             </li>
                             <li>
                                 <span class="kendala" style="color: #E74C3C;">Kendala:</span> Tidak semua siswa mendapat giliran presentasi
                                 <br>
-                                <span class="solusi" style="color: #27AE60;">â†’ Solusi:</span> Batasi durasi per kelompok (maks. 2 menit)
+                                <span class="solusi" style="color: #27AE60;">&rarr; Solusi:</span> Batasi durasi per kelompok (maks. 2 menit)
                             </li>
                             <li>
                                 <span class="kendala" style="color: #E74C3C;">Kendala:</span> Leaderboard belum ditampilkan
                                 <br>
-                                <span class="solusi" style="color: #27AE60;">â†’ Solusi:</span> Pastikan spreadsheet siap sebelum kelas dimulai
+                                <span class="solusi" style="color: #27AE60;">&rarr; Solusi:</span> Pastikan spreadsheet siap sebelum kelas dimulai
                             </li>
                         </ul>
                     </div>
@@ -1145,10 +1135,10 @@
                             <i class="fas fa-check-circle"></i> Faktor Keberhasilan
                         </div>
                         <ul>
-                            <li><span class="check-item">âœ…</span> Demonstrasi step-by-step fitur Insert Picture, Shape, dan WordArt sangat efektif</li>
-                            <li><span class="check-item">âœ…</span> Distribusi materi melalui grup WA memudahkan akses dari perangkat masing-masing</li>
-                            <li><span class="check-item">âœ…</span> Gamifikasi Leaderboard membangun motivasi intrinsik peserta didik</li>
-                            <li><span class="check-item">âœ…</span> Kerja kelompok 2-3 orang mendorong peer learning dan kreativitas</li>
+                            <li><span class="check-item">&#9989;</span> Demonstrasi step-by-step fitur Insert Picture, Shape, dan WordArt sangat efektif</li>
+                            <li><span class="check-item">&#9989;</span> Distribusi materi melalui grup WA memudahkan akses dari perangkat masing-masing</li>
+                            <li><span class="check-item">&#9989;</span> Gamifikasi Leaderboard membangun motivasi intrinsik peserta didik</li>
+                            <li><span class="check-item">&#9989;</span> Kerja kelompok 2-3 orang mendorong peer learning dan kreativitas</li>
                         </ul>
                     </div>
 
@@ -1171,9 +1161,7 @@
                     </div>
                 </div>
 
-                <!-- ============================================
-                     PDF REFLEKSI - DIPERBAIKI LEBAR & TINGGI
-                     ============================================ -->
+                <!-- PDF REFLEKSI -->
                 <div class="refleksi-pdf-wrapper">
                     <div class="refleksi-pdf-header">
                         <i class="fas fa-file-pdf"></i> Refleksi Siklus 1.pdf
@@ -1207,27 +1195,27 @@
                         <i class="fas fa-chevron-left"></i>
                     </button>
                     <div class="carousel-track" id="carouselTrack">
-                        <!-- Slide 1: Pembukaan Siklus 1 -->
+                        <!-- Slide 1 -->
                         <div class="carousel-slide">
                             <div class="slide-media" style="background: linear-gradient(135deg, #E8F0FE, #D4E2F7); color:#4A90D9; position: relative;">
                                 <img src="../../assets/images/pembelajaran siklus 1.jpg" 
                                     alt="Pembukaan Siklus 1 - Apersepsi dan motivasi dengan Leaderboard" 
                                     style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
                                 <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.5)); padding:20px 16px 12px;">
-                                    <span style="color:#fff; font-weight:600; text-shadow:0 2px 8px rgba(0,0,0,0.5);">ðŸ“¸</span>
+                                    <span style="color:#fff; font-weight:600; text-shadow:0 2px 8px rgba(0,0,0,0.5);">&#128248;</span>
                                 </div>
                             </div>
                             <p class="slide-caption">Praktik Pembelajaran Siklus 1 | 21 April 2026</p>
                         </div>
 
-                        <!-- Slide 4: Hasil Karya Siswa -->
+                        <!-- Slide 2 -->
                         <div class="carousel-slide">
                             <div class="slide-media" style="background: linear-gradient(135deg, #F3E5F5, #E1BEE7); color:#8E44AD; position: relative;">
                                 <img src="../../assets/images/Hasil tugas siswa siklus1.jpg" 
                                     alt="Hasil karya peserta didik - Dokumen bertema Lingkungan Bersih" 
                                     style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
                                 <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.5)); padding:20px 16px 12px;">
-                                    <span style="color:#fff; font-weight:600; text-shadow:0 2px 8px rgba(0,0,0,0.5);">ðŸ“¸</span>
+                                    <span style="color:#fff; font-weight:600; text-shadow:0 2px 8px rgba(0,0,0,0.5);">&#128248;</span>
                                 </div>
                             </div>
                             <p class="slide-caption">Hasil pekerjaan murid - Dokumen bertema Lingkungan Bersih dan Sehat</p>
@@ -1309,7 +1297,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span id="currentYear">2024</span> Faridatul Badriyah â€¢ PPG E-Portofolio</p>
+                <p>&copy; <span id="currentYear">2024</span> Faridatul Badriyah &bull; PPG E-Portofolio</p>
             </div>
         </div>
     </footer>
