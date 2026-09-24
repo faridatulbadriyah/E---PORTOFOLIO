@@ -3,16 +3,709 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projek Kepemimpinan | PPG E-Portofolio</title>
+    <meta name="description" content="Proyek Kepemimpinan - E-Portofolio PPG Prajabatan Informatika Faridatul Badriyah, Universitas Negeri Malang">
+    <meta name="author" content="Faridatul Badriyah">
+    <title>Proyek Kepemimpinan | PPG E-Portofolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS UTAMA -->
     <link rel="stylesheet" href="../../css/styles.css">
+    
+    <style>
+        /* ============================================
+           EFEK HOVER CARD - SEPERTI DI HALAMAN BERANDA
+           ============================================ */
+        
+        /* Card untuk About */
+        .about-copy-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: default;
+            padding: 32px 40px;
+            border-radius: var(--radius-lg);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+        }
+        
+        .about-copy-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .about-copy-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .about-copy-card:hover h2 {
+            color: #1a1215 !important;
+        }
+        
+        .about-copy-card:hover p {
+            color: #2d2d2d !important;
+            opacity: 0.85 !important;
+        }
+        
+        .about-copy-card:hover .fa-users {
+            color: var(--color-primary) !important;
+        }
+        
+        /* Card untuk Topic Accordion - diubah menjadi card biasa dengan hover */
+        .topic-accordion {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--glass-shadow);
+            overflow: hidden;
+            cursor: default;
+        }
+        
+        .topic-accordion:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .topic-accordion:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .topic-accordion:hover details summary h3 {
+            color: #1a1215 !important;
+        }
+        
+        .topic-accordion:hover details summary span[style*="color: var(--color-primary)"] {
+            color: var(--color-primary) !important;
+        }
+        
+        .topic-accordion:hover details summary span[style*="color: var(--color-secondary)"] {
+            color: #4a4a4a !important;
+        }
+        
+        .topic-accordion:hover details div p {
+            color: #2d2d2d !important;
+            opacity: 0.85 !important;
+        }
+        
+        .topic-accordion:hover details div h4 {
+            color: var(--color-primary) !important;
+        }
+        
+        .topic-accordion:hover details div div a {
+            color: #ffffff !important;
+        }
+        
+        /* Card untuk Refleksi (di bawah PDF) */
+        .reflection-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 32px 28px;
+            border-radius: var(--radius-lg);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            cursor: default;
+        }
+        
+        .reflection-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .reflection-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .reflection-card:hover h3 {
+            color: #1a1215 !important;
+        }
+        
+        .reflection-card:hover p {
+            color: #2d2d2d !important;
+            opacity: 0.85 !important;
+        }
+        
+        .reflection-card:hover p[style*="border-left"] {
+            border-left-color: var(--color-primary) !important;
+            background: rgba(0, 0, 0, 0.02) !important;
+        }
+        
+        [data-theme="dark"] .reflection-card:hover p[style*="border-left"] {
+            background: rgba(0, 0, 0, 0.04) !important;
+        }
+        
+        /* Card untuk Info Box */
+        .info-box {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 40px 48px;
+            border-radius: var(--radius-lg);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            text-align: center;
+            position: relative;
+            cursor: default;
+        }
+        
+        .info-box:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .info-box:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .info-box:hover h3 {
+            color: #1a1215 !important;
+        }
+        
+        .info-box:hover p {
+            color: #2d2d2d !important;
+            opacity: 0.85 !important;
+        }
+        
+        /* Card untuk PDF Viewer */
+        .pdf-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 24px;
+            border-radius: var(--radius-lg);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            cursor: default;
+        }
+        
+        .pdf-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .pdf-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .pdf-card:hover h3 {
+            color: #1a1215 !important;
+        }
+        
+        .pdf-card:hover p {
+            color: #2d2d2d !important;
+            opacity: 0.85 !important;
+        }
+        
+        .pdf-card:hover a.btn-outline {
+            background: var(--color-primary) !important;
+            color: #ffffff !important;
+            border-color: var(--color-primary) !important;
+        }
+        
+        /* Dark mode hover untuk tombol */
+        [data-theme="dark"] .pdf-card:hover a.btn-outline {
+            background: var(--color-primary) !important;
+            color: #ffffff !important;
+            border-color: var(--color-primary) !important;
+        }
+
+        /* ============================================
+           STYLE KHUSUS UNTUK PDF VIEWER - RASIO A4
+           ============================================ */
+        .pdf-viewer-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 794px;
+            margin: 0 auto;
+            padding-bottom: 112%;
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--radius-sm);
+            background: #f5f2ef;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .pdf-viewer-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: var(--radius-sm);
+            background: #f5f2ef;
+        }
+
+        /* Dark mode untuk PDF viewer */
+        [data-theme="dark"] .pdf-viewer-wrapper {
+            background: #2a2426;
+        }
+
+        [data-theme="dark"] .pdf-viewer-wrapper iframe {
+            background: #2a2426;
+        }
+
+        /* Topic Accordion Styles */
+        .topic-accordion details > summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        .topic-accordion details summary .fa-chevron-down {
+            transition: transform 0.3s ease;
+        }
+        
+        .topic-accordion details[open] summary .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+        
+        /* Dark mode adjustments for topic accordion */
+        [data-theme="dark"] .topic-accordion {
+            background: rgba(26, 18, 21, 0.60) !important;
+            border-color: rgba(238, 228, 218, 0.05) !important;
+        }
+        
+        [data-theme="dark"] .topic-accordion details summary h3 {
+            color: var(--color-text);
+        }
+        
+        [data-theme="dark"] .topic-accordion details summary span[style*="color: var(--color-primary)"] {
+            color: var(--color-secondary) !important;
+        }
+        
+        [data-theme="dark"] .topic-accordion details summary span[style*="color: var(--color-secondary)"] {
+            color: var(--color-text-light) !important;
+        }
+
+        [data-theme="dark"] .topic-accordion details div h4 {
+            color: var(--color-secondary) !important;
+        }
+        
+        [data-theme="dark"] .topic-accordion details div div div {
+            background: rgba(238, 228, 218, 0.03) !important;
+            border-color: rgba(238, 228, 218, 0.05) !important;
+        }
+
+        [data-theme="dark"] .topic-accordion details div div div a {
+            color: var(--color-secondary) !important;
+        }
+    </style>
 </head>
 <body>
-    <div class="container" style="padding: 80px 20px; max-width: 900px;">
-        <a href="../semester2.html" class="btn btn-outline" style="margin-bottom: 24px;">â† Kembali ke Semester 2</a>
-        <h1>Projek Kepemimpinan</h1>
-        <p>Dokumentasi mata kuliah Projek Kepemimpinan.</p>
-        <p>Isi halaman ini bisa Anda sesuaikan dengan materi, refleksi, tugas, dan hasil karya yang relevan.</p>
+
+    <!-- ============================================
+         BACKGROUND LAYER (Blobs/Orbs)
+         ============================================ -->
+    <div class="bg-layer" aria-hidden="true">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="hexagon-grid">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+        </div>
     </div>
+
+    <!-- ============================================
+         NAVBAR
+         ============================================ -->
+    <nav class="navbar" id="siteHeader">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Faridatul Badriyah</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="../../index.html#home" class="nav-link">Beranda</a></li>
+                    <li><a href="../../pages/tentang-saya.html" class="nav-link">Tentang Saya</a></li>
+                    <li><a href="../../index.html#skills" class="nav-link">Keterampilan</a></li>
+                    <li class="dropdown">
+                        <a href="#projects" class="nav-link dropdown-toggle active">
+                            Proyek <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../../semester1.html" class="dropdown-link">Semester 1</a></li>
+                            <li><a href="../../semester2.html" class="dropdown-link active">Semester 2</a></li>
+                            <li><a href="../pplterbimbing.html" class="dropdown-link">PPL Terbimbing</a></li>
+                            <li><a href="../../semester2/ppl-mandiri.html" class="dropdown-link">PPL Mandiri</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="theme-toggle" id="themeToggle" title="Ubah tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="semester-page" id="home">
+        <div class="container">
+            <div class="semester-hero">
+                <span class="badge">SEMESTER 2</span>
+                <h1>Proyek <span>Kepemimpinan</span></h1>
+                <p>Halaman dokumentasi untuk mata kuliah Proyek Kepemimpinan. Berisi deskripsi mata kuliah, topik pembelajaran, dan refleksi.</p>
+                <div style="margin-top: 24px;">
+                    <a href="../../semester2.html" class="btn btn-outline" style="gap: 8px;">
+                        <i class="fas fa-arrow-left"></i> Kembali ke Semester 2
+                    </a>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 DESKRIPSI SINGKAT (Card Tengah)
+                 ============================================ -->
+            <div style="max-width: 780px; margin: 0 auto 64px;">
+                <div class="about-copy-card" style="text-align: center;">
+                    <h2><i class="fas fa-users-cog"></i> Deskripsi Singkat</h2>
+                    <p>Mata kuliah Projek Kepemimpinan ini adalah mata kuliah berbasis projek yang dirancang untuk mengembangkan kemampuan kepemimpinan mahasiswa calon guru, melalui pengalaman langsung dalam merancang, mengelola, dan mengeksekusi sebuah inisiatif menjadi solusi nyata. Dalam prosesnya, mahasiswa tidak hanya belajar teori kepemimpinan, tetapi juga melatih keterampilan kolaborasi, komunikasi, dan pemecahan masalah dalam konteks dunia nyata. Kapasitas kepemimpinan bukanlah bakat bawaan, melainkan sebuah kompetensi yang dapat dikembangkan secara terus menerus melalui pola pikir bertumbuh.</p>
+                    <p style="margin-top: 12px; font-style: italic; color: var(--color-secondary);">
+                        Pengalaman awal: Mata kuliah ini menantang saya untuk berani mengambil inisiatif, bereksperimen dengan solusi kreatif, belajar dari kegagalan, dan pada akhirnya mengambil peran aktif dalam memberdayakan masyarakat.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 TOPIK PEMBELAJARAN (4 BAB) - SESUAI PROYEK KEPEMIMPINAN
+                 ============================================ -->
+            <div class="section-heading" style="margin-bottom: 40px;">
+                <span class="eyebrow">TOPIK PEMBELAJARAN</span>
+                <h2>Topik <span class="accent">Perkuliahan</span></h2>
+                <p>Empat bab utama yang dibahas dalam mata kuliah Proyek Kepemimpinan.</p>
+            </div>
+
+            <!-- Bab 1: Visi Guru Profesional -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
+                <details open>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">01</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">BAB 1</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">Visi Guru Profesional</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div style="padding: 0 28px 28px;">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <h4 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 8px;">Deskripsi Singkat</h4>
+                                <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8;">
+                                    Bab ini membahas bagaimana mengidentifikasi visi guru profesional dan merefleksikannya terhadap visi pribadi sebagai pendidik, kemudian mengkomunikasikan visi guru profesional dengan menerapkan pola pikir bertumbuh (growth mindset) dan salah satu konsep pembelajaran mendalam (deep learning). Mahasiswa diajak untuk merenungkan makna menjadi guru, makna pendidikan, nilai yang dipegang teguh, serta peran aplikasi visual media dan teknologi terhadap kinerja sebagai pendidik melalui perspective taking (VTR) dan Fishbone.
+                                </p>
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                    <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Bab 2: Perencanaan Projek Kepemimpinan -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
+                <details>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">02</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">BAB 2</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">Perencanaan Projek Kepemimpinan</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div style="padding: 0 28px 28px;">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <h4 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 8px;">Deskripsi Singkat</h4>
+                                <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8;">
+                                    Bab ini membahas bagaimana merumuskan konteks persoalan pendidikan yang terjadi di lingkungan, merancang strategi solusi terhadap persoalan pendidikan yang dipilih dengan mengaplikasikan growth mindset, dan menyusun perencanaan pelaksanaan projek kepemimpinan dalam bentuk projek yang efektif. Komponen yang perlu diperhatikan meliputi sumber daya yang diperlukan, penyusunan anggaran, pembagian peran, serta penetapan jadwal kegiatan melalui pemetaan peran dan tanggung jawab (WALT, WILF) dan Sorting Out.
+                                </p>
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                    <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Bab 3: Implementasi dan Manajemen Proyek -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
+                <details>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">03</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">BAB 3</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">Implementasi dan Manajemen Proyek</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div style="padding: 0 28px 28px;">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <h4 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 8px;">Deskripsi Singkat</h4>
+                                <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8;">
+                                    Bab ini membahas pelaksanaan projek dan implementasi kegiatan kepemimpinan (leadership) yang meliputi koordinasi, kolaborasi, komunikasi, pengelolaan waktu, mengatasi hambatan dan tantangan yang muncul (problem solving), serta membangun hubungan dan jaringan. Mahasiswa melaksanakan projek kepemimpinan secara berkelompok dan melakukan refleksi individu terhadap pengalaman yang diperoleh.
+                                </p>
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                    <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Bab 4: Monitoring, Evaluasi, Laporan Akhir, Refleksi -->
+            <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
+                <details>
+                    <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
+                        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+                            <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); min-width: 44px;">04</span>
+                            <div>
+                                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary);">BAB 4</span>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text);">Monitoring, Evaluasi, Laporan Akhir &amp; Refleksi</h3>
+                            </div>
+                        </div>
+                        <span style="color: var(--color-secondary); font-size: 0.85rem;">
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s ease;"></i>
+                        </span>
+                    </summary>
+                    <div style="padding: 0 28px 28px;">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <h4 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 8px;">Deskripsi Singkat</h4>
+                                <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8;">
+                                    Bab ini membahas bagaimana mengevaluasi pencapaian kegiatan proyek kepemimpinan (keberhasilan, kekurangan, saran perbaikan), menyusun refleksi komitmen dalam memimpin dengan menggunakan salah satu konsep pembelajaran mendalam (deep learning) dan pola pikir bertumbuh (growth mindset). Mahasiswa melanjutkan pelaksanaan kegiatan projek, melaksanakan monitoring, melakukan journaling, evaluasi projek kepemimpinan, serta pembuatan laporan akhir.
+                                </p>
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                    <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- ============================================
+                 REFLEKSI MATA KULIAH
+                 ============================================ -->
+            <div style="margin-top: 72px;">
+                <div class="section-heading" style="margin-bottom: 40px;">
+                    <span class="eyebrow">REFLEKSI</span>
+                    <h2>Refleksi <span class="accent">Mata Kuliah</span></h2>
+                    <p>Dokumen refleksi pembelajaran dan pengembangan diri selama mengikuti mata kuliah Proyek Kepemimpinan.</p>
+                </div>
+
+                <!-- ============================================
+                     PDF VIEWER - GOOGLE DRIVE (KOSONG)
+                     ============================================ -->
+                <div style="max-width: 1100px; margin: 0 auto 40px;">
+                    <div class="pdf-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div style="font-size: 1.8rem;">📄</div>
+                                <div>
+                                    <h3 style="font-family: var(--font-heading); color: var(--color-primary); margin: 0; font-size: 1.1rem;">Dokumen Refleksi Pembelajaran</h3>
+                                </div>
+                            </div>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="gap: 8px; font-size: 0.85rem; padding: 8px 18px;">
+                                <i class="fas fa-external-link-alt"></i> Buka di Drive
+                            </a>
+                        </div>
+                        <!-- PDF Viewer dengan rasio A4 -->
+                        <div class="pdf-viewer-wrapper">
+                            <iframe 
+                                src=""
+                                allow="autoplay"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p style="color: var(--color-text); opacity: 0.5; font-size: 0.75rem; margin-top: 12px; text-align: center;">
+                            <i class="fas fa-info-circle"></i> Geser atau scroll untuk melihat seluruh dokumen. Klik "Buka di Drive" untuk tampilan penuh.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ============================================
+                     CARD REFLEKSI (Di bawah PDF) - KOSONG
+                     ============================================ -->
+                <div style="max-width: 1100px; margin: 0 auto;">
+                    <div class="reflection-card">
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                            <div style="font-size: 2.4rem;">💭</div>
+                            <h3 style="font-family: var(--font-heading); color: var(--color-primary); margin: 0;">Refleksi Pengalaman Belajar</h3>
+                        </div>
+                        <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8; font-style: italic; padding: 16px 20px; border-left: 4px solid var(--color-primary); background: var(--color-accent-glow); border-radius: var(--radius-sm);">
+                            (Refleksi akan ditambahkan)
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 INFO BOX - SESUAI PROYEK KEPEMIMPINAN
+                 ============================================ -->
+            <div class="info-section" style="padding: 60px 0 40px;">
+                <div class="info-box" style="max-width: 780px; margin: 0 auto;">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--color-primary); margin-bottom: 10px;">Kepemimpinan sebagai Kompetensi yang Dapat Dikembangkan</h3>
+                    <p style="font-size: 1rem; line-height: 1.8; color: var(--color-text); opacity: 0.85;">"Kapasitas kepemimpinan bukanlah bakat bawaan, melainkan sebuah kompetensi yang dapat dikembangkan secara terus menerus melalui pola pikir bertumbuh."</p>
+                    <p style="font-size: 0.9rem; line-height: 1.8; color: var(--color-text); opacity: 0.7; margin-top: 12px;">
+                        Mata kuliah ini mengajak mahasiswa untuk mengembangkan kemampuan kepemimpinan melalui pengalaman langsung dalam merancang, mengelola, dan mengeksekusi sebuah inisiatif menjadi solusi nyata. Melalui pemahaman tentang visi guru profesional, perencanaan projek yang efektif, implementasi dan manajemen proyek, serta monitoring, evaluasi, dan refleksi, calon guru dibekali untuk menjadi pendidik yang resilien, reflektif, dan siap memimpin transformasi di lingkungannya. Dengan pendekatan ini, guru tidak hanya mengajar, tetapi juga menjadi agen perubahan yang memberdayakan masyarakat.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 NAVIGASI KEMBALI
+                 ============================================ -->
+            <div style="text-align: center; padding: 20px 0 40px;">
+                <a href="../../semester2.html" class="btn btn-outline" style="gap: 8px;">
+                    <i class="fas fa-arrow-left"></i> Kembali ke Semester 2
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BACK TO TOP
+         ============================================ -->
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Kolom 1: Brand -->
+                <div>
+                    <h2>E-Portofolio Farida</h2>
+                    <p>Dokumentasi perjalanan dan pengembangan profesional Faridatul Badriyah sebagai mahasiswa PPG Prajabatan Informatika.</p>
+                </div>
+                
+                <!-- Kolom 2: Informasi Kontak -->
+                <div>
+                    <h3>Informasi Kontak</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>faridatul.badriyah.2531537@students.um.ac.id</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>253153743889</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-university"></i>
+                        <span>Universitas Negeri Malang</span>
+                    </div>
+                </div>
+                
+                <!-- Kolom 3: Navigasi -->
+                <div>
+                    <h3>Navigasi</h3>
+                    <div class="footer-links">
+                        <a href="../../index.html#home">Beranda</a>
+                        <a href="../../pages/tentang-saya.html">Tentang Saya</a>
+                        <a href="../../index.html#skills">Keterampilan</a>
+                        <a href="../../index.html#projects">Proyek</a>
+                    </div>
+                </div>
+                
+                <!-- Kolom 4: PPG -->
+                <div>
+                    <h3>PPG</h3>
+                    <div class="footer-links">
+                        <a href="../pplterbimbing.html">PPL Terbimbing</a>
+                        <a href="../../semester2/ppl-mandiri.html">PPL Mandiri</a>
+                        <a href="../../pengembangan-diri/artefak.html">Artefak</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2024</span> Faridatul Badriyah • PPG E-Portofolio</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="../../js/script.js"></script>
 </body>
 </html>
-
