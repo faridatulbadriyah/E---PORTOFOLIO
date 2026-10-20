@@ -18,7 +18,6 @@
            EFEK HOVER - CARD MENJADI PUTIH
            ============================================ */
         
-        /* Card untuk Course List */
         .course-link {
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             background: var(--glass-bg);
@@ -72,7 +71,6 @@
             transform: translateX(4px);
         }
         
-        /* Card untuk PPL List */
         .ppl-link {
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             background: var(--glass-bg);
@@ -119,7 +117,6 @@
             color: var(--color-primary) !important;
         }
         
-        /* Dark mode untuk text pada hover */
         [data-theme="dark"] .course-link:hover .course-info strong {
             color: #1a1215 !important;
         }
@@ -132,7 +129,6 @@
             color: #1a1215 !important;
         }
         
-        /* Style untuk icon angka pada PPL */
         .ppl-link .fa-1,
         .ppl-link .fa-2,
         .ppl-link .fa-3 {
@@ -140,7 +136,6 @@
             margin-right: 8px;
         }
         
-        /* Dark mode default */
         [data-theme="dark"] .course-link {
             background: rgba(26, 18, 21, 0.60) !important;
             border-color: rgba(238, 228, 218, 0.05) !important;
@@ -149,6 +144,198 @@
         [data-theme="dark"] .ppl-link {
             background: rgba(26, 18, 21, 0.60) !important;
             border-color: rgba(238, 228, 218, 0.05) !important;
+        }
+
+        /* ============================================
+           MARQUEE DOKUMENTASI - SATU BARIS
+           ============================================ */
+        .dokumentasi-section {
+            margin-top: 80px;
+            margin-bottom: 40px;
+        }
+
+        .dokumentasi-section .section-heading {
+            text-align: center !important;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 780px;
+        }
+
+        .dokumentasi-section .section-heading::after {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .marquee-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .marquee-wrapper::before,
+        .marquee-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .marquee-wrapper::before {
+            left: 0;
+            background: linear-gradient(to right, var(--color-bg-primary) 0%, transparent 100%);
+        }
+
+        .marquee-wrapper::after {
+            right: 0;
+            background: linear-gradient(to left, var(--color-bg-primary) 0%, transparent 100%);
+        }
+
+        [data-theme="dark"] .marquee-wrapper::before {
+            background: linear-gradient(to right, #1a1215 0%, transparent 100%);
+        }
+
+        [data-theme="dark"] .marquee-wrapper::after {
+            background: linear-gradient(to left, #1a1215 0%, transparent 100%);
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 16px;
+            width: max-content;
+            animation: marqueeScroll 60s linear infinite;
+            will-change: transform;
+        }
+
+        .marquee-wrapper:hover .marquee-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes marqueeScroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee-item {
+            flex-shrink: 0;
+            width: 200px;
+            height: 140px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            position: relative;
+            border: 2px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        box-shadow 0.4s ease,
+                        border-color 0.4s ease;
+            cursor: pointer;
+            background: var(--color-bg-secondary);
+        }
+
+        .marquee-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .marquee-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 55%);
+            opacity: 0.9;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .marquee-item-caption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 10px 12px;
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            font-weight: 500;
+            line-height: 1.3;
+            z-index: 2;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+            pointer-events: none;
+        }
+
+        .marquee-item:hover {
+            transform: scale(1.08);
+            z-index: 10;
+            border-color: var(--color-primary);
+            box-shadow: 0 16px 40px rgba(77, 14, 19, 0.25);
+        }
+
+        [data-theme="dark"] .marquee-item:hover {
+            border-color: var(--color-secondary);
+            box-shadow: 0 16px 40px rgba(238, 228, 218, 0.10);
+        }
+
+        .marquee-item:hover img {
+            transform: scale(1.15);
+        }
+
+        .marquee-item:hover::after {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .marquee-item {
+                width: 160px;
+                height: 115px;
+            }
+
+            .marquee-item-caption {
+                font-size: 0.65rem;
+                padding: 8px 10px;
+            }
+
+            .marquee-track {
+                animation-duration: 45s;
+            }
+
+            .marquee-wrapper::before,
+            .marquee-wrapper::after {
+                width: 50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .marquee-item {
+                width: 130px;
+                height: 95px;
+            }
+
+            .marquee-item-caption {
+                font-size: 0.6rem;
+                padding: 6px 8px;
+            }
+
+            .marquee-track {
+                gap: 10px;
+                animation-duration: 35s;
+            }
+
+            .marquee-wrapper::before,
+            .marquee-wrapper::after {
+                width: 30px;
+            }
         }
     </style>
 </head>
@@ -183,6 +370,7 @@
                             <li><a href="semester2/ppl-mandiri.html" class="dropdown-link">PPL Mandiri</a></li>
                         </ul>
                     </li>
+                    <li><a href="inovasi.html" class="nav-link">Inovasi</a></li>
                     <li><button class="theme-toggle" id="themeToggle" type="button" title="Ubah tema" aria-label="Ubah tema"><i class="fas fa-moon"></i></button></li>
                 </ul>
             </div>
@@ -241,6 +429,66 @@
                     </div>
                 </section>
             </div>
+
+            <!-- ============================================
+                 MARQUEE DOKUMENTASI - SATU BARIS
+                 ============================================ -->
+            <section class="dokumentasi-section" aria-labelledby="dokumentasi-title">
+                <div class="section-heading">
+                    <span class="eyebrow">Galeri Kegiatan</span>
+                    <h2 id="dokumentasi-title">Dokumentasi <span class="accent">Kegiatan</span></h2>
+                    <p>Momen-momen berharga selama menjalani Semester 1 PPG Prajabatan Informatika.</p>
+                </div>
+
+                <!-- Satu baris marquee - bergerak ke kiri -->
+                <div class="marquee-wrapper">
+                    <div class="marquee-track">
+
+                        <!-- ============================================
+                             SET 1 (12 foto)
+                             ============================================ -->
+                        <div class="marquee-item">
+                            <img src="assets/images/CT.jpeg" alt="Mata Kuliah Computational Thinking" loading="lazy">
+                            <div class="marquee-item-caption">Mata Kuliah Computational Thinking</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="assets/images/Filosofi.jpeg" alt="Mata Kuliah Filosofi Pendidikan" loading="lazy">
+                            <div class="marquee-item-caption">Mata Kuliah Filosofi Pendidikan dan Pendidikan Nilai</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="assets/images/growth mindset.jpeg" alt="Mata Kuliah Growth Mindset" loading="lazy">
+                            <div class="marquee-item-caption">Mata Kuliah Growth Mindset</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="assets/images/praktisi CT.jpeg" alt="praktisi CT" loading="lazy">
+                            <div class="marquee-item-caption">Kelas Kolaborasi dengan Guru Praktisi_CT</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="assets/images/pmad.jpg" alt="pmad" loading="lazy">
+                            <div class="marquee-item-caption">Mata Kuliah Pembelajaran Mendalam dan Asesmen Dasar</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="assets/images/pmad1.jpeg" alt="pmad1" loading="lazy">
+                            <div class="marquee-item-caption">Mata Kuliah Pembelajaran Mendalam dan Asesmen Dasar</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="assets/images/ppdp.jpeg" alt="PPDP" loading="lazy">
+                            <div class="marquee-item-caption">Pemahaman Peserta Didik dan Pembelajaran</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="assets/images/penyerahan ppl1.jpg" alt="Kegiatan Penyerahan PPL Terbimbing" loading="lazy">
+                            <div class="marquee-item-caption">Kegiatan Penyerahan PPL Terbimbing</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="assets/images/foto penyerahan ppl.jpg" alt="Penyerahan PPL Terbimbing" loading="lazy">
+                            <div class="marquee-item-caption">Penyerahan PPL Terbimbing  di SMPN 18 Malang</div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
         </div>
     </main>
 
@@ -249,7 +497,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; <span id="currentYear">2024</span> Faridatul Badriyah â€¢ PPG E-Portofolio</p>
+                <p>&copy; <span id="currentYear">2024</span> Faridatul Badriyah • PPG E-Portofolio</p>
             </div>
         </div>
     </footer>

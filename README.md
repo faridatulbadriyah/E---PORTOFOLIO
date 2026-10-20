@@ -64,6 +64,11 @@ Selamat datang di **E-Portofolio PPG**! Ini adalah platform modern untuk menampi
 - Social media links
 - Responsive layout untuk desktop dan mobile
 
+#### Laman Inovasi
+- Latar belakang dan rancangan inovasi pembelajaran Informatika
+- Masalah yang dapat diatasi melalui pendekatan pembelajaran kontekstual
+- Rencana tindak lanjut dan pengembangan inovasi
+
 ### 5. **Formulir Kontak**
 - Form kontak yang responsif
 - Validasi input
@@ -107,6 +112,7 @@ code .
 ```
 E - PORTOFOLIO/
 ├── index.html                 # Halaman utama
+├── inovasi.html               # Laman inovasi pembelajaran
 ├── css/
 │   └── styles.css            # Stylesheet utama
 ├── js/

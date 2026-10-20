@@ -62,7 +62,7 @@
             color: var(--color-primary) !important;
         }
         
-        /* Card untuk Topic Accordion - diubah menjadi card biasa dengan hover */
+        /* Card untuk Topic Accordion */
         .topic-accordion {
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             background: var(--glass-bg);
@@ -113,7 +113,7 @@
             color: #ffffff !important;
         }
         
-        /* Card untuk Refleksi (di bawah PDF) */
+        /* Card untuk Refleksi */
         .reflection-card {
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             padding: 32px 28px;
@@ -235,16 +235,13 @@
             border-color: var(--color-primary) !important;
         }
         
-        /* Dark mode hover untuk tombol */
         [data-theme="dark"] .pdf-card:hover a.btn-outline {
             background: var(--color-primary) !important;
             color: #ffffff !important;
             border-color: var(--color-primary) !important;
         }
 
-        /* ============================================
-           STYLE KHUSUS UNTUK PDF VIEWER - RASIO A4
-           ============================================ */
+        /* PDF Viewer - Rasio A4 */
         .pdf-viewer-wrapper {
             position: relative;
             width: 100%;
@@ -269,7 +266,6 @@
             background: #f5f2ef;
         }
 
-        /* Dark mode untuk PDF viewer */
         [data-theme="dark"] .pdf-viewer-wrapper {
             background: #2a2426;
         }
@@ -291,7 +287,6 @@
             transform: rotate(180deg);
         }
         
-        /* Dark mode adjustments for topic accordion */
         [data-theme="dark"] .topic-accordion {
             background: rgba(26, 18, 21, 0.60) !important;
             border-color: rgba(238, 228, 218, 0.05) !important;
@@ -325,9 +320,7 @@
 </head>
 <body>
 
-    <!-- ============================================
-         BACKGROUND LAYER (Blobs/Orbs)
-         ============================================ -->
+    <!-- BACKGROUND LAYER -->
     <div class="bg-layer" aria-hidden="true">
         <div class="blob"></div>
         <div class="blob"></div>
@@ -352,9 +345,7 @@
         </div>
     </div>
 
-    <!-- ============================================
-         NAVBAR
-         ============================================ -->
+    <!-- NAVBAR -->
     <nav class="navbar" id="siteHeader">
         <div class="container">
             <div class="nav-content">
@@ -382,6 +373,7 @@
                             <li><a href="../../semester2/ppl-mandiri.html" class="dropdown-link">PPL Mandiri</a></li>
                         </ul>
                     </li>
+                    <li><a href="../../inovasi.html" class="nav-link">Inovasi</a></li>
                     <li>
                         <button class="theme-toggle" id="themeToggle" title="Ubah tema">
                             <i class="fas fa-moon"></i>
@@ -392,9 +384,7 @@
         </div>
     </nav>
 
-    <!-- ============================================
-         HERO SECTION
-         ============================================ -->
+    <!-- HERO SECTION -->
     <section class="semester-page" id="home">
         <div class="container">
             <div class="semester-hero">
@@ -408,9 +398,7 @@
                 </div>
             </div>
 
-            <!-- ============================================
-                 DESKRIPSI SINGKAT (Card Tengah)
-                 ============================================ -->
+            <!-- DESKRIPSI SINGKAT -->
             <div style="max-width: 780px; margin: 0 auto 64px;">
                 <div class="about-copy-card" style="text-align: center;">
                     <h2><i class="fas fa-layer-group"></i> Deskripsi Singkat</h2>
@@ -421,16 +409,14 @@
                 </div>
             </div>
 
-            <!-- ============================================
-                 TOPIK PEMBELAJARAN (5 TOPIK) - SESUAI PMA LANJUT
-                 ============================================ -->
+            <!-- TOPIK PEMBELAJARAN -->
             <div class="section-heading" style="margin-bottom: 40px;">
                 <span class="eyebrow">TOPIK PEMBELAJARAN</span>
                 <h2>Topik <span class="accent">Perkuliahan</span></h2>
                 <p>Lima topik utama yang dibahas dalam mata kuliah Pembelajaran Mendalam dan Asesmen Lanjut.</p>
             </div>
 
-            <!-- Topik 1: Asesmen Awal Pembelajaran Mendalam -->
+            <!-- Topik 1 -->
             <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
                 <details open>
                     <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
@@ -454,7 +440,7 @@
                                 </p>
                             </div>
                             <div style="margin-top: 8px;">
-                                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                <a href="https://drive.google.com/drive/folders/1JHNcdJRJcE5zzuiEh1kpg3DIQjYITh8q?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
                                     <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
                                 </a>
                             </div>
@@ -463,7 +449,7 @@
                 </details>
             </div>
 
-            <!-- Topik 2: Penerapan Pembelajaran Mendalam dengan DUP -->
+            <!-- Topik 2 -->
             <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
                 <details>
                     <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
@@ -487,7 +473,7 @@
                                 </p>
                             </div>
                             <div style="margin-top: 8px;">
-                                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                <a href="https://drive.google.com/drive/folders/1I3nzgF9m--YqSWUpIVqor6xW4JYUIoNA?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
                                     <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
                                 </a>
                             </div>
@@ -496,7 +482,7 @@
                 </details>
             </div>
 
-            <!-- Topik 3: Pembelajaran Mendalam melalui TaRL -->
+            <!-- Topik 3 -->
             <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
                 <details>
                     <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
@@ -520,7 +506,7 @@
                                 </p>
                             </div>
                             <div style="margin-top: 8px;">
-                                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                <a href="https://drive.google.com/drive/folders/1rUMUUngDKqE928PkmJw29R4jwqmLwzqO?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
                                     <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
                                 </a>
                             </div>
@@ -529,7 +515,7 @@
                 </details>
             </div>
 
-            <!-- Topik 4: Pembelajaran Mendalam melalui CRT -->
+            <!-- Topik 4 -->
             <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
                 <details>
                     <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
@@ -553,7 +539,7 @@
                                 </p>
                             </div>
                             <div style="margin-top: 8px;">
-                                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                <a href="https://drive.google.com/drive/folders/1Hv58OY11EY5oLxhkfZYlxTSXN7fl72jw?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
                                     <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
                                 </a>
                             </div>
@@ -562,7 +548,7 @@
                 </details>
             </div>
 
-            <!-- Topik 5: Pengolahan dan Pemanfaatan Hasil Asesmen -->
+            <!-- Topik 5 -->
             <div class="topic-accordion" style="max-width: 1100px; margin: 0 auto 16px;">
                 <details>
                     <summary style="cursor: pointer; padding: 20px 28px; list-style: none; display: flex; align-items: center; gap: 16px;">
@@ -586,7 +572,7 @@
                                 </p>
                             </div>
                             <div style="margin-top: 8px;">
-                                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+                                <a href="https://drive.google.com/drive/folders/1hY_PdYeoykJKZIOOroHpxTIjR1G2tYOJ?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
                                     <i class="fab fa-google-drive"></i> Lihat Materi di Google Drive
                                 </a>
                             </div>
@@ -595,9 +581,7 @@
                 </details>
             </div>
 
-            <!-- ============================================
-                 REFLEKSI MATA KULIAH
-                 ============================================ -->
+            <!-- REFLEKSI MATA KULIAH -->
             <div style="margin-top: 72px;">
                 <div class="section-heading" style="margin-bottom: 40px;">
                     <span class="eyebrow">REFLEKSI</span>
@@ -605,9 +589,7 @@
                     <p>Dokumen refleksi pembelajaran dan pengembangan diri selama mengikuti mata kuliah Pembelajaran Mendalam dan Asesmen Lanjut.</p>
                 </div>
 
-                <!-- ============================================
-                     PDF VIEWER - GOOGLE DRIVE (KOSONG)
-                     ============================================ -->
+                <!-- PDF VIEWER -->
                 <div style="max-width: 1100px; margin: 0 auto 40px;">
                     <div class="pdf-card">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
@@ -617,17 +599,12 @@
                                     <h3 style="font-family: var(--font-heading); color: var(--color-primary); margin: 0; font-size: 1.1rem;">Dokumen Refleksi Pembelajaran</h3>
                                 </div>
                             </div>
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="gap: 8px; font-size: 0.85rem; padding: 8px 18px;">
+                            <a href="https://drive.google.com/file/d/1TC90GAaAhDAn7_RJ_2bvBlHJPESBRWvy/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="gap: 8px; font-size: 0.85rem; padding: 8px 18px;">
                                 <i class="fas fa-external-link-alt"></i> Buka di Drive
                             </a>
                         </div>
-                        <!-- PDF Viewer dengan rasio A4 -->
                         <div class="pdf-viewer-wrapper">
-                            <iframe 
-                                src=""
-                                allow="autoplay"
-                                allowfullscreen>
-                            </iframe>
+                            <iframe src="https://drive.google.com/file/d/1TC90GAaAhDAn7_RJ_2bvBlHJPESBRWvy/preview" allow="autoplay" allowfullscreen></iframe>
                         </div>
                         <p style="color: var(--color-text); opacity: 0.5; font-size: 0.75rem; margin-top: 12px; text-align: center;">
                             <i class="fas fa-info-circle"></i> Geser atau scroll untuk melihat seluruh dokumen. Klik "Buka di Drive" untuk tampilan penuh.
@@ -635,25 +612,23 @@
                     </div>
                 </div>
 
-                <!-- ============================================
-                     CARD REFLEKSI (Di bawah PDF) - KOSONG
-                     ============================================ -->
+                <!-- CARD REFLEKSI -->
                 <div style="max-width: 1100px; margin: 0 auto;">
                     <div class="reflection-card">
                         <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
                             <div style="font-size: 2.4rem;">💭</div>
                             <h3 style="font-family: var(--font-heading); color: var(--color-primary); margin: 0;">Refleksi Pengalaman Belajar</h3>
                         </div>
-                        <p style="color: var(--color-text); opacity: 0.85; line-height: 1.8; font-style: italic; padding: 16px 20px; border-left: 4px solid var(--color-primary); background: var(--color-accent-glow); border-radius: var(--radius-sm);">
-                            (Refleksi akan ditambahkan)
-                        </p>
+                        <div style="color: var(--color-text); opacity: 0.85; line-height: 1.8; padding: 16px 20px; border-left: 4px solid var(--color-primary); background: var(--color-accent-glow); border-radius: var(--radius-sm);">
+                            <p style="font-weight: 600; margin-bottom: 8px; color: var(--color-primary);">Mata kuliah ini membuka wawasan saya bahwa mengajar bukan sekadar menyampaikan materi, melainkan seni merancang pengalaman belajar yang inklusif, bermakna, dan berkeadilan.</p>
+                            <p style="margin-bottom: 12px;">Awalnya, saya menganggap asesmen hanya berfungsi untuk memberi nilai akhir dan menyamaratakan perlakuan pada semua murid. Namun, setelah merancang pembelajaran berbasis DUP (LK 3.1) dan mendalami penerapan Culturally Responsive Teaching (LK 4.1), saya menyadari bahwa setiap murid memiliki cara belajar dan latar belakang yang unik. Saya belajar bahwa memberikan beragam pilihan cara ekspresi (melalui flowchart, narasi, atau praktik digital) dan mengaitkan materi dengan konteks keseharian murid dapat membuat pembelajaran jauh lebih bermakna.</p>
+                            <p>Selain itu, puncak pembelajaran saya terjadi saat menganalisis data asesmen (LK 5.1). Saya tersadar bahwa hasil asesmen bukanlah 'hukuman' atau vonis bagi murid, melainkan 'kompas' bagi guru untuk mendiagnosis kesulitan mereka. Hal ini akan sangat berguna bagi saya ke depannya; saya ingin menjadi guru yang tidak hanya menyamaratakan perlakuan, tetapi mampu memberikan <em>scaffolding</em> yang tepat bagi murid yang kesulitan (remedial) dan tantangan yang memacu kreativitas bagi murid yang sudah mahir (pengayaan), sehingga terciptalah pembelajaran mendalam yang benar-benar memanusiakan setiap anak.</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- ============================================
-                 INFO BOX - SESUAI PMA LANJUT
-                 ============================================ -->
+            <!-- INFO BOX -->
             <div class="info-section" style="padding: 60px 0 40px;">
                 <div class="info-box" style="max-width: 780px; margin: 0 auto;">
                     <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--color-primary); margin-bottom: 10px;">Pembelajaran Mendalam yang Berpihak pada Murid</h3>
@@ -664,9 +639,7 @@
                 </div>
             </div>
 
-            <!-- ============================================
-                 NAVIGASI KEMBALI
-                 ============================================ -->
+            <!-- NAVIGASI KEMBALI -->
             <div style="text-align: center; padding: 20px 0 40px;">
                 <a href="../../semester2.html" class="btn btn-outline" style="gap: 8px;">
                     <i class="fas fa-arrow-left"></i> Kembali ke Semester 2
@@ -675,26 +648,19 @@
         </div>
     </section>
 
-    <!-- ============================================
-         BACK TO TOP
-         ============================================ -->
+    <!-- BACK TO TOP -->
     <button id="backToTop" class="back-to-top" type="button" aria-label="Kembali ke atas">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- ============================================
-         FOOTER
-         ============================================ -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- Kolom 1: Brand -->
                 <div>
                     <h2>E-Portofolio Farida</h2>
                     <p>Dokumentasi perjalanan dan pengembangan profesional Faridatul Badriyah sebagai mahasiswa PPG Prajabatan Informatika.</p>
                 </div>
-                
-                <!-- Kolom 2: Informasi Kontak -->
                 <div>
                     <h3>Informasi Kontak</h3>
                     <div class="footer-contact-item">
@@ -710,8 +676,6 @@
                         <span>Universitas Negeri Malang</span>
                     </div>
                 </div>
-                
-                <!-- Kolom 3: Navigasi -->
                 <div>
                     <h3>Navigasi</h3>
                     <div class="footer-links">
@@ -721,8 +685,6 @@
                         <a href="../../index.html#projects">Proyek</a>
                     </div>
                 </div>
-                
-                <!-- Kolom 4: PPG -->
                 <div>
                     <h3>PPG</h3>
                     <div class="footer-links">
