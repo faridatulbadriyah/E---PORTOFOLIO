@@ -69,6 +69,11 @@ Selamat datang di **E-Portofolio PPG**! Ini adalah platform modern untuk menampi
 - Masalah yang dapat diatasi melalui pendekatan pembelajaran kontekstual
 - Rencana tindak lanjut dan pengembangan inovasi
 
+#### Refleksi PPG
+- Refleksi perjalanan belajar dari Semester 1 hingga PPL Mandiri
+- Pandangan tentang pendidikan Indonesia dan upaya menjadi guru profesional
+- Tiga rencana tindak lanjut dengan waktu dan indikator ketercapaian
+
 ### 5. **Formulir Kontak**
 - Form kontak yang responsif
 - Validasi input
@@ -113,8 +118,10 @@ code .
 E - PORTOFOLIO/
 ├── index.html                 # Halaman utama
 ├── inovasi.html               # Laman inovasi pembelajaran
+├── refleksi-ppg.html          # Refleksi pengalaman belajar selama PPG
 ├── css/
-│   └── styles.css            # Stylesheet utama
+│   ├── styles.css            # Stylesheet utama
+│   └── refleksi-ppg.css      # Gaya khusus laman refleksi PPG
 ├── js/
 │   └── script.js             # JavaScript interaktif
 ├── pages/                    # Halaman tambahan (opsional)

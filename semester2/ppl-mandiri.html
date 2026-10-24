@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -401,17 +401,19 @@
                 <ul class="nav-links" id="navLinks">
                     <li><a href="../index.html#home" class="nav-link">Beranda</a></li>
                     <li><a href="../pages/tentang-saya.html" class="nav-link">Tentang Saya</a></li>
+                    <li><a href="../index.html#skills" class="nav-link">Keterampilan</a></li>
                     <li class="dropdown">
-                        <a href="../index.html#projects" class="nav-link dropdown-toggle active">Proyek <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
+                        <a href="../index.html#projects" class="nav-link dropdown-toggle active" aria-expanded="false" aria-controls="projectMenu"><span>Proyek</span> <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu" id="projectMenu">
                             <li><a href="../semester1.html" class="dropdown-link">Semester 1</a></li>
                             <li><a href="../semester2.html" class="dropdown-link">Semester 2</a></li>
                             <li><a href="../semester-1/pplterbimbing.html" class="dropdown-link">PPL Terbimbing</a></li>
-                            <li><a href="ppl-mandiri.html" class="dropdown-link active">PPL Mandiri</a></li>
+                            <li><a href="../semester2/ppl-mandiri.html" class="dropdown-link active">PPL Mandiri</a></li>
                         </ul>
                     </li>
+                    <li><a href="../refleksi-ppg.html" class="nav-link">Refleksi PPG</a></li>
                     <li><a href="../inovasi.html" class="nav-link">Inovasi</a></li>
-                    <li><button class="theme-toggle" id="themeToggle" title="Ubah tema" aria-label="Ubah tema"><i class="fas fa-moon"></i></button></li>
+                    <li><button class="theme-toggle" id="themeToggle" type="button" title="Aktifkan mode gelap" aria-label="Aktifkan mode gelap"><i class="fas fa-moon" aria-hidden="true"></i></button></li>
                 </ul>
             </div>
         </div>
@@ -619,17 +621,15 @@
                                     <h3 style="font-family: var(--font-heading); color: var(--color-primary); margin: 0; font-size: 1.1rem;">Dokumen Refleksi Pembelajaran PPL Mandiri</h3>
                                 </div>
                             </div>
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="gap: 8px; font-size: 0.85rem; padding: 8px 18px; opacity: 0.5; cursor: not-allowed;">
-                                <i class="fas fa-external-link-alt"></i> Buka di Drive (kosong)
+                            <a href="https://drive.google.com/file/d/1zcHU4i6h7_V7FlJ6g1dDHQCj8zeORJHO/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="gap: 8px; font-size: 0.85rem; padding: 8px 18px;">
+                                <i class="fas fa-external-link-alt"></i> Buka di Drive
                             </a>
                         </div>
                         <div class="pdf-viewer-wrapper">
-                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: var(--color-bg-secondary); color: var(--color-text-light); font-size: 1rem; opacity: 0.6; border-radius: var(--radius-sm);">
-                                <span>📄 Dokumen refleksi akan segera diunggah</span>
-                            </div>
+                            <iframe src="https://drive.google.com/file/d/1zcHU4i6h7_V7FlJ6g1dDHQCj8zeORJHO/preview" allow="autoplay" allowfullscreen></iframe>
                         </div>
                         <p style="color: var(--color-text); opacity: 0.5; font-size: 0.75rem; margin-top: 12px; text-align: center;">
-                            <i class="fas fa-info-circle"></i> Dokumen refleksi PPL Mandiri akan segera tersedia.
+                            <i class="fas fa-info-circle"></i> Geser atau scroll untuk melihat seluruh dokumen. Klik "Buka di Drive" untuk tampilan penuh.
                         </p>
                     </div>
                 </div>
@@ -641,9 +641,9 @@
                             <h3 style="font-family: var(--font-heading); color: var(--color-primary); margin: 0;">Refleksi Pengalaman PPL Mandiri</h3>
                         </div>
                         <blockquote>
-                            PPL Mandiri telah menjadi perjalanan yang sangat berharga dalam membentuk identitas saya sebagai calon guru. Melalui lima topik yang dilalui—orientasi, observasi, praktik terbimbing, praktik mandiri, hingga refleksi akhir—saya semakin memahami bahwa mengajar adalah proses yang dinamis dan membutuhkan kepekaan terhadap kebutuhan peserta didik. Pendekatan TaRL dan CRT yang saya praktikkan membuka mata saya bahwa setiap anak memiliki cara belajar yang unik, dan tugas guru adalah menuntun mereka sesuai dengan kodratnya.
+                            Mata kuliah PPL Mandiri ini benar-benar menjadi ajang pembuktian saya dalam menerapkan teori keguruan ke dalam praktik nyata di kelas. Melalui pelaksanaan Pembelajaran Kedua di Siklus 2 dengan materi Pengenalan Fungsi Dasar Excel, saya belajar bahwa menjadi guru yang efektif bukanlah tentang seberapa banyak materi yang bisa saya jelaskan, melainkan tentang seberapa mampu saya merancang pengalaman belajar yang membuat murid aktif berpikir.
                             <br><br>
-                            Saya juga belajar bahwa kegiatan di luar kelas—seperti piket, rapat guru, dan ekstrakurikuler—memberikan perspektif utuh tentang peran guru dalam ekosistem sekolah. Dari 13 praktik mengajar yang saya lalui, setiap siklus mengajarkan saya untuk lebih reflektif dan terbuka terhadap masukan. Ke depan, saya berkomitmen untuk terus mengembangkan growth mindset, menjadikan setiap tantangan sebagai peluang belajar, dan menjadi guru yang tidak hanya mengajar, tetapi juga menginspirasi.
+                            Awalnya, saya sempat ragu apakah model <em>Discovery Learning</em> dengan tantangan 'Tim Manual vs Tim Excel' ini bisa berjalan sesuai waktu. Namun, pengalaman pertama saya menggunakan LKPD berbasis <em>spreadsheet</em> interaktif menjadi titik balik yang luar biasa. Ketika saya membagikan tautan, lalu murid-murid dengan antusias memilih nama mereka dan secara otomatis diarahkan ke <em>sheet</em> masing-masing untuk langsung mengerjakan misi, saya tersadar bahwa teknologi dapat membuat proses asesmen menjadi sangat personal, efisien, dan menyenangkan. Pengalaman ini mengajarkan saya bahwa asesmen bukan hanya soal memberikan nilai di akhir, tetapi bagaimana proses observasi dan LKPD digital yang saya rancang bisa benar-benar memetakan pemahaman murid secara akurat. Ke depannya, bekal pengalaman PPL Mandiri ini akan saya jadikan pondasi untuk terus berbenah, menjadi guru yang lebih reflektif, inovatif, dan berani menciptakan pembelajaran bermakna bagi murid.
                         </blockquote>
                     </div>
                 </div>

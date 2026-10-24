@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Latar belakang, rancangan inovasi pembelajaran Informatika, masalah yang dapat diatasi, serta tindak lanjut dan pengembangannya.">
+    <meta name="description" content="Desain karya inovasi Spreadsheet-Based Interactive Worksheet (SIW) untuk murid Kelas VIII SMPN 18 Malang: identifikasi kebutuhan dan tantangan, gagasan dan tujuan, riset dan pengembangan, implementasi, evaluasi, serta prinsip karya inovasi.">
     <meta name="author" content="Faridatul Badriyah">
     <title>Inovasi Pembelajaran | Faridatul Badriyah</title>
 
@@ -12,6 +12,277 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Tambahan khusus halaman inovasi (tidak mengubah styles.css) -->
+    <style>
+        .siw-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 18px;
+        }
+        .siw-meta .tag {
+            font-size: 0.75rem;
+            padding: 5px 14px;
+        }
+        .innovation-card h2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .innovation-card h2 i {
+            font-size: 1.1rem;
+            color: var(--color-accent-border);
+            opacity: 0.7;
+        }
+        [data-theme="dark"] .innovation-card h2 i {
+            color: var(--color-secondary);
+        }
+        .innovation-card h3 {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-secondary);
+            margin: 18px 0 8px;
+            letter-spacing: 0.01em;
+        }
+        .innovation-card h3:first-of-type {
+            margin-top: 8px;
+        }
+        .innovation-list li strong {
+            color: var(--color-primary);
+        }
+        [data-theme="dark"] .innovation-list li strong {
+            color: var(--color-secondary);
+        }
+
+        /* ---------- ARTEFAK & DOKUMENTASI ---------- */
+        .artifact-block {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px dashed var(--color-accent-border-light);
+        }
+        .artifact-block-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-secondary);
+            margin-bottom: 12px;
+        }
+        .artifact-block-title i {
+            color: var(--color-accent-border);
+        }
+        [data-theme="dark"] .artifact-block-title i {
+            color: var(--color-secondary);
+        }
+
+        .artifact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .artifact-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            background: var(--color-surface);
+            transition: var(--transition-soft);
+        }
+        [data-theme="dark"] .artifact-item {
+            background: rgba(26, 18, 21, 0.55);
+            border-color: rgba(238, 228, 218, 0.06);
+        }
+        .artifact-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Slot placeholder: ganti <img> atau <iframe> di dalamnya */
+        .artifact-slot {
+            position: relative;
+            aspect-ratio: 16 / 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            text-align: center;
+            padding: 12px;
+            background: rgba(238, 228, 218, 0.30);
+            color: var(--color-text);
+            opacity: 0.85;
+            font-size: 0.75rem;
+            line-height: 1.4;
+        }
+        [data-theme="dark"] .artifact-slot {
+            background: rgba(238, 228, 218, 0.04);
+        }
+        .artifact-slot i {
+            font-size: 1.4rem;
+            color: var(--color-primary);
+            opacity: 0.55;
+        }
+        [data-theme="dark"] .artifact-slot i {
+            color: var(--color-secondary);
+        }
+        .artifact-slot img,
+        .artifact-slot iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 0;
+        }
+        .artifact-slot.has-media::before,
+        .artifact-slot.has-media i,
+        .artifact-slot.has-media span {
+            display: none;
+        }
+
+        .artifact-caption {
+            padding: 0 10px 10px;
+            font-size: 0.75rem;
+            line-height: 1.4;
+            color: var(--color-text);
+            opacity: 0.75;
+        }
+        .artifact-caption strong {
+            display: block;
+            font-weight: 600;
+            color: var(--color-primary);
+            opacity: 1;
+            margin-bottom: 2px;
+        }
+        [data-theme="dark"] .artifact-caption strong {
+            color: var(--color-secondary);
+        }
+
+        .artifact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .artifact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 7px 14px;
+            border-radius: var(--radius-pill);
+            border: 1px solid var(--color-accent-border-light);
+            color: var(--color-primary);
+            background: transparent;
+            text-decoration: none;
+            transition: var(--transition-soft);
+        }
+        .artifact-link:hover {
+            background: var(--color-primary);
+            color: var(--color-surface);
+            border-color: var(--color-primary);
+            transform: translateY(-1px);
+        }
+        [data-theme="dark"] .artifact-link {
+            color: var(--color-secondary);
+            border-color: rgba(238, 228, 218, 0.12);
+        }
+        [data-theme="dark"] .artifact-link:hover {
+            background: var(--color-secondary);
+            color: #1a1215;
+            border-color: var(--color-secondary);
+        }
+
+        .artifact-section-heading {
+            margin: 64px auto 24px;
+        }
+
+        /* ---------- TABEL UMUM (Prinsip & Evaluasi) ---------- */
+        .principle-table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 8px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--glass-border);
+        }
+        .principle-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            min-width: 620px;
+        }
+        .principle-table th,
+        .principle-table td {
+            padding: 12px 14px;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid rgba(77, 14, 19, 0.08);
+            color: var(--color-text);
+        }
+        [data-theme="dark"] .principle-table th,
+        [data-theme="dark"] .principle-table td {
+            border-bottom-color: rgba(238, 228, 218, 0.06);
+        }
+        .principle-table th {
+            background: rgba(238, 228, 218, 0.25);
+            font-family: var(--font-body);
+            font-weight: 600;
+            color: var(--color-primary);
+            font-size: 0.82rem;
+            letter-spacing: 0.02em;
+        }
+        [data-theme="dark"] .principle-table th {
+            background: rgba(238, 228, 218, 0.06);
+            color: var(--color-secondary);
+        }
+        .principle-table tr:last-child td {
+            border-bottom: none;
+        }
+        .principle-table td:first-child {
+            width: 56px;
+            text-align: center;
+            font-weight: 700;
+            color: var(--color-primary);
+            font-family: var(--font-heading);
+        }
+        [data-theme="dark"] .principle-table td:first-child {
+            color: var(--color-secondary);
+        }
+
+        /* Varian tabel evaluasi: kolom No lebih sempit, kolom Tahapan sedikit lebih lebar */
+        .eval-table td:first-child {
+            width: 48px;
+        }
+        .eval-table td:nth-child(2) {
+            font-weight: 600;
+            color: var(--color-primary);
+            min-width: 150px;
+        }
+        [data-theme="dark"] .eval-table td:nth-child(2) {
+            color: var(--color-secondary);
+        }
+
+        .innovation-card.full-width {
+            grid-column: 1 / -1;
+        }
+        @media (max-width: 820px) {
+            .innovation-card.full-width {
+                grid-column: auto;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="bg-layer" aria-hidden="true">
@@ -28,7 +299,7 @@
                     <i class="fas fa-graduation-cap"></i>
                     <span>Faridatul Badriyah</span>
                 </div>
-                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navLinks">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -38,22 +309,17 @@
                     <li><a href="pages/tentang-saya.html" class="nav-link">Tentang Saya</a></li>
                     <li><a href="index.html#skills" class="nav-link">Keterampilan</a></li>
                     <li class="dropdown">
-                        <a href="index.html#projects" class="nav-link dropdown-toggle">
-                            Proyek <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown-menu">
+                        <a href="index.html#projects" class="nav-link dropdown-toggle" aria-expanded="false" aria-controls="projectMenu"><span>Proyek</span> <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu" id="projectMenu">
                             <li><a href="semester1.html" class="dropdown-link">Semester 1</a></li>
                             <li><a href="semester2.html" class="dropdown-link">Semester 2</a></li>
                             <li><a href="semester-1/pplterbimbing.html" class="dropdown-link">PPL Terbimbing</a></li>
                             <li><a href="semester2/ppl-mandiri.html" class="dropdown-link">PPL Mandiri</a></li>
                         </ul>
                     </li>
-                    <li><a href="inovasi.html" class="nav-link active" aria-current="page">Inovasi</a></li>
-                    <li>
-                        <button class="theme-toggle" id="themeToggle" type="button" title="Ubah tema" aria-label="Ubah tema">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                    </li>
+                    <li><a href="refleksi-ppg.html" class="nav-link">Refleksi PPG</a></li>
+                    <li><a href="inovasi.html" class="nav-link active">Inovasi</a></li>
+                    <li><button class="theme-toggle" id="themeToggle" type="button" title="Aktifkan mode gelap" aria-label="Aktifkan mode gelap"><i class="fas fa-moon" aria-hidden="true"></i></button></li>
                 </ul>
             </div>
         </div>
@@ -62,50 +328,279 @@
     <main class="innovation-page">
         <div class="container">
             <header class="innovation-hero">
-                <span class="badge">GAGASAN PEMBELAJARAN</span>
-                <h1 class="innovation-title">Inovasi <span>Pembelajaran Informatika</span></h1>
-                <p class="innovation-lead">Merancang pengalaman belajar yang kontekstual, inklusif, dan memberi ruang bagi setiap murid untuk bertumbuh.</p>
+                <span class="badge">LEMBAR KERJA 4 — DESAIN KARYA INOVATIF</span>
+                <h1 class="innovation-title">Spreadsheet-Based <span>Interactive Worksheet</span></h1>
+                <p class="innovation-lead">LKPD digital berbasis spreadsheet untuk murid Kelas VIII SMPN 18 Malang: otomatis tersimpan, efisien, dan mendorong keterlibatan seluruh murid.</p>
+
+                <div class="siw-meta">
+                    <span class="tag"><i class="fas fa-bullseye" style="margin-right:4px;"></i> Sasaran: Murid Kelas VIII</span>
+                    <span class="tag"><i class="fas fa-school" style="margin-right:4px;"></i> SMPN 18 Malang</span>
+                    <span class="tag"><i class="fas fa-table" style="margin-right:4px;"></i> Berbasis Spreadsheet</span>
+                    <span class="tag"><i class="fas fa-cloud-upload-alt" style="margin-right:4px;"></i> Auto-Save</span>
+                </div>
+
+                <!-- Artefak inti di hero: tautan utama -->
+                <div class="artifact-links" style="justify-content:center;">
+                    <!-- Tautan SIW view-only -->
+                    <a class="artifact-link" href="https://docs.google.com/spreadsheets/d/10qWIWSWhX7UM6-QiIyNAMkoGz1KmMQ0UO93l1F8Uzsk/edit?usp=sharing" target="_blank" rel="noopener">
+                        <i class="fas fa-up-right-from-square"></i> Tautan SIW (View-Only)
+                    </a>
+                    <!-- Dokumen LK 4 PDF -->
+                    <a class="artifact-link" href="https://drive.google.com/file/d/1NXRk-ne-0txlRqVr6GqCCM0OzAeq0FbA/view?usp=sharing" target="_blank" rel="noopener">
+                        <i class="fas fa-file-pdf"></i> Dokumen LK 4 (PDF)
+                    </a>
+                    <!-- Petunjuk Penggunaan -->
+                    <a class="artifact-link" href="https://drive.google.com/file/d/1J4pBCXesw_vUZBWl3Y_XnflH2cT04XbT/view?usp=drive_link" target="_blank" rel="noopener">
+                        <i class="fas fa-book"></i> Petunjuk Penggunaan
+                    </a>
+                </div>
             </header>
 
             <div class="innovation-grid">
+
+                <!-- ============================================
+                     POIN 1 — IDENTIFIKASI KEBUTUHAN DAN TANTANGAN
+                     ============================================ -->
                 <article class="about-copy-card innovation-card">
-                    <h2><i class="fas fa-book-open"></i>Latar Belakang</h2>
-                    <p>Pembelajaran Informatika mengajak murid memahami konsep sekaligus menggunakannya untuk memecahkan masalah. Namun, kesiapan awal, minat, dan akses terhadap perangkat digital dapat berbeda-beda. Pembelajaran yang hanya berpusat pada penjelasan dan satu jenis tugas berisiko membuat sebagian murid kurang terlibat atau kesulitan mengikuti materi.</p>
-                    <p>Karena itu, diperlukan rancangan belajar yang menghubungkan konsep dengan situasi dekat dengan kehidupan murid, menyediakan pilihan cara belajar, dan tetap dapat dijalankan ketika perangkat atau koneksi internet terbatas.</p>
+                    <h2><i class="fas fa-search"></i>Identifikasi Kebutuhan dan Tantangan</h2>
+
+                    <h3>Kebutuhan</h3>
+                    <ul class="innovation-list">
+                        <li>Pembelajaran membutuhkan LKPD yang dapat diakses guru dan murid serta otomatis tersimpan, tanpa perlu menyalin satu per satu dari PC masing-masing murid.</li>
+                        <li>Pada tugas kelompok (1 tugas untuk 2–3 murid), sering hanya satu murid yang mengerjakan. Murid lain tidak memahami dan tidak dapat menjelaskan hasil kerja kelompoknya.</li>
+                        <li>Cara konvensional di PC masing-masing memakan waktu lama karena murid harus mengetik data dan tabel dari awal. Dengan SIW, waktu lebih efisien karena murid dapat fokus pada pengerjaan rumus.</li>
+                    </ul>
+
+                    <h3>Tantangan</h3>
+                    <ul class="innovation-list">
+                        <li>Membutuhkan jaringan internet yang stabil.</li>
+                        <li>Ada risiko murid iseng mengutak-atik LKPD milik murid lain sehingga hasil pekerjaan terganggu.</li>
+                    </ul>
+
+                    <p><em>Temuan ini didukung catatan observasi kelas dan wawancara dengan guru mata pelajaran.</em></p>
                 </article>
 
+                <!-- ============================================
+                     POIN 2 — GAGASAN DAN TUJUAN INOVASI
+                     ============================================ -->
                 <article class="about-copy-card innovation-card">
-                    <h2><i class="fas fa-lightbulb"></i>Inovasi</h2>
-                    <p><strong>Informatika Berbasis Tantangan Kontekstual dan Pilihan Belajar</strong> adalah rancangan pembelajaran yang dimulai dari masalah nyata di sekitar murid. Murid mengeksplorasi konsep, bekerja secara mandiri atau berkolaborasi, lalu menyampaikan solusi dalam bentuk yang sesuai dengan tujuan belajar.</p>
+                    <h2><i class="fas fa-lightbulb"></i>Gagasan dan Tujuan Inovasi</h2>
+                    <p><strong>Gagasan kreatif:</strong> mengembangkan <strong>Spreadsheet-Based Interactive Worksheet (SIW)</strong>, yaitu LKPD digital berbasis spreadsheet yang menyediakan tabel data, soal, dan petunjuk pengerjaan secara lengkap. Murid hanya fokus mengisi sel kosong dengan rumus yang sesuai. LKPD diakses melalui satu tautan dari guru dan hasil kerja tersimpan otomatis, sehingga guru dapat memantau tanpa menyalin satu per satu. Struktur LKPD yang jelas juga mendorong seluruh anggota kelompok ikut terlibat.</p>
+
+                    <h3>Rumusan Tujuan</h3>
                     <ul class="innovation-list">
-                        <li>Memetakan kesiapan awal dan mengaitkan materi dengan pengalaman murid.</li>
-                        <li>Memberi tantangan bertahap dengan pilihan produk digital maupun unplugged.</li>
-                        <li>Menggunakan umpan balik formatif dan refleksi selama proses belajar.</li>
+                        <li>Menyediakan LKPD digital yang diakses bersama oleh guru dan murid serta tersimpan otomatis.</li>
+                        <li>Meningkatkan efisiensi dan efektivitas waktu pembelajaran, karena murid fokus pada rumus, bukan mengetik ulang data dan tabel.</li>
+                        <li>Mendorong keterlibatan seluruh murid melalui LKPD yang terstruktur.</li>
+                        <li>Memanfaatkan teknologi spreadsheet sebagai media pembelajaran interaktif yang relevan.</li>
+                    </ul>
+
+                    <h3>Kebaruan, Kreativitas, Relevansi, Kebermanfaatan, Keefektivitasan</h3>
+                    <ul class="innovation-list">
+                        <li><strong>Kebaruan:</strong> mengintegrasikan LKPD untuk pembelajaran Informatika kelas VIII dengan spreadsheet, yang belum pernah digunakan sebelumnya di SMPN 18 Malang.</li>
+                        <li><strong>Kreativitas:</strong> memadukan ide pembelajaran, teknologi spreadsheet, dan kebutuhan efisiensi waktu.</li>
+                        <li><strong>Relevansi:</strong> sesuai kebutuhan murid Kelas VIII, karakteristik kurikulum, dan perkembangan teknologi digital.</li>
+                        <li><strong>Kebermanfaatan:</strong> murid tidak perlu menyalin data dan soal satu per satu, sehingga menjadi lebih fokus pada inti pembelajaran.</li>
+                        <li><strong>Keefektivitasan:</strong> spreadsheet ini dirancang agar autosaved dan menyajikan LKPD yang lengkap, sehingga murid langsung mengerjakan bagian inti. Efektivitasnya akan diuji melalui tahapan evaluasi yang telah dirancang.</li>
                     </ul>
                 </article>
 
+                <!-- ============================================
+                     POIN 3 — RISET DAN PENGEMBANGAN SOLUSI
+                     ============================================ -->
                 <article class="about-copy-card innovation-card">
-                    <h2><i class="fas fa-puzzle-piece"></i>Masalah yang Dapat Diatasi</h2>
+                    <h2><i class="fas fa-flask"></i>Riset dan Pengembangan Solusi</h2>
+                    <p><strong>Hasil riset sederhana:</strong> sudah banyak e-LKPD berbasis Google Forms, Quizizz, atau platform lain. Namun, sebagian besar belum mengintegrasikan fitur spreadsheet langsung dalam satu lembar kerja, yang memungkinkan murid mengerjakan rumus secara otomatis dan tersimpan secara real-time. SIW menawarkan pendekatan berbeda: spreadsheet menjadi wadah LKPD interaktif yang lengkap dengan tabel, soal, dan petunjuk, serta diakses melalui tautan yang dibagikan guru.</p>
+
+                    <h3>Rancangan Prototipe</h3>
                     <ul class="innovation-list">
-                        <li>Partisipasi dan motivasi belajar yang belum merata.</li>
-                        <li>Perbedaan pengetahuan awal serta kecepatan belajar murid.</li>
-                        <li>Keterbatasan perangkat atau koneksi melalui alternatif aktivitas tanpa perangkat.</li>
-                        <li>Kesulitan memahami konsep abstrak dengan bantuan tantangan yang dekat dengan konteks sehari-hari.</li>
-                        <li>Kurangnya umpan balik proses melalui pemeriksaan pemahaman dan refleksi berkala.</li>
+                        <li><strong>Sheet pertama (Daftar Nama):</strong> berisi kumpulan nama murid. Setiap nama dapat diklik dan mengarah ke sheet yang bersangkutan.</li>
+                        <li><strong>Sheet nama murid:</strong> berisi LKPD lengkap dengan tabel data, soal, dan petunjuk pengerjaan. Murid mengisi sel kosong dengan rumus yang sesuai.</li>
+                        <li><strong>Akses:</strong> guru menampilkan tautan di proyektor, lalu murid mengetik tautan tersebut pada browser PC masing-masing.</li>
+                        <li><strong>Penyimpanan:</strong> hasil pekerjaan tersimpan otomatis pada spreadsheet sehingga guru dapat memantau tanpa menyalin manual.</li>
+                    </ul>
+                    <p><em>Prototipe dapat dilihat melalui tautan SIW (view-only) dan file prototipe pada e-portofolio.</em></p>
+                </article>
+
+                <!-- ============================================
+                     POIN 4 — IMPLEMENTASI DAN PENERAPAN
+                     ============================================ -->
+                <article class="about-copy-card innovation-card">
+                    <h2><i class="fas fa-play-circle"></i>Implementasi dan Penerapan</h2>
+                    <p>Karya inovasi SIW <strong>telah diimplementasikan</strong> dalam pembelajaran Informatika materi Excel di kelas VIII SMPN 18 Malang, dan telah digunakan beberapa kali pada pembelajaran. Proses implementasinya sebagai berikut.</p>
+
+                    <h3>Proses Implementasi</h3>
+                    <ul class="innovation-list">
+                        <li><strong>Persiapan:</strong> guru menyusun file SIW yang terdiri atas sheet "Daftar Murid" (berisi nama murid dengan hyperlink), sheet LKPD per murid, serta melakukan proteksi sel (<em>locked cell</em>) pada bagian instruksi, format, dan rumus. File disiapkan pada PC lab/akun spreadsheet yang digunakan murid.</li>
+                        <li><strong>Sosialisasi kepada murid:</strong> guru menjelaskan cara membuka file, mengklik nama pada sheet "Daftar Murid" untuk menuju sheet LKPD masing-masing, serta aturan bahwa hanya sel tertentu yang boleh diisi.</li>
+                        <li><strong>Pelaksanaan pembelajaran:</strong> murid membuka file SIW, mengklik namanya, lalu langsung mengerjakan LKPD pada sheet miliknya. Murid tidak perlu copy-paste file karena LKPD sudah siap di sheet masing-masing.</li>
+                        <li><strong>Penilaian oleh guru:</strong> guru menghampiri meja masing-masing murid, meminta murid menjelaskan apa yang telah dikerjakan pada LKPD-nya, kemudian guru menilai berdasarkan proses penjelasan dan hasil kerja murid tersebut. Nilai tidak ditampilkan pada spreadsheet, melainkan dicatat oleh guru secara terpisah. Dengan SIW, guru tetap dapat membuka satu file yang sama untuk melihat hasil kerja seluruh murid sebagai dasar penilaian, sehingga guru tidak perlu lagi meng-copy file dari tiap PC. Namun, karena penilaian dilakukan melalui penjelasan murid, guru tetap mendatangi meja murid, yang menjadi lebih efisien karena semua hasil kerja sudah terpusat dalam satu file dan dapat dibuka kapan saja tanpa berpindah-pindah PC untuk mengambil file.</li>
+                        <li><strong>Umpan balik:</strong> umpan balik diberikan guru secara langsung (lisan) saat murid menjelaskan hasil pekerjaannya di meja masing-masing. Guru mengonfirmasi bagian yang sudah benar, menunjukkan bagian yang perlu diperbaiki, dan memberikan arahan perbaikan. Karena seluruh hasil kerja murid terpusat dalam satu file SIW, guru dapat membuka kembali file tersebut untuk mengecek ulang pekerjaan murid saat memberikan umpan balik lanjutan atau saat murid melakukan perbaikan. Umpan balik tidak dituliskan pada spreadsheet, melainkan disampaikan langsung kepada murid dan dicatat guru secara terpisah sebagai bagian dari penilaian proses.</li>
+                    </ul>
+
+                    <h3>Kendala yang Ditemukan</h3>
+                    <ul class="innovation-list">
+                        <li>Murid lain kadang "iseng" membuka sheet LKPD teman karena navigasi antar-sheet masih terbuka.</li>
+                    </ul>
+
+                    <h3>Rencana Perbaikan (Pengembangan)</h3>
+                    <ul class="innovation-list">
+                        <li>Menerapkan <em>protect sheet</em> per murid dengan izin terbatas.</li>
+                        <li>Memanfaatkan Google Apps Script untuk navigasi berbasis ID/login murid dan log aktivitas (mencatat siapa membuka sheet siapa).</li>
+                        <li>Alternatif: memindahkan LKPD ke LMS/Google Classroom dengan file terpisah per murid bila diperlukan.</li>
                     </ul>
                 </article>
 
-                <article class="about-copy-card innovation-card">
-                    <h2><i class="fas fa-seedling"></i>Tindak Lanjut dan Pengembangan</h2>
-                    <p>Inovasi ini perlu diuji secara bertahap dan disesuaikan dengan kebutuhan kelas, bukan dianggap sebagai solusi yang langsung cocok untuk semua situasi.</p>
-                    <ul class="innovation-list">
-                        <li>Melaksanakan uji coba pada satu topik dan mengumpulkan hasil kerja, umpan balik, serta refleksi murid.</li>
-                        <li>Mengevaluasi ketercapaian tujuan, keterlibatan, dan aksesibilitas aktivitas.</li>
-                        <li>Merevisi tantangan, panduan, rubrik, dan pilihan aktivitas berdasarkan temuan uji coba.</li>
-                        <li>Mengembangkan bank tantangan dan berbagi praktik baik dengan rekan pendidik untuk penerapan pada topik lain.</li>
-                    </ul>
+                <!-- ============================================
+                     POIN 5 — EVALUASI (FULL-WIDTH, TABEL, TANPA ARTEFAK)
+                     ============================================ -->
+                <article class="about-copy-card innovation-card full-width">
+                    <h2><i class="fas fa-chart-line"></i>Evaluasi</h2>
+                    <p>Evaluasi dilakukan dalam lima tahap untuk mengukur tingkat keberhasilan SIW.</p>
+                    <div class="principle-table-wrap">
+                        <table class="principle-table eval-table">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Tahapan Evaluasi</th>
+                                    <th>Instrumen / Data</th>
+                                    <th>Indikator Keberhasilan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Evaluasi Proses (selama implementasi)</td>
+                                    <td>Observasi kelancaran siswa membuka file, mengklik nama, dan mengerjakan LKPD pada sheet masing-masing; pencatatan kendala teknis (akses file, proteksi sel, gangguan antar-siswa yang membuka sheet teman).</td>
+                                    <td>Link mudah diakses, navigasi antar sheet lancar, dan murid terlibat aktif mengerjakan LKPD.</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Evaluasi Hasil Kerja Siswa</td>
+                                    <td>Ketuntasan dan kelengkapan hasil kerja siswa pada LKPD di sheet masing-masing; kemudahan guru memeriksa hasil kerja seluruh siswa dalam satu file; kualitas penjelasan siswa saat diminta menjelaskan pekerjaannya.</td>
+                                    <td>Hasil kerja siswa lengkap dan tuntas; guru mudah memeriksa dalam satu file; penjelasan siswa mencerminkan pemahaman materi.</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Evaluasi Efisiensi bagi Guru</td>
+                                    <td>Kemudahan guru melanjutkan penilaian proses tanpa harus copy file dari tiap PC; ketersediaan rekapan hasil kerja yang lengkap dan terpusat.</td>
+                                    <td>Guru tidak perlu menyalin file dari tiap PC; rekapan hasil kerja lengkap dan terpusat tersedia.</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Evaluasi Respon Pengguna</td>
+                                    <td>Refleksi guru terhadap kelebihan dan kelemahan selama beberapa kali implementasi.</td>
+                                    <td>Guru dapat mengidentifikasi kelebihan dan kelemahan SIW sebagai dasar perbaikan.</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Tindak Lanjut</td>
+                                    <td>Memperbaiki kelemahan berdasarkan hasil evaluasi, terutama kendala siswa "iseng" membuka sheet teman (mis. proteksi sheet per siswa, atau Google Apps Script dengan log aktivitas).</td>
+                                    <td>Dihasilkan daftar revisi SIW, terutama terkait pengelolaan akses antar murid.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </article>
+
+                <!-- ============================================
+                     POIN 6 — PRINSIP KARYA INOVASI PENDIDIKAN
+                     (diletakkan paling akhir, full-width)
+                     ============================================ -->
+                <article class="about-copy-card innovation-card full-width">
+                    <h2><i class="fas fa-award"></i>Prinsip Karya Inovasi Pendidikan</h2>
+                    <div class="principle-table-wrap">
+                        <table class="principle-table">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Prinsip</th>
+                                    <th>Penjelasan Singkat</th>
+                                    <th>Keterkaitan dengan SIW</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Kebaruan (Novelty)</td>
+                                    <td>Produk mengandung unsur baru, baik ide, pendekatan, maupun cara penerapan yang belum pernah digunakan sebelumnya dalam konteks yang sama.</td>
+                                    <td>Integrasi LKPD pembelajaran Informatika kelas VIII dengan spreadsheet yang belum pernah digunakan sebelumnya di SMPN 18 Malang.</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Kreativitas</td>
+                                    <td>Dihasilkan melalui proses berpikir kreatif yang mengombinasikan ide, teori, atau teknologi untuk memecahkan masalah pendidikan.</td>
+                                    <td>Memadukan ide pembelajaran, teknologi spreadsheet, dan kebutuhan efisiensi waktu menjadi solusi inovatif.</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Kebermanfaatan (Usefulness)</td>
+                                    <td>Memberikan nilai tambah bagi peserta didik, guru, atau lembaga pendidikan dalam meningkatkan efektivitas dan efisiensi pembelajaran.</td>
+                                    <td>Murid tidak perlu menyalin data dan soal satu per satu sehingga lebih fokus pada inti pembelajaran; guru dapat memantau hasil kerja secara terpusat.</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Relevansi dan Kontekstualitas</td>
+                                    <td>Sesuai dengan kebutuhan peserta didik, karakteristik kurikulum, serta perkembangan teknologi dan masyarakat.</td>
+                                    <td>Sesuai kebutuhan murid Kelas VIII, karakteristik kurikulum, dan perkembangan teknologi digital.</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Efektivitas Terbukti (Evidence-Based)</td>
+                                    <td>Teruji melalui uji coba atau penelitian yang menunjukkan adanya peningkatan hasil belajar, motivasi, atau keterampilan.</td>
+                                    <td>Spreadsheet dirancang autosaved dan menyajikan LKPD lengkap sehingga murid langsung mengerjakan bagian inti; efektivitasnya diuji melalui tahapan evaluasi yang telah dirancang.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+
             </div>
+
+            <!-- ============================================
+                 GALERI DOKUMENTASI (BUKTI VISUAL TERPUSAT)
+                 ============================================ -->
+            <section aria-labelledby="galeriDokumentasi">
+                <div class="section-heading artifact-section-heading">
+                    <span class="eyebrow">Dokumentasi</span>
+                    <h2 id="galeriDokumentasi">Galeri <span class="accent">Artefak &amp; Dokumentasi</span></h2>
+                    <p>Kumpulan bukti visual pendukung karya inovasi SIW</p>
+                </div>
+
+                <div class="artifact-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                    <!-- Screenshot sheet Daftar Nama -->
+                    <figure class="artifact-item">
+                        <div class="artifact-slot has-media">
+                            <img src="assets/images/DaftarNamaSIW.png" alt="Screenshot sheet Daftar Nama pada SIW">
+                        </div>
+                        <figcaption class="artifact-caption">
+                            <strong>Sheet "Daftar Nama"</strong>
+                            Navigasi nama → sheet LKPD masing-masing.
+                        </figcaption>
+                    </figure>
+                    <!-- Screenshot sheet LKPD siswa -->
+                    <figure class="artifact-item">
+                        <div class="artifact-slot has-media">
+                            <img src="assets/images/lkpdSIW.png" alt="Screenshot sheet LKPD siswa pada SIW">
+                        </div>
+                        <figcaption class="artifact-caption">
+                            <strong>Sheet LKPD Siswa</strong>
+                            Tabel, soal, petunjuk, dan sel kosong untuk rumus.
+                        </figcaption>
+                    </figure>
+                    <!-- Foto implementasi -->
+                    <figure class="artifact-item">
+                        <div class="artifact-slot has-media">
+                            <img src="assets/images/implementasiSIW.png" alt="Foto implementasi SIW">
+                        </div>
+                        <figcaption class="artifact-caption">
+                            <strong>Implementasi di Kelas</strong>
+                            Murid mengerjakan SIW di PC.
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+
         </div>
     </main>
 

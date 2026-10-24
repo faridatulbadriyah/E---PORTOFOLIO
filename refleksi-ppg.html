@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Refleksi pengalaman belajar Faridatul Badriyah selama mengikuti Program PPG Prajabatan Informatika.">
+    <meta name="author" content="Faridatul Badriyah">
+    <title>Refleksi PPG | Faridatul Badriyah</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/refleksi-ppg.css">
+</head>
+<body>
+    <div class="bg-layer" aria-hidden="true">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+
+    <nav class="navbar" id="siteHeader" aria-label="Navigasi utama">
+        <div class="container">
+            <div class="nav-content">
+                <a class="logo" href="index.html" aria-label="Kembali ke beranda">
+                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                    <span>Faridatul Badriyah</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html#home" class="nav-link">Beranda</a></li>
+                    <li><a href="pages/tentang-saya.html" class="nav-link">Tentang Saya</a></li>
+                    <li><a href="index.html#skills" class="nav-link">Keterampilan</a></li>
+                    <li class="dropdown">
+                        <a href="index.html#projects" class="nav-link dropdown-toggle" aria-expanded="false" aria-controls="projectMenu"><span>Proyek</span> <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu" id="projectMenu">
+                            <li><a href="semester1.html" class="dropdown-link">Semester 1</a></li>
+                            <li><a href="semester2.html" class="dropdown-link">Semester 2</a></li>
+                            <li><a href="semester-1/pplterbimbing.html" class="dropdown-link">PPL Terbimbing</a></li>
+                            <li><a href="semester2/ppl-mandiri.html" class="dropdown-link">PPL Mandiri</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="refleksi-ppg.html" class="nav-link active">Refleksi PPG</a></li>
+                    <li><a href="inovasi.html" class="nav-link">Inovasi</a></li>
+                    <li><button class="theme-toggle" id="themeToggle" type="button" title="Aktifkan mode gelap" aria-label="Aktifkan mode gelap"><i class="fas fa-moon" aria-hidden="true"></i></button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="reflection-hero">
+            <div class="container reflection-hero-content">
+                <span class="badge">REFLEKSI PENGALAMAN BELAJAR • PPG INFORMATIKA</span>
+                <h1>Belajar Menjadi Guru,<br><span>Belajar Bertumbuh Bersama Murid</span></h1>
+                <p>
+                    Saya menulis refleksi ini dengan melihat kembali proses belajar, praktik mengajar,
+                    dan catatan perbaikan selama PPG. Pengalaman di kelas membantu saya memahami bahwa
+                    mengajar bukan hanya menyampaikan materi, melainkan juga membaca kebutuhan murid
+                    dan bertanggung jawab atas proses belajarnya.
+                </p>
+                <div class="reflection-meta">
+                    <span><i class="fas fa-user" aria-hidden="true"></i> Faridatul Badriyah</span>
+                    <span><i class="fas fa-laptop-code" aria-hidden="true"></i> Bidang Informatika</span>
+                </div>
+            </div>
+        </header>
+
+        <nav class="reflection-nav" aria-label="Daftar bagian refleksi">
+            <div class="container">
+                <a href="#perjalanan"><span>01</span> Perjalanan Belajar</a>
+                <a href="#pengetahuan-praktik"><span>02</span> Pengetahuan &amp; Praktik</a>
+                <a href="#pandangan-pendidikan"><span>03</span> Pandangan Pendidikan</a>
+                <a href="#guru-profesional"><span>04</span> Guru Profesional</a>
+                <a href="#rencana-tindak-lanjut"><span>05</span> Rencana Tindak Lanjut</a>
+            </div>
+        </nav>
+
+        <section class="reflection-section" id="perjalanan">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">01 • Perjalanan Belajar</span>
+                    <h2>Dari mengajar materi <span class="accent">menuju mendampingi proses</span></h2>
+                    <p>Perubahan pemahaman saya tumbuh bertahap: dari perkuliahan, praktik dengan bimbingan, hingga tanggung jawab mengajar yang lebih mandiri.</p>
+                </div>
+                <div class="reflection-card journey-card">
+                    <div class="before-after">
+                        <article>
+                            <span class="journey-label">Sebelum PPG</span>
+                            <h3>Guru sebagai penyampai materi</h3>
+                            <p>
+                                Sebelum mengikuti PPG, saya cenderung melihat tugas guru dari hal yang paling tampak misalnya
+                                menjelaskan materi, menyiapkan tugas, dan menjaga kelas tetap berjalan. 
+                            </p>
+                        </article>
+                        <article>
+                            <span class="journey-label">Sesudah PPG</span>
+                            <h3>Guru sebagai perancang dan pembelajar</h3>
+                            <p>
+                                Setelah mengikuti PPG, saya semakin memahami bahwa menjadi guru bukan sekadar menyampaikan materi di kelas,
+                                tetapi juga memerlukan persiapan, kepekaan, dan kemampuan untuk terus mengevaluasi proses pembelajaran.
+                                Seorang guru perlu memahami karakteristik dan kebutuhan murid, merancang pembelajaran yang sesuai,
+                                memantau pemahaman murid, serta memberikan pendampingan berdasarkan kemampuan mereka yang beragam.
+                                Saya juga menyadari bahwa hasil asesmen bukan hanya digunakan untuk mengukur pencapaian murid,
+                                tetapi juga menjadi bahan refleksi bagi guru untuk memperbaiki dan meningkatkan kualitas pembelajaran ke depannya.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <span class="timeline-marker">S1</span>
+                        <div class="reflection-card">
+                            <h3>Semester 1: membangun landasan</h3>
+                            <p>
+                                Perkuliahan seperti Pemahaman tentang Peserta Didik dan Pembelajaran, Computational
+                                Thinking, serta Pembelajaran Mendalam dan Asesmen Dasar memberi saya bahasa dan
+                                kerangka untuk merancang pembelajaran. Saya mulai menghubungkan tujuan, aktivitas,
+                                dan cara melihat pemahaman murid, bukan hanya menuntaskan materi.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <span class="timeline-marker">PT</span>
+                        <div class="reflection-card">
+                            <h3>PPL Terbimbing: mencoba, menerima umpan balik, memperbaiki</h3>
+                            <p>
+                                Praktik dalam tiga siklus membuat rencana pembelajaran bertemu dengan keadaan kelas.
+                                Pada Siklus 2, waktu praktik untuk tiga fitur Ms. Word ternyata tidak cukup; saya
+                                mencatat tindak lanjut untuk memprioritaskan dua fitur utama dan menjadikan sisanya
+                                pengayaan. Demonstrasi langsung dengan proyektor membantu murid mengikuti langkah
+                                praktik dengan lebih jelas.
+                            </p>
+                            <a class="evidence-link" href="semester-1/ppl-terbimbing/siklus-2.html">
+                                Baca refleksi PPL Terbimbing Siklus 2 <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <span class="timeline-marker">S2</span>
+                        <div class="reflection-card">
+                            <h3>Semester 2: memperdalam asesmen dan relasi</h3>
+                            <p>
+                                Pembelajaran Sosial Emosional dan Pembelajaran Mendalam dan Asesmen Lanjut
+                                mengingatkan saya bahwa rancangan belajar perlu memperhatikan hubungan dengan
+                                murid sekaligus bukti ketercapaian tujuan. Saya belajar untuk tidak menganggap
+                                satu cara penyampaian atau satu bentuk asesmen akan selalu sesuai bagi semua murid.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <span class="timeline-marker">PM</span>
+                        <div class="reflection-card">
+                            <h3>PPL Mandiri: bertanggung jawab atas keputusan pembelajaran</h3>
+                            <p>
+                                Dalam PPL Mandiri, saya berlatih mengambil tanggung jawab lebih utuh atas persiapan,
+                                pelaksanaan, dan tindak lanjut pembelajaran. Pengalaman asesmen daring memperlihatkan
+                                bahwa kesiapan tautan saja belum cukup: ketika beberapa murid kesulitan membuka
+                                Google Form, saya perlu menyediakan tautan alternatif dan bantuan melalui WhatsApp.
+                            </p>
+                            <a class="evidence-link" href="semester2/ppl-mandiri/siklus-3.html">
+                                Baca refleksi PPL Mandiri Siklus 3 <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="reflection-section section-tint" id="pengetahuan-praktik">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">02 • Pengetahuan dan Praktik</span>
+                    <h2>Empat bekal yang <span class="accent">saya bawa ke kelas</span></h2>
+                    <p>Nilai mata kuliah terasa ketika saya menggunakannya untuk membaca situasi nyata dan menentukan langkah berikutnya.</p>
+                </div>
+                <div class="course-grid">
+                    <article class="reflection-card course-card">
+                        <span class="course-number">01</span>
+                        <h3>Pemahaman tentang Peserta Didik dan Pembelajaran</h3>
+                        <p>
+                            Mata kuliah ini mengingatkan saya bahwa kesiapan dan akses belajar murid tidak selalu
+                            sama. Dalam asesmen daring Siklus 3, saya menyiapkan tautan alternatif dan memberi
+                            bantuan melalui WhatsApp ketika beberapa murid tidak dapat mengakses Google Form.
+                        </p>
+                        <a class="evidence-link" href="semester-1/mata-kuliah/pemahaman-peserta-didik-dan-pembelajaran.html">Dokumentasi mata kuliah</a>
+                    </article>
+                    <article class="reflection-card course-card">
+                        <span class="course-number">02</span>
+                        <h3>Computational Thinking</h3>
+                        <p>
+                            Berpikir komputasional membantu saya memecah pekerjaan menjadi urutan yang dapat
+                            diikuti. Dalam praktik fitur Ms. Word, demonstrasi langsung dan langkah yang disusun
+                            bertahap membantu murid mencoba fitur satu per satu, alih-alih menghadapi semua
+                            instruksi sekaligus.
+                        </p>
+                        <a class="evidence-link" href="semester-1/mata-kuliah/computational-thinking.html">Dokumentasi mata kuliah</a>
+                    </article>
+                    <article class="reflection-card course-card">
+                        <span class="course-number">03</span>
+                        <h3>Pembelajaran Mendalam dan Asesmen Dasar</h3>
+                        <p>
+                            Saya belajar menyelaraskan kegiatan dan cara mengecek hasil belajar. Saat waktu praktik
+                            Siklus 2 tidak cukup untuk tiga fitur, refleksi saya adalah memusatkan kegiatan pada
+                            dua fitur utama dan memindahkan satu fitur lain menjadi pengayaan. Pengalaman itu
+                            membuat alokasi waktu menjadi bagian penting dari rancangan asesmen dan aktivitas.
+                        </p>
+                        <a class="evidence-link" href="semester-1/mata-kuliah/pma-dasar.html">Dokumentasi mata kuliah</a>
+                    </article>
+                    <article class="reflection-card course-card">
+                        <span class="course-number">04</span>
+                        <h3>Pembelajaran Sosial Emosional</h3>
+                        <p>
+                            Bagi saya, mendampingi murid juga berarti tetap membuka jalur komunikasi saat mereka
+                            menemui hambatan. Pada asesmen daring Siklus 3, bantuan personal melalui WhatsApp
+                            menjadi salah satu cara agar murid yang kesulitan mengakses formulir tetap dapat
+                            meminta bantuan dan melanjutkan tugas.
+                        </p>
+                        <a class="evidence-link" href="semester2/mata-kuliah/pembelajaran-sosial-emosional.html">Dokumentasi mata kuliah</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="reflection-section" id="pandangan-pendidikan">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">03 • Pandangan tentang Pendidikan Indonesia setelah PPG</span>
+                    <h2>Pendidikan yang memberi ruang <span class="accent">bagi setiap murid</span></h2>
+                    <p class="required-answer">Jawaban LK 3(a) — Pandangan saya tentang pendidikan Indonesia setelah PPG</p>
+                    <p>
+                        Setelah mengikuti PPG, saya memandang pendidikan Indonesia perlu memberi setiap murid
+                        kesempatan belajar yang bermutu, tanpa mengabaikan perbedaan kesiapan, akses, dan cara
+                        mereka menunjukkan pemahaman. Pandangan ini saya bangun dari hal-hal yang saya temui
+                        saat PPL, bukan dari anggapan bahwa satu metode cocok untuk semua.
+                    </p>
+                </div>
+                <div class="vision-grid">
+                    <article class="reflection-card vision-card">
+                        <span class="vision-index"><i class="fas fa-arrows-rotate" aria-hidden="true"></i> Visi 1</span>
+                        <h3>Adaptif</h3>
+                        <p>
+                            Saya ingin pembelajaran mampu menyesuaikan diri ketika rencana bertemu hambatan.
+                            Pada asesmen Google Form Siklus 3, beberapa murid mengalami kendala akses; tautan
+                            alternatif dan bantuan melalui WhatsApp menjadi respons yang lebih berguna daripada
+                            sekadar mengulang instruksi yang sama.
+                        </p>
+                    </article>
+                    <article class="reflection-card vision-card">
+                        <span class="vision-index"><i class="fas fa-laptop-code" aria-hidden="true"></i> Visi 2</span>
+                        <h3>Berdaya saing</h3>
+                        <p>
+                            Saya memaknai daya saing sebagai kemampuan menggunakan pengetahuan dan teknologi
+                            untuk menghasilkan karya, bukan sekadar mengenal aplikasi. Dalam praktik fitur Ms.
+                            Word, murid berlatih menerapkan fitur lanjutan melalui demonstrasi dan tugas praktik.
+                            Saya juga belajar membatasi target ketika waktu tidak cukup agar keterampilan utama
+                            benar-benar sempat dilatih.
+                        </p>
+                    </article>
+                    <article class="reflection-card vision-card">
+                        <span class="vision-index"><i class="fas fa-heart" aria-hidden="true"></i> Visi 3</span>
+                        <h3>Berkarakter</h3>
+                        <p>
+                            Karakter tumbuh melalui kebiasaan belajar bersama dan menghargai kontribusi orang
+                            lain. Catatan Siklus 1 menunjukkan tidak semua kelompok mendapat giliran presentasi.
+                            Bagi saya, ini menjadi pengingat konkret untuk membagi durasi presentasi dengan adil
+                            agar kesempatan berbicara tidak hanya dimiliki kelompok yang lebih cepat.
+                        </p>
+                    </article>
+                    <article class="reflection-card vision-card">
+                        <span class="vision-index"><i class="fas fa-comments" aria-hidden="true"></i> Visi 4</span>
+                        <h3>Interaktif dan bermakna</h3>
+                        <p>
+                            Pembelajaran lebih bermakna ketika murid mencoba, melihat contoh, lalu membahas
+                            hasilnya. Demonstrasi fitur secara langsung melalui proyektor pada Siklus 2 membantu
+                            murid mengikuti praktik. Ke depan, saya ingin menyediakan cukup waktu untuk bertanya,
+                            mencoba, dan berbagi hasil, bukan hanya menyelesaikan daftar materi.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="reflection-section section-tint" id="guru-profesional">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">04 • Upaya Menjadi Guru Profesional</span>
+                    <h2>Profesionalisme dibangun <span class="accent">melalui tindakan</span></h2>
+                    <p class="required-answer">Jawaban LK 3(b) — Upaya yang akan saya lakukan untuk menjadi guru profesional</p>
+                    <p>
+                        Saya akan mengembangkan profesionalisme melalui kebiasaan yang dapat diamati dan
+                        dievaluasi: menggunakan teknologi dengan pertimbangan akses, terus berlatih, mengikuti
+                        perubahan pendidikan, dan merefleksikan pembelajaran secara rutin.
+                    </p>
+                </div>
+                <div class="action-list">
+                    <article class="reflection-card action-card">
+                        <span class="action-icon"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i></span>
+                        <div>
+                            <h3>Beradaptasi dengan teknologi</h3>
+                            <p>
+                                Sebelum membagikan asesmen digital, saya akan menguji tautan dari perangkat berbeda,
+                                menyiapkan alternatif sederhana, dan memberi petunjuk pengumpulan yang jelas.
+                                Langkah ini saya ambil dari pengalaman murid yang kesulitan membuka Google Form
+                                saat PPL.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="reflection-card action-card">
+                        <span class="action-icon"><i class="fas fa-toolbox" aria-hidden="true"></i></span>
+                        <div>
+                            <h3>Mengembangkan keterampilan mengajar</h3>
+                            <p>
+                                Saya akan berlatih merancang demonstrasi singkat, instruksi bertahap, dan alokasi
+                                waktu yang realistis. Catatan Siklus 2 tentang tiga fitur yang tidak cukup
+                                dikerjakan dalam satu sesi akan saya gunakan untuk menentukan prioritas serta
+                                menyiapkan kegiatan pengayaan.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="reflection-card action-card">
+                        <span class="action-icon"><i class="fas fa-book-open" aria-hidden="true"></i></span>
+                        <div>
+                            <h3>Memahami perkembangan pendidikan</h3>
+                            <p>
+                                Setiap awal semester, saya akan menelaah kembali kurikulum, panduan asesmen,
+                                dan kebijakan pendidikan dari sumber resmi, lalu mencatat dampaknya terhadap
+                                tujuan serta rancangan pembelajaran Informatika yang saya susun.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="reflection-card action-card">
+                        <span class="action-icon"><i class="fas fa-rotate" aria-hidden="true"></i></span>
+                        <div>
+                            <h3>Membiasakan diri berefleksi</h3>
+                            <p>
+                                Setelah mengajar, saya akan mencatat bagian yang berjalan baik, bukti kesulitan
+                                murid, dan satu perubahan untuk pertemuan berikutnya. Catatan tentang transisi
+                                kegiatan, alokasi waktu, serta kesempatan presentasi pada PPL menjadi contoh
+                                aspek yang perlu saya pantau.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="reflection-section" id="rencana-tindak-lanjut">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">05 • Rencana Tindak Lanjut</span>
+                    <h2>Tiga komitmen saat <span class="accent">memulai karier</span></h2>
+                    <p class="required-answer">Jawaban LK 3(c) — Tiga hal penting yang akan saya lakukan saat mulai menjadi guru</p>
+                    <p>Rencana ini saya susun sebagai langkah awal yang dapat ditinjau kembali berdasarkan kebutuhan murid dan konteks sekolah.</p>
+                </div>
+                <div class="rtl-list">
+                    <article class="reflection-card rtl-card">
+                        <span class="rtl-number">01</span>
+                        <div class="rtl-content">
+                            <h3>Mengenali murid dan membangun rutinitas belajar yang aman</h3>
+                            <p>
+                                Pada bulan pertama, saya akan mengenali pengalaman awal, minat, dan kebutuhan
+                                akses murid melalui percakapan serta asesmen awal. Saya akan menyepakati cara
+                                bertanya, bekerja kelompok, dan meminta bantuan agar murid memahami bagaimana
+                                mereka dapat berpartisipasi.
+                            </p>
+                            <dl class="rtl-measure">
+                                <div><dt>Waktu</dt><dd>Bulan pertama mengajar; ditinjau tiap awal semester.</dd></div>
+                                <div><dt>Indikator</dt><dd>Catatan asesmen awal tersedia, kebutuhan dukungan tercatat, dan rutinitas kelas disepakati bersama murid.</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+                    <article class="reflection-card rtl-card">
+                        <span class="rtl-number">02</span>
+                        <div class="rtl-content">
+                            <h3>Merancang pembelajaran Informatika yang terjangkau dan memberi kesempatan praktik</h3>
+                            <p>
+                                Pada setiap unit, saya akan merancang tujuan, demonstrasi, waktu praktik,
+                                pemeriksaan pemahaman, serta alternatif jika perangkat atau koneksi menjadi
+                                kendala. Saya akan menjaga agar tugas inti realistis dikerjakan dalam waktu
+                                tersedia dan memberi ruang bagi murid untuk menunjukkan proses maupun hasilnya.
+                            </p>
+                            <dl class="rtl-measure">
+                                <div><dt>Waktu</dt><dd>Sebelum setiap unit; dievaluasi setelah setiap pertemuan.</dd></div>
+                                <div><dt>Indikator</dt><dd>Setiap modul memiliki tujuan dan asesmen yang selaras, estimasi waktu praktik, alternatif akses, serta catatan hasil belajar murid.</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+                    <article class="reflection-card rtl-card">
+                        <span class="rtl-number">03</span>
+                        <div class="rtl-content">
+                            <h3>Belajar bersama rekan dan memperbaiki praktik secara berkala</h3>
+                            <p>
+                                Setiap bulan, saya akan mendiskusikan satu pengalaman mengajar dengan rekan
+                                guru atau komunitas belajar, meminta umpan balik, dan memilih satu perubahan
+                                kecil untuk dicoba. Saya akan menyimpan catatan dan contoh hasil belajar sebagai
+                                jejak perkembangan profesional.
+                            </p>
+                            <dl class="rtl-measure">
+                                <div><dt>Waktu</dt><dd>Minimal satu kali setiap bulan dan setelah kegiatan belajar yang penting.</dd></div>
+                                <div><dt>Indikator</dt><dd>Tersimpan satu refleksi dan umpan balik per bulan, beserta satu tindakan perbaikan yang dicoba pada pembelajaran berikutnya.</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+                </div>
+                <div class="closing-note">
+                    <p>
+                        Saya belum menganggap proses menjadi guru profesional selesai setelah PPG. Saya ingin
+                        membawa catatan pengalaman ini ke ruang kelas berikutnya, mengujinya dalam konteks
+                        yang nyata, dan bersedia memperbaiki keputusan ketika bukti belajar murid menunjukkan
+                        bahwa mereka membutuhkan hal yang berbeda.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h2>E-Portofolio Farida</h2>
+                    <p>Refleksi pengalaman belajar dan pengembangan profesional selama PPG Prajabatan Informatika.</p>
+                </div>
+                <div>
+                    <h3>Navigasi</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Beranda</a>
+                        <a href="index.html#projects">Proyek</a>
+                        <a href="refleksi-ppg.html">Refleksi PPG</a>
+                        <a href="inovasi.html">Inovasi</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Dokumentasi PPL</h3>
+                    <div class="footer-links">
+                        <a href="semester-1/ppl-terbimbing/siklus-2.html">PPL Terbimbing</a>
+                        <a href="semester2/ppl-mandiri/siklus-3.html">PPL Mandiri</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2026</span> Faridatul Badriyah &bull; PPG E-Portofolio</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

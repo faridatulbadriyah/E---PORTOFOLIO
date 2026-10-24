@@ -41,15 +41,20 @@
 
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', function() {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('open');
+            const isOpen = navLinks.classList.toggle('open');
+            menuToggle.classList.toggle('active', isOpen);
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi');
         });
 
         // Close menu on link click (mobile)
         navLinks.querySelectorAll('a').forEach(function(link) {
             link.addEventListener('click', function() {
+                if (link.classList.contains('dropdown-toggle')) return;
                 menuToggle.classList.remove('active');
                 navLinks.classList.remove('open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Buka menu navigasi');
             });
         });
     }
@@ -112,11 +117,13 @@ window.addEventListener('load', updateActiveLink);
             root.setAttribute('data-theme', 'dark');
             themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
             themeToggle.title = 'Aktifkan mode terang';
+            themeToggle.setAttribute('aria-label', 'Aktifkan mode terang');
             localStorage.setItem('theme', 'dark');
         } else {
             root.removeAttribute('data-theme');
             themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
             themeToggle.title = 'Aktifkan mode gelap';
+            themeToggle.setAttribute('aria-label', 'Aktifkan mode gelap');
             localStorage.setItem('theme', 'light');
         }
         darkMode = isDark;
@@ -199,17 +206,26 @@ window.addEventListener('load', updateActiveLink);
     if (dropdownToggle && dropdownMenu) {
         // Toggle dropdown on click
         dropdownToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const isOpen = dropdownMenu.classList.toggle('open');
-            this.classList.toggle('active');
+            if (window.matchMedia('(max-width: 640px)').matches && !dropdownMenu.classList.contains('open')) {
+                e.preventDefault();
+                dropdownMenu.classList.add('open');
+                dropdownToggle.classList.add('active');
+                dropdownToggle.setAttribute('aria-expanded', 'true');
+            } else {
+                dropdownMenu.classList.remove('open');
+                dropdownToggle.classList.remove('active');
+                dropdownToggle.setAttribute('aria-expanded', 'false');
+            }
             
             // Close other dropdowns if any
             document.querySelectorAll('.dropdown-menu.open').forEach(function(menu) {
                 if (menu !== dropdownMenu) {
                     menu.classList.remove('open');
-                    document.querySelector('.dropdown-toggle.active')?.classList.remove('active');
+                    const otherToggle = menu.parentElement.querySelector('.dropdown-toggle');
+                    if (otherToggle) {
+                        otherToggle.classList.remove('active');
+                        otherToggle.setAttribute('aria-expanded', 'false');
+                    }
                 }
             });
         });
@@ -219,6 +235,7 @@ window.addEventListener('load', updateActiveLink);
             if (!dropdownToggle.parentElement.contains(e.target)) {
                 dropdownMenu.classList.remove('open');
                 dropdownToggle.classList.remove('active');
+                dropdownToggle.setAttribute('aria-expanded', 'false');
             }
         });
 
@@ -227,11 +244,16 @@ window.addEventListener('load', updateActiveLink);
             link.addEventListener('click', function() {
                 dropdownMenu.classList.remove('open');
                 dropdownToggle.classList.remove('active');
+                dropdownToggle.setAttribute('aria-expanded', 'false');
                 
                 // Close mobile menu if open
                 if (navLinks && navLinks.classList.contains('open')) {
                     navLinks.classList.remove('open');
-                    if (menuToggle) menuToggle.classList.remove('active');
+                    if (menuToggle) {
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        menuToggle.setAttribute('aria-label', 'Buka menu navigasi');
+                    }
                 }
             });
         });
@@ -245,6 +267,7 @@ window.addEventListener('load', updateActiveLink);
                 clearTimeout(hoverTimeout);
                 dropdownMenu.classList.add('open');
                 dropdownToggle.classList.add('active');
+                dropdownToggle.setAttribute('aria-expanded', 'true');
             }
         });
         
@@ -253,6 +276,7 @@ window.addEventListener('load', updateActiveLink);
                 hoverTimeout = setTimeout(function() {
                     dropdownMenu.classList.remove('open');
                     dropdownToggle.classList.remove('active');
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
                 }, 200);
             }
         });

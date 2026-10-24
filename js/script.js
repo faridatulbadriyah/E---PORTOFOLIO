@@ -38,15 +38,20 @@
     const navLinks = document.getElementById('navLinks');
 
     menuToggle.addEventListener('click', function() {
+        const isOpen = navLinks.classList.toggle('open');
         menuToggle.classList.toggle('active');
-        navLinks.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+        menuToggle.setAttribute('aria-label', isOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi');
     });
 
     // Close menu on link click (mobile)
     navLinks.querySelectorAll('a').forEach(function(link) {
         link.addEventListener('click', function() {
+            if (link.classList.contains('dropdown-toggle')) return;
             menuToggle.classList.remove('active');
             navLinks.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Buka menu navigasi');
         });
     });
 
@@ -71,7 +76,16 @@ function updateActiveLink() {
     // Update main nav links
     document.querySelectorAll('.nav-links > li > a.nav-link').forEach(function(link) {
         link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + currentId) {
+        const href = link.getAttribute('href');
+        const targetUrl = href ? new URL(href, window.location.href) : null;
+        const isCurrentPage = targetUrl && !href.startsWith('#') &&
+            targetUrl.pathname === window.location.pathname &&
+            !targetUrl.hash;
+        if (href === '#' + currentId || isCurrentPage) {
+            link.classList.add('active');
+        }
+        if (link.classList.contains('dropdown-toggle') &&
+            /\/(?:semester|ppl)/.test(window.location.pathname)) {
             link.classList.add('active');
         }
     });
@@ -123,11 +137,13 @@ window.addEventListener('load', updateActiveLink);
             root.setAttribute('data-theme', 'dark');
             themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
             themeToggle.title = 'Aktifkan mode terang';
+            themeToggle.setAttribute('aria-label', 'Aktifkan mode terang');
             localStorage.setItem('theme', 'dark');
         } else {
             root.removeAttribute('data-theme');
             themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
             themeToggle.title = 'Aktifkan mode gelap';
+            themeToggle.setAttribute('aria-label', 'Aktifkan mode gelap');
             localStorage.setItem('theme', 'light');
         }
         darkMode = isDark;
@@ -229,26 +245,39 @@ const dropdownMenu = document.querySelector('.dropdown-menu');
 if (dropdownToggle && dropdownMenu) {
     // Toggle dropdown on click
     dropdownToggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        const isOpen = dropdownMenu.classList.toggle('open');
-        this.classList.toggle('active');
+        if (window.matchMedia('(max-width: 640px)').matches && !dropdownMenu.classList.contains('open')) {
+            e.preventDefault();
+            dropdownMenu.classList.add('open');
+            dropdownToggle.classList.add('active');
+            dropdownToggle.setAttribute('aria-expanded', 'true');
+        } else {
+            dropdownMenu.classList.remove('open');
+            dropdownToggle.classList.remove('active');
+            dropdownToggle.setAttribute('aria-expanded', 'false');
+        }
         
         // Close other dropdowns if any
         document.querySelectorAll('.dropdown-menu.open').forEach(function(menu) {
             if (menu !== dropdownMenu) {
                 menu.classList.remove('open');
-                document.querySelector('.dropdown-toggle.active')?.classList.remove('active');
+                const otherToggle = menu.parentElement.querySelector('.dropdown-toggle');
+                if (otherToggle) {
+                    otherToggle.classList.remove('active');
+                    otherToggle.setAttribute('aria-expanded', 'false');
+                }
             }
         });
     });
+
+    const dropdownNavLinks = document.getElementById('navLinks');
+    const dropdownMenuToggle = document.getElementById('menuToggle');
 
     // Close dropdown when clicking outside
     document.addEventListener('click', function(e) {
         if (!dropdownToggle.parentElement.contains(e.target)) {
             dropdownMenu.classList.remove('open');
             dropdownToggle.classList.remove('active');
+            dropdownToggle.setAttribute('aria-expanded', 'false');
         }
     });
 
@@ -257,11 +286,15 @@ if (dropdownToggle && dropdownMenu) {
         link.addEventListener('click', function() {
             dropdownMenu.classList.remove('open');
             dropdownToggle.classList.remove('active');
+            dropdownToggle.setAttribute('aria-expanded', 'false');
             
             // Close mobile menu if open
-            if (navLinks && navLinks.classList.contains('open')) {
-                navLinks.classList.remove('open');
-                if (menuToggle) menuToggle.classList.remove('active');
+            if (dropdownNavLinks && dropdownNavLinks.classList.contains('open')) {
+                dropdownNavLinks.classList.remove('open');
+                if (dropdownMenuToggle) {
+                    dropdownMenuToggle.classList.remove('active');
+                    dropdownMenuToggle.setAttribute('aria-expanded', 'false');
+                }
             }
         });
     });
@@ -275,6 +308,7 @@ if (dropdownToggle && dropdownMenu) {
             clearTimeout(hoverTimeout);
             dropdownMenu.classList.add('open');
             dropdownToggle.classList.add('active');
+            dropdownToggle.setAttribute('aria-expanded', 'true');
         }
     });
     
@@ -283,6 +317,7 @@ if (dropdownToggle && dropdownMenu) {
             hoverTimeout = setTimeout(function() {
                 dropdownMenu.classList.remove('open');
                 dropdownToggle.classList.remove('active');
+                dropdownToggle.setAttribute('aria-expanded', 'false');
             }, 200);
         }
     });
