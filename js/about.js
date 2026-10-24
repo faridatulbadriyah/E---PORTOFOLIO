@@ -63,15 +63,7 @@
 // 4. ACTIVE NAV LINK (scroll spy) - FIXED
 // ============================================
 
-// CEK APAKAH ADA SECTION DI HALAMAN INI
-const hasSections = document.querySelectorAll('section[id]').length > 0;
-
 function updateActiveLink() {
-    // JIKA TIDAK ADA SECTION, SKIP (biarkan active tetap di tempatnya)
-    if (!hasSections) {
-        return;
-    }
-
     let currentId = '';
     const scrollPos = window.scrollY + 120;
 
@@ -85,8 +77,24 @@ function updateActiveLink() {
 
     document.querySelectorAll('.nav-links > li > a.nav-link').forEach(function(link) {
         link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + currentId) {
+        const href = link.getAttribute('href');
+        const targetUrl = href ? new URL(href, window.location.href) : null;
+        const isCurrentPage = targetUrl &&
+            targetUrl.pathname === window.location.pathname &&
+            !targetUrl.hash;
+        if (href === '#' + currentId || isCurrentPage) {
             link.classList.add('active');
+        }
+    });
+
+    document.querySelectorAll('.dropdown-link').forEach(function(link) {
+        link.classList.remove('active');
+        const href = link.getAttribute('href');
+        const targetUrl = href ? new URL(href, window.location.href) : null;
+        if (targetUrl && targetUrl.pathname === window.location.pathname && !targetUrl.hash) {
+            link.classList.add('active');
+            const toggle = link.closest('.dropdown').querySelector('.dropdown-toggle');
+            toggle.classList.add('active');
         }
     });
 }

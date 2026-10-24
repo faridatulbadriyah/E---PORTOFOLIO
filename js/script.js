@@ -93,9 +93,12 @@ function updateActiveLink() {
     // Update dropdown links
     document.querySelectorAll('.dropdown-link').forEach(function(link) {
         link.classList.remove('active');
-        // Check if link href matches current section
         const href = link.getAttribute('href');
-        if (href && href.includes('#' + currentId)) {
+        const targetUrl = href ? new URL(href, window.location.href) : null;
+        const isCurrentPage = targetUrl &&
+            targetUrl.pathname === window.location.pathname &&
+            !targetUrl.hash;
+        if ((href && href.includes('#' + currentId)) || isCurrentPage) {
             link.classList.add('active');
         }
         // Also highlight dropdown toggle if any child is active
