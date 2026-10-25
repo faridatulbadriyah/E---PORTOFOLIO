@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PPL Mandiri: 13 praktik, satu perjalanan menjadi guru.">
     <meta name="author" content="Faridatul Badriyah">
-    <title>PPL Mandiri | 13 Praktik, Satu Perjalanan Menjadi Guru</title>
+    <title>PPL Mandiri | Dokumentasi PPL Mandiri</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -205,24 +205,23 @@
             box-shadow: var(--shadow-lg);
         }
 
+        /* ===== PDF VIEWER DIPERBAIKI ===== */
         .pdf-viewer-wrapper {
             position: relative;
             width: 100%;
-            padding-bottom: 70.7%;
-            height: 0;
+            height: 600px;
             overflow: hidden;
             border-radius: var(--radius-sm);
-            background: var(--color-bg-secondary);
+            background: #ffffff;
             border: 1px solid var(--glass-border);
         }
 
         .pdf-viewer-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+            display: block;
             width: 100%;
             height: 100%;
             border: 0;
+            background: #ffffff;
         }
 
         .reflection-card {
@@ -362,6 +361,7 @@
             .reflection-card { padding: 24px 20px; }
             .pdf-card { padding: 20px 16px; }
             .topic-content { padding: 0 20px 20px; }
+            .pdf-viewer-wrapper { height: 480px; }
         }
 
         @media (max-width: 480px) {
@@ -377,6 +377,7 @@
                 font-size: 0.9rem;
             }
             .topic-content { padding: 0 16px 16px; }
+            .pdf-viewer-wrapper { height: 380px; }
         }
     </style>
 </head>
@@ -428,46 +429,13 @@
 
             <header class="ppl-hero">
                 <span class="badge">PPL MANDIRI | SEMESTER 2</span>
-                <h1>13 Praktik, <span>Satu Perjalanan</span> Menjadi Guru</h1>
-                <p>Ruang dokumentasi untuk merekam proses belajar, mencoba, merefleksikan, dan bertumbuh selama PPL Mandiri.</p>
-                <span class="quote">"Setiap praktik adalah langkah kecil menuju guru yang lebih peka."</span>
+                <h1>Dokumentasi<span>PPL Mandiri</span></h1>
             </header>
 
-            <section class="index-grid" aria-label="Navigasi PPL Mandiri">
-                <div class="index-card full" id="perjalanan-praktik">
-                    <div class="index-card-icon"><i class="fas fa-route"></i></div>
-                    <h2>Jejak Karya PPL Mandiri</h2>
-                    <p class="journey-heading">Dari pengamatan awal menuju <span>praktik yang reflektif.</span></p>
-                    <span class="status">13 praktik terdokumentasi</span>
-                    <div class="practice-list">
-                        <a class="practice-link" href="#topik-1"><i class="fas fa-compass"></i> Topik 1: Orientasi</a>
-                        <a class="practice-link" href="#topik-2"><i class="fas fa-eye"></i> Topik 2: Observasi</a>
-                        <a class="practice-link" href="#topik-3"><i class="fas fa-hands-helping"></i> Topik 3: Praktik Terbimbing</a>
-                        <a class="practice-link" href="#topik-4"><i class="fas fa-user-graduate"></i> Topik 4: Praktik Mandiri</a>
-                        <a class="practice-link" href="#topik-5"><i class="fas fa-brain"></i> Topik 5: Refleksi Akhir</a>
-                        <a class="practice-link" href="#refleksi-mk"><i class="fas fa-book-open"></i> Refleksi Mata Kuliah</a>
-                    </div>
-                    <span class="card-arrow">Jelajahi perjalanan <i class="fas fa-arrow-right"></i></span>
-                </div>
-
-                <div class="index-card half" id="uts">
-                    <div class="index-card-icon"><i class="fas fa-bookmark"></i></div>
-                    <h3>UTS</h3>
-                    <p>Praktik terbaik Siklus 1.</p>
-                    <span class="status">Segera hadir</span>
-                </div>
-                <div class="index-card half" id="uas">
-                    <div class="index-card-icon"><i class="fas fa-bookmark"></i></div>
-                    <h3>UAS</h3>
-                    <p>Praktik terbaik Siklus 2–4.</p>
-                    <span class="status">Segera hadir</span>
-                </div>
-            </section>
-
             <!-- ==========================================
-            LIMA TOPIK PPL MANDIRI
+            1. LIMA TOPIK PPL MANDIRI
             ========================================== -->
-            <div class="section-heading" style="margin-bottom: 40px;">
+            <div class="section-heading" style="margin-bottom: 40px;" id="lima-topik">
                 <span class="eyebrow">TOPIK PERKULIAHAN</span>
                 <h2>Lima Topik <span class="accent">PPL Mandiri</span></h2>
                 <p>Lima topik utama yang dibahas dalam mata kuliah Praktik Pengalaman Lapangan Mandiri.</p>
@@ -604,6 +572,99 @@
                         </div>
                     </div>
                 </details>
+            </div>
+
+            <!-- ==========================================
+            2. LESSON STUDY (2 Lesson Study)
+            ========================================== -->
+            <div style="margin-top: 72px;" id="lesson-study">
+                <div class="section-heading" style="margin-bottom: 40px;">
+                    <span class="eyebrow">PRAKTIK TERBIMBING</span>
+                    <h2>Lesson Study <span class="accent">PPL Mandiri</span></h2>
+                    <p>Dua siklus Lesson Study dengan format plan, do, and see sebagai praktik pembelajaran terbimbing.</p>
+                </div>
+
+                <section class="index-grid" aria-label="Lesson Study">
+                    <a class="index-card half" href="lesson-study-1.html" id="lesson-study-1">
+                        <div class="index-card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <h3>Lesson Study 1</h3>
+                        <p>Perencanaan, pelaksanaan, dan refleksi pembelajaran pada siklus pertama.</p>
+                        <span class="card-arrow">Lihat detail <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a class="index-card half" href="lesson-study-2.html" id="lesson-study-2">
+                        <div class="index-card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <h3>Lesson Study 2</h3>
+                        <p>Perencanaan, pelaksanaan, dan refleksi pembelajaran pada siklus kedua.</p>
+                        <span class="card-arrow">Lihat detail <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </section>
+            </div>
+
+            <!-- ==========================================
+            3. PRAKTIK PEMBELAJARAN MANDIRI (4 Siklus)
+            ========================================== -->
+            <div style="margin-top: 72px;" id="praktik-mandiri">
+                <div class="section-heading" style="margin-bottom: 40px;">
+                    <span class="eyebrow">PRAKTIK MANDIRI</span>
+                    <h2>Praktik Pembelajaran <span class="accent">Mandiri</span></h2>
+                    <p>Empat siklus praktik pembelajaran mandiri dengan total 13 praktik mengajar.</p>
+                </div>
+
+                <section class="index-grid" aria-label="Praktik Pembelajaran Mandiri">
+                    <a class="index-card half" href="siklus-1.html" id="siklus-1">
+                        <div class="index-card-icon"><i class="fas fa-rotate"></i></div>
+                        <h3>Siklus 1</h3>
+                        <p>3 praktik mengajar pada Minggu 5–7.</p>
+                        <span class="card-arrow">Lihat detail <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a class="index-card half" href="siklus-2.html" id="siklus-2">
+                        <div class="index-card-icon"><i class="fas fa-rotate"></i></div>
+                        <h3>Siklus 2</h3>
+                        <p>3 praktik mengajar pada Minggu 8–10.</p>
+                        <span class="card-arrow">Lihat detail <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a class="index-card half" href="siklus-3.html" id="siklus-3">
+                        <div class="index-card-icon"><i class="fas fa-rotate"></i></div>
+                        <h3>Siklus 3</h3>
+                        <p>3 praktik mengajar pada Minggu 11–13.</p>
+                        <span class="card-arrow">Lihat detail <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a class="index-card half" href="siklus-4.html" id="siklus-4">
+                        <div class="index-card-icon"><i class="fas fa-rotate"></i></div>
+                        <h3>Siklus 4</h3>
+                        <p>2 praktik mengajar pada Minggu 14–15.</p>
+                        <span class="card-arrow">Lihat detail <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </section>
+            </div>
+
+            <!-- ==========================================
+            4. UTS & UAS
+            ========================================== -->
+            <div style="margin-top: 72px;" id="evaluasi">
+                <div class="section-heading" style="margin-bottom: 40px;">
+                    <span class="eyebrow">EVALUASI</span>
+                    <h2>UTS &amp; <span class="accent">UAS</span></h2>
+                    <p>Praktik terbaik dari siklus pembelajaran sebagai penugasan evaluasi.</p>
+                </div>
+
+                <section class="index-grid" aria-label="Evaluasi PPL Mandiri">
+                    <!-- Card UTS diperbaiki dengan link yang sesuai -->
+                    <a class="index-card half" href="ppl-mandiri/uts-ppl-mandiri.html" id="uts">
+                        <div class="index-card-icon"><i class="fas fa-bookmark"></i></div>
+                        <h3>UTS</h3>
+                        <p>Praktik terbaik Siklus 1.</p>
+                        <span class="card-arrow">Lihat detail <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    
+                    <!-- Card UAS tetap dibiarkan seperti aslinya -->
+                    <div class="index-card half" id="uas">
+                        <div class="index-card-icon"><i class="fas fa-bookmark"></i></div>
+                        <h3>UAS</h3>
+                        <p>Praktik terbaik Siklus 2–4.</p>
+                        <span class="status">Segera hadir</span>
+                    </div>
+                </section>
             </div>
 
             <!-- ==========================================

@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ujian Tengah Semester PPL Mandiri: praktik pembelajaran Informatika materi Pengenalan Sheet dan Tabel Data Perpustakaan di SMPN 18 Malang.">
+    <meta name="author" content="Faridatul Badriyah">
+    <title>UTS PPL Mandiri Siklus 1 | Faridatul Badriyah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        .uts-main {
+            padding: 7rem 0 4rem;
+        }
+
+        .uts-hero {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .uts-hero h1 {
+            margin: 1rem 0;
+            color: var(--color-text);
+            font-family: var(--font-heading);
+            font-size: clamp(2.3rem, 6vw, 4.6rem);
+            line-height: 1.12;
+        }
+
+        .uts-hero > p {
+            color: var(--color-text-light);
+            font-size: 1.05rem;
+        }
+
+        .uts-hero .quote {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.65rem 1.25rem;
+            border-left: 3px solid var(--color-secondary);
+            color: var(--color-primary);
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-style: italic;
+        }
+
+        .content-section {
+            margin-top: 72px;
+        }
+
+        .glass-card,
+        .artifact-card,
+        .reflection-card,
+        .photo-placeholder {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--glass-shadow);
+        }
+
+        .glass-card {
+            padding: 2rem 2.25rem;
+        }
+
+        .glass-card p,
+        .artifact-card p,
+        .reflection-card blockquote {
+            color: var(--color-text);
+        }
+
+        .resource-actions,
+        .page-navigation {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 0 0 1.5rem;
+        }
+
+        /* ===== TATA LETAK SEJAJAR (GRID 2 KOLOM) ===== */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .resource-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource-item .resource-actions {
+            margin-bottom: 1rem;
+        }
+
+        .resource-item .resource-actions .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .pdf-viewer-wrapper {
+            height: 450px; /* Diperkecil agar proporsional saat sejajar */
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            background: var(--color-white);
+            box-shadow: var(--glass-shadow);
+        }
+
+        .pdf-viewer-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            background: var(--color-text);
+            box-shadow: var(--glass-shadow);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .artifact-analysis {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .artifact-card {
+            overflow: hidden;
+        }
+
+        .artifact-card h3 {
+            padding: 1rem 1.5rem;
+            margin: 0;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: var(--color-surface);
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+        }
+
+        .artifact-card-body {
+            padding: 1.5rem;
+        }
+
+        .artifact-card h4 {
+            margin: 1rem 0 0.35rem;
+            color: var(--color-primary);
+            font-size: 0.95rem;
+        }
+
+        .artifact-card h4:first-child {
+            margin-top: 0;
+        }
+
+        .artifact-card p {
+            margin-bottom: 0.5rem;
+            font-size: 0.91rem;
+            text-align: justify;
+        }
+
+        .artifact-card ul {
+            padding-left: 1.25rem;
+            color: var(--color-text);
+            font-size: 0.91rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .artifact-card li {
+            margin-bottom: 0.25rem;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+
+        .photo-placeholder {
+            display: flex;
+            min-width: 0;
+            aspect-ratio: 4 / 3;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25rem;
+            border-style: dashed;
+            text-align: center;
+        }
+
+        .photo-placeholder i {
+            margin-bottom: 0.75rem;
+            color: var(--color-secondary);
+            font-size: 2.5rem;
+        }
+
+        .photo-placeholder strong {
+            color: var(--color-text);
+        }
+
+        .photo-placeholder .photo-caption {
+            width: 100%;
+            min-height: 2.5rem;
+            margin-top: 0.75rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--glass-border);
+            color: var(--color-text-light);
+            font-size: 0.82rem;
+        }
+
+        .small-note {
+            margin-top: 1rem;
+            color: var(--color-text-light);
+            font-size: 0.88rem;
+            text-align: center;
+        }
+
+        .reflection-card {
+            padding: 2rem 2.25rem;
+        }
+
+        .reflection-card blockquote {
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            text-align: justify;
+        }
+
+        .info-section {
+            margin-top: 72px;
+            padding: 0 0 1rem;
+        }
+
+        .info-box {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .ppl-footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 820px) {
+            .resource-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .artifact-analysis { grid-template-columns: 1fr; }
+            .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .glass-card, .reflection-card { padding: 1.5rem; }
+            .pdf-viewer-wrapper { height: 400px; }
+        }
+
+        @media (max-width: 640px) {
+            .photo-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .pdf-viewer-wrapper { height: 380px; }
+            .glass-card, .reflection-card { padding: 1.2rem; }
+            .resource-item .resource-actions .btn { font-size: 0.85rem; padding: 10px 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-layer" aria-hidden="true">
+        <div class="blob"></div><div class="blob"></div><div class="blob"></div><div class="blob"></div>
+        <div class="hexagon-grid">
+            <div class="hexagon"></div><div class="hexagon"></div><div class="hexagon"></div>
+            <div class="hexagon"></div><div class="hexagon"></div><div class="hexagon"></div>
+            <div class="hexagon"></div><div class="hexagon"></div><div class="hexagon"></div>
+        </div>
+    </div>
+
+    <nav class="navbar" id="siteHeader">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Faridatul Badriyah</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navLinks">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="../../index.html#home" class="nav-link">Beranda</a></li>
+                    <li><a href="../../pages/tentang-saya.html" class="nav-link">Tentang Saya</a></li>
+                    <li><a href="../../index.html#skills" class="nav-link">Keterampilan</a></li>
+                    <li class="dropdown">
+                        <a href="../../index.html#projects" class="nav-link dropdown-toggle" aria-expanded="false" aria-controls="projectMenu"><span>Proyek</span> <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu" id="projectMenu">
+                            <li><a href="../../semester1.html" class="dropdown-link">Semester 1</a></li>
+                            <li><a href="../../semester2.html" class="dropdown-link">Semester 2</a></li>
+                            <li><a href="../../semester-1/pplterbimbing.html" class="dropdown-link">PPL Terbimbing</a></li>
+                            <li><a href="../ppl-mandiri.html" class="dropdown-link">PPL Mandiri</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../refleksi-ppg.html" class="nav-link">Refleksi PPG</a></li>
+                    <li><a href="../../inovasi.html" class="nav-link">Inovasi</a></li>
+                    <li><button class="theme-toggle" id="themeToggle" type="button" title="Aktifkan mode gelap" aria-label="Aktifkan mode gelap"><i class="fas fa-moon" aria-hidden="true"></i></button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="uts-main">
+        <div class="container">
+            <header class="uts-hero">
+                <span class="badge">UTS | PPL MANDIRI SIKLUS 1</span>
+                <h1>Ujian Tengah Semester: Praktik Terbaik</h1>
+                <p>SMPN 18 Malang · Kelas VIII I · Informatika · Pengenalan Sheet &amp; Tabel Data Perpustakaan</p>
+            </header>
+
+            <section class="content-section" aria-labelledby="pengantar-heading">
+                <div class="section-heading">
+                    <span class="eyebrow">KONTEKS PRAKTIK</span>
+                    <h2 id="pengantar-heading">Pengantar Praktik Terpilih</h2>
+                </div>
+                <article class="glass-card">
+                    <p>Halaman Ujian Tengah Semester ini mendokumentasikan praktik terbaik yang saya laksanakan di SMPN 18 Malang. Praktik berlangsung di kelas VIII I pada mata pelajaran Informatika dengan materi pengenalan pengelolaan sheet (insert, rename, delete), struktur baris/kolom/sel, serta pembuatan tabel Data Buku Perpustakaan sederhana. Saya memilih praktik ini karena menjadi titik balik yang penting dalam merancang pembelajaran yang menyenangkan. Melalui penerapan model <em>Problem Based Learning</em> (PBL) dengan pendekatan <em>Gamification Learning</em> (tantangan kelompok dan <em>leaderboard</em>), murid tidak hanya menghafal teori, tetapi secara aktif bereksplorasi menggunakan Microsoft Excel. Antusiasme murid sangat tinggi saat berkompetisi secara sehat menyelesaikan misi merapikan data. Pengalaman ini mengajarkan saya bahwa instruksi bertahap melalui demonstrasi, pengondisian kelas yang baik, serta ruang untuk praktik langsung (<em>learning by doing</em>) dapat membuat pembelajaran teknologi terasa sangat relevan dan bermakna.</p>
+                </article>
+            </section>
+
+            <!-- ==========================================
+            PERANGKAT & REKAMAN (SEJAJAR: RPP & VIDEO)
+            ========================================== -->
+            <section class="content-section" aria-labelledby="perangkat-heading">
+                <div class="section-heading">
+                    <span class="eyebrow">PERANGKAT & REKAMAN</span>
+                    <h2 id="perangkat-heading">Modul Ajar &amp; Video Praktik</h2>
+                    <p>Rancangan pembelajaran dan dokumentasi pelaksanaan praktik terpilih.</p>
+                </div>
+                
+                <div class="resource-grid">
+                    <!-- Item 1: Modul Ajar / RPP -->
+                    <div class="resource-item">
+                        <div class="resource-actions">
+                            <a href="https://drive.google.com/file/d/1R3gSdZefhlmw8Om-0bkyW8r54VVv-0vu/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fab fa-google-drive" aria-hidden="true"></i> Lihat Modul Ajar (RPP)</a>
+                        </div>
+                        <div class="pdf-viewer-wrapper">
+                            <iframe src="https://drive.google.com/file/d/1R3gSdZefhlmw8Om-0bkyW8r54VVv-0vu/preview" title="Pratinjau Modul Ajar Pengenalan Sheet Excel" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Video Praktik Mengajar -->
+                    <div class="resource-item">
+                        <div class="resource-actions">
+                            <a href="https://drive.google.com/file/d/1VdmU17ZiYemFVsrLBbqhci28XPxhwV-S/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fab fa-google-drive" aria-hidden="true"></i> Buka Video di Drive</a>
+                        </div>
+                        <div class="video-wrapper">
+                            <iframe src="https://drive.google.com/file/d/1VdmU17ZiYemFVsrLBbqhci28XPxhwV-S/preview" title="Video Praktik Mengajar Pengenalan Sheet Excel" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+            ANALISIS ARTIFAK
+            ========================================== -->
+            <section class="content-section" aria-labelledby="analisis-heading">
+                <div class="section-heading">
+                    <span class="eyebrow">TINJAUAN KRITIS</span>
+                    <h2 id="analisis-heading">Analisis Artifak</h2>
+                    <p>Kekuatan, tantangan, dan tindak lanjut dari setiap komponen pembelajaran.</p>
+                </div>
+                <div class="artifact-analysis">
+                    <article class="artifact-card">
+                        <h3><i class="fas fa-book-open" aria-hidden="true"></i> Modul Ajar</h3>
+                        <div class="artifact-card-body">
+                            <h4>Konteks</h4>
+                            <p>Modul ini dirancang untuk kelas VIII I dengan alokasi waktu 2 JP (2 x 40 menit). Materi berfokus pada pengenalan sheet (insert, rename, delete), pengenalan baris, kolom, dan sel, serta pembuatan tabel Data Buku Perpustakaan. Model yang digunakan adalah Problem Based Learning dengan pendekatan Gamifikasi.</p>
+                            <h4>Tujuan</h4>
+                            <p>Murid diharapkan mampu mengidentifikasi baris/kolom/sel, mengelola sheet, membuat tabel data buku perpustakaan, dan menerapkan fitur format dasar Excel (Merge and Center, Bold, Border, dll) pada tabel yang dibuat.</p>
+                            <h4>Kelebihan</h4>
+                            <ul>
+                                <li>Alur pembelajaran sangat terstruktur dengan sintaks PBL yang jelas (dari orientasi masalah hingga evaluasi).</li>
+                                <li>Integrasi pendekatan gamifikasi (tantangan, <em>leaderboard</em>, reward) sangat inovatif untuk membangun motivasi intrinsik murid.</li>
+                                <li>Modul telah memuat instrumen asesmen lengkap (rubrik penilaian sikap dan keterampilan) serta panduan diferensiasi (remedial dan pengayaan).</li>
+                            </ul>
+                            <h4>Kekurangan</h4>
+                            <ul>
+                                <li>Karena banyaknya aktivitas (demonstrasi, tantangan kelompok, presentasi), pengaturan waktu 2 JP terasa sangat ketat.</li>
+                                <li>Perbedaan literasi digital murid berpotensi membuat beberapa kelompok tertinggal jika demonstrasi dirasa terlalu cepat.</li>
+                            </ul>
+                            <h4>Kaitan dengan Teori/MK PPG</h4>
+                            <p>Penyusunan modul ini mencerminkan penerapan kerangka TPACK, di mana guru memadukan pengetahuan teknologi (Excel), pedagogi (PBL dan Gamifikasi), dan konten materi. Model PBL selaras dengan teori belajar konstruktivisme, di mana murid membangun pemahaman melalui pemecahan masalah nyata (merapikan data perpustakaan). Adanya pertanyaan pemantik dan rubrik penilaian yang ditampilkan di awal menunjukkan penerapan asesmen formatif (<em>assessment for learning</em>) dan pemahaman bermakna (<em>deep learning</em>).</p>
+                            <h4>Usulan Perbaikan</h4>
+                            <ul>
+                                <li>Menyediakan panduan langkah-demi-langkah (<em>cheat sheet</em>) cetak atau digital di meja masing-masing kelompok untuk mengantisipasi murid yang lupa langkah demonstrasi.</li>
+                                <li>Menambahkan opsi tantangan bertingkat (misal: kelompok yang selesai awal diminta mewarnai tab sheet) untuk mengakomodasi murid dengan kecepatan belajar tinggi.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="artifact-card">
+                        <h3><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i> Video Praktik</h3>
+                        <div class="artifact-card-body">
+                            <h4>Konteks</h4>
+                            <p>Video merekam pengelolaan kelas dan penyampaian materi secara langsung. Rekaman menjadi bukti autentik proses pembelajaran, termasuk interaksi guru-murid dan implementasi strategi gamifikasi saat murid mulai mengeksplorasi aplikasi Excel.</p>
+                            <h4>Tujuan</h4>
+                            <p>Video membantu meninjau kejelasan demonstrasi, pengondisian kelas, dan efektivitas instruksi. Rekaman juga menjadi bahan refleksi mandiri atas tempo mengajar dan pemerataan pendampingan.</p>
+                            <h4>Kelebihan</h4>
+                            <ul>
+                                <li>Memperlihatkan suasana kelas yang kompetitif namun menyenangkan berkat penerapan <em>leaderboard</em>.</li>
+                                <li>Memberi kesempatan untuk meninjau kembali bagaimana guru mendemonstrasikan fitur <em>insert/rename sheet</em> secara bertahap.</li>
+                                <li>Respon dan kebutuhan bantuan teknis murid dapat diamati dengan jelas.</li>
+                            </ul>
+                            <h4>Kekurangan</h4>
+                            <ul>
+                                <li>Pada awal pembelajaran, fokus murid sedikit terpecah karena pengelolaan penggunaan HP (untuk <em>pretest</em>) kurang ketat.</li>
+                                <li>Ketika guru mendampingi satu kelompok, kelompok lain terkadang kehilangan arah atau menunggu terlalu lama.</li>
+                            </ul>
+                            <h4>Kaitan dengan Teori/MK PPG</h4>
+                            <p>Demonstrasi bertahap dalam video menunjukkan penerapan prinsip <em>learning by doing</em> dan <em>scaffolding</em>. Kolaborasi antar murid saat menyelesaikan tantangan mencerminkan implementasi Pembelajaran Sosial Emosional (PSE), khususnya keterampilan berkolaborasi (gotong royong) dan regulasi diri saat menghadapi tantangan waktu. Feedback langsung yang diberikan guru saat kelompok maju mencerminkan asesmen formatif yang berorientasi pada proses.</p>
+                            <h4>Usulan Perbaikan</h4>
+                            <ul>
+                                <li>Menerapkan aturan ketat pengumpulan HP setelah <em>pretest</em> selesai agar fokus murid kembali 100% ke layar komputer.</li>
+                                <li>Menggunakan penunjuk visual (seperti <em>laser pointer</em> atau sorotan kursor) saat demonstrasi di proyektor agar terlihat jelas oleh semua kelompok.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="artifact-card">
+                        <h3><i class="fas fa-display" aria-hidden="true"></i> Bahan Ajar &amp; Media</h3>
+                        <div class="artifact-card-body">
+                            <h4>Konteks</h4>
+                            <p>Media pembelajaran berupa <em>slide</em> presentasi (PPT) dengan desain visual 3D yang menarik. PPT memuat materi anatomi Excel (baris, kolom, sel), perbedaan <em>workbook</em> dan <em>sheet</em>, serta langkah-langkah mengelola sheet.</p>
+                            <h4>Tujuan</h4>
+                            <p>Media visual ini digunakan untuk menjembatani konsep abstrak dengan visualisasi nyata, memandu jalannya misi tantangan kelompok, serta menyajikan tabel data perpustakaan yang harus disalin oleh murid.</p>
+                            <h4>Kelebihan</h4>
+                            <ul>
+                                <li>Desain visual (3D) sangat <em>engaging</em> dan modern, cocok untuk menarik minat murid SMP.</li>
+                                <li>Penggunaan metafora visual (misal: <em>workbook</em> diibaratkan buku, <em>sheet</em> sebagai halaman) sangat membantu pemahaman konsep dasar.</li>
+                                <li>Instruksi misi dan data tabel disajikan dengan jelas dan mudah dibaca.</li>
+                            </ul>
+                            <h4>Kekurangan</h4>
+                            <ul>
+                                <li>Jika proyektor di kelas kurang tajam, detail teks atau elemen visual yang kecil pada PPT berpotensi kurang terbaca dari bangku belakang.</li>
+                                <li>PPT belum menyertakan langkah spesifik untuk versi Excel yang berbeda (misal Excel web vs aplikasi desktop).</li>
+                            </ul>
+                            <h4>Kaitan dengan Teori/MK PPG</h4>
+                            <p>Pemilihan media ini sangat menguatkan komponen <em>Technological Knowledge</em> (TK) dalam TPACK. Visualisasi materi yang baik mendukung prinsip Pembelajaran Mendalam, di mana murid tidak sekadar menghafal, tetapi memahami esensi (misalnya analogi baris/kolom seperti lantai dan tiang gedung). Media yang diproyeksikan juga memfasilitasi asesmen bersama saat guru dan murid membahas hasil kerja kelompok di depan kelas.</p>
+                            <h4>Usulan Perbaikan</h4>
+                            <ul>
+                                <li>Menyematkan tautan video tutorial singkat di dalam PPT yang bisa diakses mandiri oleh murid jika mereka lupa langkahnya.</li>
+                                <li>Memastikan kontras warna teks dan latar belakang PPT tetap tinggi agar ramah bagi murid dengan penglihatan kurang tajam.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="artifact-card">
+                        <h3><i class="fas fa-file-lines" aria-hidden="true"></i> LKPD</h3>
+                        <div class="artifact-card-body">
+                            <h4>Konteks</h4>
+                            <p>LKPD (Tugas 2) berisi instruksi pembuatan tabel Data Buku Perpustakaan. LKPD dilengkapi dengan kolom identitas, tujuan pembelajaran, data mentah buku, langkah-langkah pengerjaan, <em>checklist</em> hasil, rubrik penilaian, dan refleksi singkat.</p>
+                            <h4>Tujuan</h4>
+                            <p>Menjadi panduan operasional (<em>step-by-step</em>) bagi murid selama menjalani tantangan kelompok. LKPD membantu murid bekerja secara mandiri dan terarah sesuai target misi.</p>
+                            <h4>Kelebihan</h4>
+                            <ul>
+                                <li>Desain sangat komunikatif, penuh warna, dan ramah anak (memadukan elemen visual dan teks yang terstruktur).</li>
+                                <li>Eksplisit mencantumkan <em>checklist</em> dan rubrik penilaian, sehingga murid tahu persis standar nilai yang dicari.</li>
+                                <li>Adanya bagian refleksi singkat di akhir membantu murid menyadari proses belajarnya sendiri.</li>
+                            </ul>
+                            <h4>Kekurangan</h4>
+                            <ul>
+                                <li>Perbedaan kecepatan mengetik dan tingkat literasi digital membuat sebagian murid (atau kelompok) berisiko tertinggal.</li>
+                                <li>Kesalahan teknis (seperti menyimpan file dengan format nama yang salah) berpotensi menghambat penilaian.</li>
+                            </ul>
+                            <h4>Kaitan dengan Teori/MK PPG</h4>
+                            <p>LKPD ini adalah wujud nyata dari penerapan asesmen formatif (<em>assessment for learning</em>). Lembar ini juga mendukung diferensiasi, di mana murid dapat mengecek secara mandiri pekerjaan mereka berdasarkan rubrik. Struktur LKPD yang memandu murid dari instruksi hingga refleksi selaras dengan prinsip Pembelajaran Mendalam dan mendorong kemandirian (Profil Pelajar Pancasila).</p>
+                            <h4>Usulan Perbaikan</h4>
+                            <ul>
+                                <li>Menambahkan contoh tangkapan layar (<em>screenshot</em>) hasil akhir tabel yang sempurna pada LKPD sebagai acuan visual.</li>
+                                <li>Mencantumkan tautan <em>template</em> Excel kosong yang sudah disiapkan agar murid tidak perlu memulai dari nol dan menghemat waktu.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ==========================================
+            SUMBER BELAJAR & AKTIVITAS (SEJAJAR: BAHAN AJAR & LKPD)
+            ========================================== -->
+            <section class="content-section" aria-labelledby="sumber-heading">
+                <div class="section-heading">
+                    <span class="eyebrow">SUMBER BELAJAR & AKTIVITAS</span>
+                    <h2 id="sumber-heading">Bahan Ajar &amp; LKPD</h2>
+                    <p>Media pendukung dan lembar kerja murid untuk pengenalan fitur dasar Excel.</p>
+                </div>
+
+                <div class="resource-grid">
+                    <!-- Item 1: Bahan Ajar & Media -->
+                    <div class="resource-item">
+                        <div class="resource-actions">
+                            <a href="https://drive.google.com/file/d/1McuA38Devktx64W7otZnpVJVsAmQUNik/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fab fa-google-drive" aria-hidden="true"></i> Buka Bahan Ajar &amp; Media</a>
+                        </div>
+                        <div class="pdf-viewer-wrapper">
+                            <iframe src="https://drive.google.com/file/d/1McuA38Devktx64W7otZnpVJVsAmQUNik/preview" title="Pratinjau Bahan Ajar dan Media Excel" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: LKPD / Tugas Murid -->
+                    <div class="resource-item">
+                        <div class="resource-actions">
+                            <a href="https://drive.google.com/file/d/1oVtZ5Hj_WBLRasSjBLciI5KkCkzW1IBV/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fab fa-google-drive" aria-hidden="true"></i> Buka LKPD / Tugas Murid</a>
+                        </div>
+                        <div class="pdf-viewer-wrapper">
+                            <iframe src="https://drive.google.com/file/d/1oVtZ5Hj_WBLRasSjBLciI5KkCkzW1IBV/preview" title="Pratinjau LKPD Pengenalan Microsoft Excel" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="content-section" aria-labelledby="umpan-balik-heading">
+                <div class="section-heading">
+                    <span class="eyebrow">PENDAMPINGAN</span>
+                    <h2 id="umpan-balik-heading">Umpan Balik GP / DPL</h2>
+                    <p>Catatan dan masukan untuk pengembangan praktik pembelajaran berikutnya.</p>
+                </div>
+                <div class="resource-actions">
+                    <a href="https://drive.google.com/file/d/1xcCXvXDuEiDQrGG_vuG2oc0x8_ll-Uzg/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fab fa-google-drive" aria-hidden="true"></i> Buka Umpan Balik GP / DPL</a>
+                </div>
+                <div class="pdf-viewer-wrapper">
+                    <iframe src="https://drive.google.com/file/d/1xcCXvXDuEiDQrGG_vuG2oc0x8_ll-Uzg/preview" title="Pratinjau Umpan Balik GP dan DPL" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section class="content-section" aria-labelledby="dokumentasi-heading">
+                <div class="section-heading">
+                    <span class="eyebrow">MOMEN PEMBELAJARAN</span>
+                    <h2 id="dokumentasi-heading">Dokumentasi Kegiatan</h2>
+                    <p>Ruang untuk melengkapi dokumentasi suasana pembelajaran dan pendampingan murid.</p>
+                </div>
+                <div class="photo-grid">
+                    <!-- Foto 1 -->
+                    <div style="overflow: hidden; border-radius: var(--radius-md); display: flex; flex-direction: column;">
+                        <img src="../../assets/images/evaluasi lesson study.jpg" alt="Dokumentasi kegiatan 1" style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3;">
+                        <div class="photo-caption" style="padding: 10px; background: var(--glass-bg); text-align: center; font-size: 0.85rem;">Evaluasi Praktik Pembelajaran</div>
+                    </div>
+
+                    <!-- Foto 2 -->
+                    <div style="overflow: hidden; border-radius: var(--radius-md); display: flex; flex-direction: column;">
+                        <img src="../../assets/images/siklus1_2.jpg" alt="Dokumentasi kegiatan 2" style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3;">
+                        <div class="photo-caption" style="padding: 10px; background: var(--glass-bg); text-align: center; font-size: 0.85rem;">Praktik Pembelajaran 1 pada Siklus 1</div>
+                    </div>
+
+                    <!-- Foto 3 -->
+                    <div style="overflow: hidden; border-radius: var(--radius-md); display: flex; flex-direction: column;">
+                        <img src="../../assets/images/pembukaan1_2.png" alt="Dokumentasi kegiatan 3" style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3;">
+                        <div class="photo-caption" style="padding: 10px; background: var(--glass-bg); text-align: center; font-size: 0.85rem;">Tahap Pendahuluan pada Kegiatan Pembelajaran</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" aria-labelledby="refleksi-heading">
+                <div class="section-heading">
+                    <span class="eyebrow">BELAJAR DARI PRAKTIK</span>
+                    <h2 id="refleksi-heading">Refleksi</h2>
+                </div>
+                <div class="reflection-card">
+                    <blockquote>
+                        Secara keseluruhan, perancangan materi pengenalan workbook, worksheet, dan pengelolaan sheet berhasil dilaksanakan dengan baik. Saya melakukan demonstrasi secara bertahap, mengulas materi sebelumnya, dan mengatur waktu dengan tepat dari awal hingga penutup. Kedekatan (bonding) dengan siswa serta pemberian tantangan (reward) membuat mereka antusias dan tidak segan bertanya. Namun, saya menyadari adanya kendala pada pemberian waktu membuka HP saat pre-test yang sedikit mengalihkan fokus, serta kurangnya kesepakatan kelas (kontrak belajar) sehingga siswa yang sudah selesai tugasnya lebih dulu cenderung ramai dan membuka hal di luar konteks (seperti game) saat menunggu temannya. Berdasarkan umpan balik Guru Pamong pada Lesson Study tanggal 11 Agustus 2026, saya akan memperbaiki rancangan untuk pertemuan berikutnya dengan menambahkan kesepakatan kelas di awal pembelajaran secara eksplisit (beserta konsekuensi ringan yang tidak memberatkan), mengatur ulang alokasi waktu pre-test, dan menyediakan mekanisme bertanya terstruktur (seperti giliran per kelompok) agar siswa yang sudah selesai tugas tidak menunggu tanpa arah, sementara aspek yang sudah efektif seperti pemberian reward dan kedekatan dengan siswa akan tetap dipertahankan.
+                    </blockquote>
+                </div>
+            </section>
+
+            <nav class="ppl-footer-nav page-navigation" aria-label="Navigasi halaman">
+                <a href="../ppl-mandiri.html" class="btn btn-primary">← Kembali ke PPL Mandiri</a>
+                <a href="uas-ppl-mandiri.html" class="btn btn-primary">Lanjut ke UAS →</a>
+            </nav>
+        </div>
+    </main>
+
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Kembali ke atas"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h2>E-Portofolio Farida</h2>
+                    <p>Dokumentasi perjalanan dan pengembangan profesional Faridatul Badriyah sebagai mahasiswa PPG Prajabatan Informatika.</p>
+                </div>
+                <div>
+                    <h3>Informasi Kontak</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>faridatul.badriyah.2531537@students.um.ac.id</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>253153743889</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-university"></i>
+                        <span>Universitas Negeri Malang</span>
+                    </div>
+                </div>
+                <div>
+                    <h3>Navigasi</h3>
+                    <div class="footer-links">
+                        <a href="../../index.html#home">Beranda</a>
+                        <a href="../../pages/tentang-saya.html">Tentang Saya</a>
+                        <a href="../../index.html#skills">Keterampilan</a>
+                        <a href="../../index.html#projects">Proyek</a>
+                        <a href="../../refleksi-ppg.html">Refleksi PPG</a>
+                        <a href="../../inovasi.html">Inovasi</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>PPG</h3>
+                    <div class="footer-links">
+                        <a href="../../semester-1/pplterbimbing.html">PPL Terbimbing</a>
+                        <a href="../ppl-mandiri.html">PPL Mandiri</a>
+                        <a href="../../semester1.html">Semester 1</a>
+                        <a href="../../semester2.html">Semester 2</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2024</span> Faridatul Badriyah • PPG E-Portofolio</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+
+            if (dropdownToggle && dropdownMenu) {
+                dropdownToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdownMenu.classList.toggle('open');
+                    dropdownToggle.classList.toggle('active');
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!dropdownToggle.closest('.dropdown').contains(e.target)) {
+                        dropdownMenu.classList.remove('open');
+                        dropdownToggle.classList.remove('active');
+                    }
+                });
+            }
+
+            document.querySelectorAll('.topic-accordion details').forEach(detail => {
+                detail.addEventListener('toggle', function() {
+                    const icon = this.querySelector('summary i.fa-chevron-down');
+                    if (icon) {
+                        icon.style.transform = this.open ? 'rotate(180deg)' : 'rotate(0deg)';
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- Placeholder foto:
+         Section Instrumen dan Hasil Asesmen: foto/instrumen-asesmen.jpg,
+         foto/hasil-asesmen.jpg, foto/umpan-balik-formatif.jpg.
+         Section Bukti Hasil Kerja Murid: foto/hasil-kerja-1.jpg,
+         foto/hasil-kerja-2.jpg, foto/hasil-kerja-3.jpg.
+         Section Dokumentasi Kegiatan: foto/dokumentasi-1.jpg,
+         foto/dokumentasi-2.jpg, foto/dokumentasi-3.jpg.
+    -->
+</body>
+</html>
