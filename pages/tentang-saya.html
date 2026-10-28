@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -12,6 +12,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Tambahan khusus halaman tentang-saya -->
+    <style>
+        /* ---- Perkecil galeri dokumentasi ---- */
+        .gallery-section .gallery-card {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .gallery-section .carousel {
+            max-width: 640px;
+            margin: 16px auto 0;
+            aspect-ratio: 16 / 10;
+        }
+        .gallery-section .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ---- Caption peta ---- */
+        .map-frame {
+            display: flex;
+            flex-direction: column;
+        }
+        .map-frame iframe {
+            width: 100%;
+            flex: 1 1 auto;
+            min-height: 280px;
+            border: 0;
+            border-radius: inherit;
+        }
+        .map-caption {
+            margin-top: 10px;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            color: var(--color-text);
+            opacity: 0.75;
+            text-align: center;
+        }
+        .map-caption i {
+            color: var(--color-accent-border);
+            margin-right: 5px;
+        }
+        [data-theme="dark"] .map-caption i {
+            color: var(--color-secondary);
+        }
+
+        @media (max-width: 600px) {
+            .gallery-section .gallery-card {
+                max-width: 100%;
+            }
+            .gallery-section .carousel {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="bg-layer" aria-hidden="true">
@@ -89,7 +145,7 @@
                     <p>Menjadi pendidik yang memberi manfaat, teladan, dan ruang tumbuh bagi setiap murid.</p>
                 </div>
                 <div class="purpose-quote">
-                    <p>â€œMengajar bukan sekadar profesi, melainkan panggilan jiwa dan investasi abadi. Setiap ilmu yang saya ajarkan dan setiap akhlak yang saya teladankan semoga kelak menjadi amal jariyah yang terus mengalir meskipun jasad telah tiada. Karena itu, menjadi guru adalah tujuan hidup saya sekaligus bekal menuju kehidupan selanjutnya.â€</p>
+                    <p>Mengajar bukan sekadar profesi, melainkan panggilan jiwa dan investasi abadi. Setiap ilmu yang saya ajarkan dan setiap akhlak yang saya teladankan semoga kelak menjadi amal jariyah yang terus mengalir meskipun jasad telah tiada. Karena itu, menjadi guru adalah tujuan hidup saya sekaligus bekal menuju kehidupan selanjutnya.</p>
                 </div>
             </section>
 
@@ -113,6 +169,7 @@
                 </article>
                 <div class="map-frame" aria-label="Peta Kota Kediri">
                     <iframe src="https://www.google.com/maps?q=Kota%20Kediri&output=embed" title="Peta Kota Kediri" loading="lazy" allowfullscreen></iframe>
+                    <p class="map-caption"><i class="fas fa-map-pin"></i>Peta Kota Kediri, Jawa Timur — lokasi asal tempat saya tumbuh dan dibesarkan.</p>
                 </div>
             </section>
 
@@ -203,4 +260,3 @@
     <script src="../js/about.js"></script>
 </body>
 </html>
-

@@ -57,6 +57,61 @@
             color: var(--color-secondary);
         }
 
+        /* ---------- PENJELASAN SINGKAT SIW (HERO) ---------- */
+        .siw-intro {
+            max-width: 760px;
+            margin: 22px auto 0;
+            padding: 16px 20px;
+            border-left: 3px solid var(--color-accent-border);
+            background: rgba(238, 228, 218, 0.28);
+            border-radius: var(--radius-sm);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: var(--color-text);
+            text-align: left;
+        }
+        [data-theme="dark"] .siw-intro {
+            background: rgba(238, 228, 218, 0.05);
+            border-left-color: var(--color-secondary);
+        }
+        .siw-intro strong {
+            color: var(--color-primary);
+        }
+        [data-theme="dark"] .siw-intro strong {
+            color: var(--color-secondary);
+        }
+
+        /* ---------- VIDEO YOUTUBE ---------- */
+        .siw-video-section {
+            margin: 48px auto 8px;
+            max-width: 860px;
+        }
+        .siw-video-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-md);
+            background: #000;
+        }
+        .siw-video-wrap iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .siw-video-caption {
+            margin-top: 12px;
+            text-align: center;
+            font-size: 0.82rem;
+            line-height: 1.5;
+            color: var(--color-text);
+            opacity: 0.8;
+        }
+
         /* ---------- ARTEFAK & DOKUMENTASI ---------- */
         .artifact-block {
             margin-top: 20px;
@@ -332,6 +387,11 @@
                 <h1 class="innovation-title">Spreadsheet-Based <span>Interactive Worksheet</span></h1>
                 <p class="innovation-lead">LKPD digital berbasis spreadsheet untuk murid Kelas VIII SMPN 18 Malang: otomatis tersimpan, efisien, dan mendorong keterlibatan seluruh murid.</p>
 
+                <!-- Penjelasan singkat SIW -->
+                <p class="siw-intro">
+                    <strong>Spreadsheet-Based Interactive Worksheet (SIW)</strong> adalah lembar kerja digital berbasis spreadsheet yang dirancang agar murid dapat langsung mengerjakan LKPD pada sel yang telah disediakan, sementara hasil pekerjaan tersimpan otomatis dan dapat dipantau guru dalam satu file terpusat. SIW memuat tabel data, soal, dan petunjuk pengerjaan lengkap, sehingga murid hanya berfokus pada pengisian rumus dan pemahaman materi, bukan pada pengetikan ulang data atau tabel dari awal.
+                </p>
+
                 <div class="siw-meta">
                     <span class="tag"><i class="fas fa-bullseye" style="margin-right:4px;"></i> Sasaran: Murid Kelas VIII</span>
                     <span class="tag"><i class="fas fa-school" style="margin-right:4px;"></i> SMPN 18 Malang</span>
@@ -355,6 +415,29 @@
                     </a>
                 </div>
             </header>
+
+            <!-- ============================================
+                 VIDEO YOUTUBE TENTANG SIW
+                 ============================================ -->
+            <section class="siw-video-section" aria-labelledby="videoSIWTitle">
+                <div class="section-heading artifact-section-heading" style="margin-top: 0;">
+                    <span class="eyebrow">Video</span>
+                    <h2 id="videoSIWTitle">Mengenal <span class="accent">SIW</span></h2>
+                    <p>Cuplikan singkat penggunaan Spreadsheet-Based Interactive Worksheet</p>
+                </div>
+                <div class="siw-video-wrap">
+                    <!-- Link sudah diperbaiki: gunakan format youtube.com/embed/VIDEO_ID -->
+                    <iframe
+                        src="https://www.youtube.com/embed/Hg98wvFvHa0"
+                        title="Video SIW - Spreadsheet-Based Interactive Worksheet"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                        loading="lazy">
+                    </iframe>
+                </div>
+                <p class="siw-video-caption">Video ini menampilkan gambaran penggunaan SIW, mulai dari navigasi daftar nama hingga pengerjaan LKPD pada sheet masing-masing murid.</p>
+            </section>
 
             <div class="innovation-grid">
 
@@ -393,15 +476,6 @@
                         <li>Meningkatkan efisiensi dan efektivitas waktu pembelajaran, karena murid fokus pada rumus, bukan mengetik ulang data dan tabel.</li>
                         <li>Mendorong keterlibatan seluruh murid melalui LKPD yang terstruktur.</li>
                         <li>Memanfaatkan teknologi spreadsheet sebagai media pembelajaran interaktif yang relevan.</li>
-                    </ul>
-
-                    <h3>Kebaruan, Kreativitas, Relevansi, Kebermanfaatan, Keefektivitasan</h3>
-                    <ul class="innovation-list">
-                        <li><strong>Kebaruan:</strong> mengintegrasikan LKPD untuk pembelajaran Informatika kelas VIII dengan spreadsheet, yang belum pernah digunakan sebelumnya di SMPN 18 Malang.</li>
-                        <li><strong>Kreativitas:</strong> memadukan ide pembelajaran, teknologi spreadsheet, dan kebutuhan efisiensi waktu.</li>
-                        <li><strong>Relevansi:</strong> sesuai kebutuhan murid Kelas VIII, karakteristik kurikulum, dan perkembangan teknologi digital.</li>
-                        <li><strong>Kebermanfaatan:</strong> murid tidak perlu menyalin data dan soal satu per satu, sehingga menjadi lebih fokus pada inti pembelajaran.</li>
-                        <li><strong>Keefektivitasan:</strong> spreadsheet ini dirancang agar autosaved dan menyajikan LKPD yang lengkap, sehingga murid langsung mengerjakan bagian inti. Efektivitasnya akan diuji melalui tahapan evaluasi yang telah dirancang.</li>
                     </ul>
                 </article>
 
@@ -617,7 +691,7 @@
                 <p>Dokumentasi perjalanan dan pengembangan profesional Faridatul Badriyah sebagai mahasiswa PPG Prajabatan Informatika.</p>
             </div>
             
-            <!-- Kolom 2: Informasi Kontak (FOOTNOTE) - BARU DITAMBAHKAN -->
+            <!-- Kolom 2: Informasi Kontak (FOOTNOTE) -->
             <div>
                 <h3>Informasi Kontak</h3>
                 <div class="footer-contact-item">

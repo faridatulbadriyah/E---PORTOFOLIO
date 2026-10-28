@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dokumentasi Siklus 3 PPL Mandiri: Pengenalan Fungsi SUM dan COUNT (Misi Detektif Data) di SMPN 18 Malang.">
+    <meta name="author" content="Faridatul Badriyah">
+    <title>Siklus 3 | PPL Mandiri - Faridatul Badriyah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <!-- Latar dekoratif mengikuti halaman lain di e-portofolio. -->
+    <div class="bg-layer" aria-hidden="true">
+        <div class="blob"></div><div class="blob"></div><div class="blob"></div><div class="blob"></div>
+        <div class="hexagon-grid">
+            <div class="hexagon"></div><div class="hexagon"></div><div class="hexagon"></div>
+            <div class="hexagon"></div><div class="hexagon"></div><div class="hexagon"></div>
+            <div class="hexagon"></div><div class="hexagon"></div><div class="hexagon"></div>
+        </div>
+    </div>
+
+    <!-- Navigasi utama menggunakan komponen dan script global. -->
+    <nav class="navbar" id="siteHeader">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                    <span>Faridatul Badriyah</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navLinks">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="../../index.html#home" class="nav-link">Beranda</a></li>
+                    <li><a href="../../pages/tentang-saya.html" class="nav-link">Tentang Saya</a></li>
+                    <li><a href="../../index.html#skills" class="nav-link">Keterampilan</a></li>
+                    <li class="dropdown">
+                        <a href="../../index.html#projects" class="nav-link dropdown-toggle" aria-expanded="false" aria-controls="projectMenu"><span>Proyek</span> <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu" id="projectMenu">
+                            <li><a href="../../semester1.html" class="dropdown-link">Semester 1</a></li>
+                            <li><a href="../../semester2.html" class="dropdown-link">Semester 2</a></li>
+                            <li><a href="../../semester-1/pplterbimbing.html" class="dropdown-link">PPL Terbimbing</a></li>
+                            <li><a href="../ppl-mandiri.html" class="dropdown-link">PPL Mandiri</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../refleksi-ppg.html" class="nav-link">Refleksi PPG</a></li>
+                    <li><a href="../../inovasi.html" class="nav-link">Inovasi</a></li>
+                    <li><button class="theme-toggle" id="themeToggle" type="button" title="Aktifkan mode gelap" aria-label="Aktifkan mode gelap"><i class="fas fa-moon" aria-hidden="true"></i></button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 1. Hero dan identitas praktik. -->
+        <header class="hero ls1-hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="badge">SIKLUS 3 · PPL MANDIRI</span>
+                    <h1 class="hero-title">Siklus 3: <span class="highlight-name">Pengenalan Fungsi Dasar Excel (SUM dan COUNT)</span></h1>
+                    <p class="hero-subtitle">SMPN 18 Malang | Kelas VIII / Fase D | 21 September 2026 | 1 x 2 JP (80 menit)</p>
+                    <p class="hero-meta">Guru Pamong: Ratna Agustyasari, S.Pd | DPL: Dyah Lestari, S.T., M.Eng.</p>
+                    <div class="hero-buttons">
+                        <a href="../ppl-mandiri.html" class="btn btn-primary"><i class="fas fa-arrow-left" aria-hidden="true"></i> Kembali ke PPL Mandiri</a>
+                    </div>
+                </div>
+                <div class="hero-intro-box">
+                    <p>Dokumentasi perencanaan, pelaksanaan, dan refleksi Siklus 3 pada materi pengenalan fungsi SUM dan COUNT melalui misi "Detektif Data" di kelas VIII SMPN 18 Malang.</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="container ls1-main">
+            <!-- 2. Bagian A: perangkat perencanaan pembelajaran -->
+            <section class="ls1-section" id="analisis-rpp">
+                <div class="section-heading">
+                    <span class="eyebrow">BAGIAN A</span>
+                    <h2>Analisis Perencanaan Pembelajaran</h2>
+                </div>
+                
+                <!-- TRIK GRID: Memaksa sejajar sempurna -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: stretch; width: 100%;">
+                    
+                    <!-- Card Kiri (Teks) -->
+                    <div style="display: flex; flex-direction: column; height: 100%;">
+                        <article class="ls1-card" style="flex-grow: 1; display: flex; flex-direction: column; box-sizing: border-box; margin: 0; height: 100%;">
+                            <h3 style="margin-top: 0;">Rencana Pelaksanaan Pembelajaran (RPP)</h3>
+                            <p style="flex-grow: 1;">Rancangan RPP sudah baik karena memadukan <em>Direct Instruction</em> dengan <em>Problem Based Learning</em> melalui kasus "Detektif Data". Namun, alokasi waktu 80 menit dinilai terlalu padat untuk mencakup orientasi, demonstrasi, praktik mandiri, dan refleksi, sehingga perlu penyesuaian prioritas aktivitas.</p>
+                            <div class="ls1-actions" style="margin-top: auto; padding-top: 1rem;">
+                                <a href="https://drive.google.com/file/d/1V-x9UVMlMq_LxMxiKIXqfXDGYqDo7WIv/view?usp=drive_link" class="btn btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive" aria-hidden="true"></i> Buka RPP</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Card Kanan (PDF + Caption) -->
+                    <div style="display: flex; flex-direction: column; height: 100%;">
+                        <article class="ls1-card" style="flex-grow: 1; display: flex; flex-direction: column; box-sizing: border-box; margin: 0; padding: 0; overflow: hidden; height: 100%;">
+                            <!-- Wadah Iframe -->
+                            <div style="flex-grow: 1; position: relative; width: 100%; min-height: 300px;">
+                                <iframe 
+                                    src="https://drive.google.com/file/d/1V-x9UVMlMq_LxMxiKIXqfXDGYqDo7WIv/preview" 
+                                    title="Pratinjau RPP Siklus 3" 
+                                    loading="lazy" 
+                                    allow="autoplay; fullscreen" 
+                                    allowfullscreen 
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
+                                </iframe>
+                            </div>
+                            <!-- Caption PDF -->
+                            <div style="padding: 0.75rem; background: rgba(0,0,0,0.05); font-size: 0.85rem; text-align: center; font-style: italic; flex-shrink: 0;">
+                                Dokumen Rencana Pelaksanaan Pembelajaran (RPP) Siklus 3.
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 3. Bagian B: materi dan urutan konsep. -->
+            <section class="ls1-section" id="analisis-materi">
+                <div class="section-heading">
+                    <span class="eyebrow">BAGIAN B</span>
+                    <h2>Analisis Materi Pembelajaran</h2>
+                </div>
+                <article class="ls1-card">
+                    <p>Materi perbedaan fungsi SUM dan COUNT sangat relevan dengan kebutuhan pengolahan data murid. Namun, penyampaian kedua fungsi sekaligus berpotensi membebani pemula. Materi perlu disederhanakan dengan penekanan pada urutan logis: pengenalan konsep "berapa besar" vs "berapa banyak" terlebih dahulu, baru dilanjutkan ke penulisan sintaks fungsi dan perlakuan terhadap sel kosong.</p>
+                    <ul class="ls1-list">
+                        <li><strong>SUM:</strong> Menjumlahkan seluruh angka dalam rentang sel (menjawab "berapa besar nilainya?").</li>
+                        <li><strong>COUNT:</strong> Menghitung banyaknya sel yang berisi angka (menjawab "berapa banyak datanya?").</li>
+                        <li><strong>Perlakuan Sel:</strong> Sel kosong dan teks diabaikan oleh COUNT, sedangkan angka nol tetap dihitung.</li>
+                        <li><strong>Kata Kunci:</strong> "Total" mengarah ke SUM, "Banyak" mengarah ke COUNT.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <!-- 4. Bagian C: media dan aksesibilitasnya. -->
+            <section class="ls1-section" id="analisis-media">
+                <div class="section-heading">
+                    <span class="eyebrow">BAGIAN C</span>
+                    <h2>Analisis Media Pembelajaran</h2>
+                </div>
+                <p style="margin-bottom: 1.5rem;">Media yang digunakan sudah variatif, memadukan visual digital (PPT) dengan aktivitas pemecahan masalah (kasus kantin) untuk menjaga keterlibatan murid. Evaluasi utama terletak pada manajemen perangkat, di mana penggunaan HP perlu dikendalikan agar tidak mengalihkan fokus dari praktik langsung di laptop.</p>
+                
+                <!-- Terapkan trik grid yang sama untuk konsistensi -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: stretch;">
+                    <div style="display: flex; flex-direction: column; height: 100%;">
+                        <article class="ls1-card" style="flex-grow: 1; display: flex; flex-direction: column; margin: 0; height: 100%;">
+                            <h3 style="margin-top: 0;">Media Utama</h3>
+                            <ul class="ls1-list" style="flex-grow: 1;">
+                                <li>PPT "SUM vs COUNT: Menjumlahkan atau Menghitung?"</li>
+                                <li>LKPD Misi Detektif Data</li>
+                                <li>File Excel Data Penjualan Kantin</li>
+                                <li>LCD, Laptop, dan Microsoft Excel</li>
+                            </ul>
+                            <div class="ls1-actions" style="margin-top: auto;">
+                                <a href="https://drive.google.com/file/d/1mhKLFrPNtLwhIVkQlPEiKCzzmKeJ4dSr/view?usp=drive_link" class="btn btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive" aria-hidden="true"></i> Buka PPT Excel</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div style="display: flex; flex-direction: column; height: 100%;">
+                        <article class="ls1-card" style="flex-grow: 1; display: flex; flex-direction: column; margin: 0; height: 100%;">
+                            <h3 style="margin-top: 0;">Kendala & Solusi</h3>
+                            <p style="flex-grow: 1;">Kesiapan perangkat dan koneksi internet menjadi kendala teknis yang mungkin muncul. Solusinya adalah menyiapkan tangkapan layar materi sebagai cadangan jika proyektor atau laptop bermasalah, serta membatasi penggunaan HP hanya untuk keperluan esensial seperti pretest dan posttest.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Bagian D: analisis praktik berdasarkan refleksi. -->
+            <section class="ls1-section" id="analisis-video">
+                <div class="section-heading">
+                    <span class="eyebrow">BAGIAN D</span>
+                    <h2>Analisis Praktik Mengajar</h2>
+                </div>
+                
+                <!-- TRIK GRID: Memaksa sejajar sempurna -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: stretch; width: 100%;">
+                    
+                    <!-- Card Kiri (Teks) -->
+                    <div style="display: flex; flex-direction: column; height: 100%;">
+                        <article class="ls1-card" style="flex-grow: 1; display: flex; flex-direction: column; box-sizing: border-box; margin: 0; height: 100%;">
+                            <h3 style="margin-top: 0;">Refleksi Pelaksanaan</h3>
+                            <p style="flex-grow: 1;">Berdasarkan refleksi LK 4.3, praktik mengajar berjalan kondusif berkat pendekatan personal dan pemberian tantangan. Namun, analisis menunjukkan perlunya perbaikan pada pengelolaan awal pembelajaran, khususnya pengawasan HP, serta penambahan sesi demonstrasi eksplisit untuk konsep sintaks fungsi dan tanda titik dua (:) yang sering membuat murid keliru.</p>
+                        </article>
+                    </div>
+
+                    <!-- Card Kanan (Gambar + Caption) -->
+                    <div style="display: flex; flex-direction: column; height: 100%;">
+                        <article class="ls1-card" style="flex-grow: 1; display: flex; flex-direction: column; box-sizing: border-box; margin: 0; padding: 0; overflow: hidden; height: 100%;">
+                            <!-- Gambar (Flex-grow agar mengisi sisa ruang) -->
+                            <div style="flex-grow: 1; width: 100%; min-height: 250px; position: relative;">
+                                <img src="../../assets/images/siklus 3.1.png" alt="Tangkapan layar praktik mengajar Siklus 3" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;">
+                            </div>
+                            <!-- Caption Gambar -->
+                            <div style="padding: 0.75rem; background: rgba(0,0,0,0.05); font-size: 0.85rem; text-align: center; font-style: italic; flex-shrink: 0;">
+                                Tangkapan layar pelaksanaan praktik mengajar Siklus 3.
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 6. Bagian E: kegiatan nonmengajar dalam rentang minggu praktik. -->
+            <section class="ls1-section" id="kegiatan-nonmengajar">
+                <div class="section-heading">
+                    <span class="eyebrow">BAGIAN E</span>
+                    <h2>Analisis Kegiatan Nonmengajar</h2>
+                </div>
+                <article class="ls1-card">
+                    <p>Keterlibatan dalam kegiatan nonmengajar seperti piket, menyambut siswa, dan inval kelas memberikan perspektif holistik tentang peran guru. Pengalaman ini melatih kemampuan koordinasi, komunikasi dengan wali murid, serta adaptasi terhadap dinamika budaya sekolah yang tidak tercakup dalam kegiatan pembelajaran di kelas.</p>
+                    <ol class="ls1-timeline">
+                        <li><strong>Upacara Bendera:</strong> Mengikuti upacara sebagai bentuk kedisiplinan (Senin, 21 September 2026).</li>
+                        <li><strong>Menyambut kedatangan siswa dengan 5S:</strong> Menerapkan budaya Senyum, Sapa, Salam, Sopan, dan Santun (Selasa, 22 September 2026).</li>
+                        <li><strong>Standby di ruang piket:</strong> Membantu pencatatan ketidakhadiran murid dan memfasilitasi wali murid (Rabu, 23 September 2026).</li>
+                        <li><strong>Inval kelas 8G Mapel IPS:</strong> Mengisi kelas kosong untuk mata pelajaran IPS (Rabu, 23 September 2026).</li>
+                    </ol>
+                </article>
+            </section>
+
+            <!-- 7. Bagian F: instrumen, rubrik, dan batas interpretasi. -->
+            <section class="ls1-section" id="instrumen-penilaian">
+                <div class="section-heading">
+                    <span class="eyebrow">BAGIAN F</span>
+                    <h2>Instrumen Penilaian</h2>
+                </div>
+                <article class="ls1-card">
+                    <p>Instrumen penilaian proses dan rubrik keterampilan sudah selaras dengan tujuan pembelajaran praktik. Ke depannya, indikator perlu dijabarkan lebih spesifik ke dalam perilaku yang dapat diamati (misal: "menuliskan sintaks fungsi dengan benar" alih-alih "menggunakan fungsi") agar penilaian lebih objektif dan konsisten antar-pengamat.</p>
+                    <h3>Rubrik Keterampilan</h3>
+                    <div class="ls1-table-wrap">
+                        <table class="ls1-table">
+                            <thead><tr><th scope="col">Aspek</th><th scope="col">Indikator</th></tr></thead>
+                            <tbody>
+                                <tr><td>Ketepatan Memilih Fungsi (SUM/COUNT)</td><td>Memilih SUM atau COUNT dengan tepat pada seluruh situasi dan mampu menjelaskan alasannya berdasarkan kata kunci pertanyaan.</td></tr>
+                                <tr><td>Ketepatan Penulisan Sintaks & Range</td><td>Menuliskan seluruh fungsi beserta range sel dengan sangat tepat dan mandiri.</td></tr>
+                                <tr><td>Ketepatan Hasil & Penalaran pada LKPD</td><td>Seluruh hasil (100%) tepat dan mampu menjelaskan penyebab perbedaan hasil SUM dan COUNT secara logis.</td></tr>
+                                <tr><td>Kerapian, Efisiensi Waktu & Penyajian</td><td>Selesai sebelum batas waktu dengan tabel rapi dan presisi, serta menyampaikan temuan dengan jelas dan percaya diri.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h4>Rumus Nilai</h4>
+                    <p class="ls1-formula">Nilai Keterampilan = (Skor Perolehan ÷ Skor Maksimal) × 100</p>
+                    <p class="ls1-formula">Nilai Akhir = (Nilai Pengetahuan × 50%) + (Nilai Keterampilan × 50%)</p>
+                </article>
+            </section>
+
+            <!-- 8. Bagian G: refleksi diri dan rencana tindak lanjut. -->
+            <section class="ls1-section" id="refleksi-diri">
+                <div class="section-heading">
+                    <span class="eyebrow">BAGIAN G</span>
+                    <h2>Refleksi Diri</h2>
+                </div>
+                <article class="ls1-card ls1-reflection">
+                    <p>Pembelajaran utama dari praktik ini adalah pentingnya manajemen waktu dan penguasaan kelas yang ketat. Ke depannya, saya akan lebih disiplin dalam menetapkan aturan perangkat di awal, memodelkan instruksi teknis secara bertahap, dan memastikan sesi refleksi penutup tetap terlaksana meskipun waktu terbatas untuk mengukur pemahaman murid secara akurat.</p>
+                    <ul class="ls1-list">
+                        <li><strong>Perbaikan utama:</strong> Menetapkan aturan penggunaan HP, memodelkan sintaks fungsi dan tanda titik dua (:) secara bertahap, serta menggunakan daftar cek waktu agar refleksi penutup terlaksana.</li>
+                        <li><strong>Tindak lanjut:</strong> Mengumpulkan refleksi singkat murid dan meminta masukan dari Guru Pamong serta DPL untuk perbaikan rancangan berikutnya.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <!-- 9. Galeri dokumentasi; ganti placeholder dengan dokumentasi aktual. -->
+            <section class="ls1-section" id="dokumentasi">
+                <div class="section-heading">
+                    <span class="eyebrow">DOKUMENTASI</span>
+                    <h2>Dokumentasi Kegiatan</h2>
+                </div>
+                <div class="ls1-gallery">
+                    <figure class="ls1-gallery-item">
+                        <img src="../../assets/images/Siklus 3.1.png" alt="Dokumentasi pertanyaan pemantik" loading="lazy">
+                        <figcaption>Tahap Pendahuluan pada Kegiatan Praktik Siklus 3</figcaption>
+                    </figure>
+                    <figure class="ls1-gallery-item">
+                        <img src="../../assets/images/lkpds3.1.png" alt="Dokumentasi murid berlatih Excel" loading="lazy">
+                        <figcaption>LKPD</figcaption>
+                    </figure>
+                    <figure class="ls1-gallery-item">
+                        <img src="../../assets/images/hasil tugas siswa siklus 3.1.png" alt="Dokumentasi hasil LKPD" loading="lazy">
+                        <figcaption>Hasil kerja murid</figcaption>
+                    </figure>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Tombol kembali ke bagian atas yang diproses oleh script global. -->
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Kembali ke atas"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+
+    <!-- Footer mengikuti struktur footer halaman PPL Mandiri. -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h2>E-Portofolio Farida</h2>
+                    <p>Dokumentasi perjalanan dan pengembangan profesional Faridatul Badriyah sebagai mahasiswa PPG Prajabatan Informatika.</p>
+                </div>
+                <div>
+                    <h3>Informasi Kontak</h3>
+                    <div class="footer-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><span>faridatul.badriyah.2531537@students.um.ac.id</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-user-graduate" aria-hidden="true"></i><span>253153743889</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-university" aria-hidden="true"></i><span>Universitas Negeri Malang</span></div>
+                </div>
+                <div>
+                    <h3>Navigasi</h3>
+                    <div class="footer-links">
+                        <a href="../../index.html#home">Beranda</a>
+                        <a href="../../pages/tentang-saya.html">Tentang Saya</a>
+                        <a href="../../index.html#skills">Keterampilan</a>
+                        <a href="../../index.html#projects">Proyek</a>
+                        <a href="../../refleksi-ppg.html">Refleksi PPG</a>
+                        <a href="../../inovasi.html">Inovasi</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>PPG</h3>
+                    <div class="footer-links">
+                        <a href="../../semester-1/pplterbimbing.html">PPL Terbimbing</a>
+                        <a href="../ppl-mandiri.html">PPL Mandiri</a>
+                        <a href="../../semester1.html">Semester 1</a>
+                        <a href="../../semester2.html">Semester 2</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2024</span> Faridatul Badriyah • PPG E-Portofolio</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Gunakan satu-satunya JavaScript global proyek. -->
+    <script src="../../js/script.js"></script>
+</body>
+</html>
