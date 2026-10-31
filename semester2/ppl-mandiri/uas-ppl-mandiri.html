@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UAS PPL Mandiri: E-Portfolio 2 Praktik Mengajar Mandiri Terbaik — Pengenalan Fungsi Dasar Excel (SUM, AVERAGE, MIN, MAX, COUNT) di SMPN 18 Malang.">
+    <meta name="author" content="Faridatul Badriyah">
+    <title>UAS PPL Mandiri | E-Portfolio 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- PATH CSS DIPERBAIKI (NAIK 2 TINGKAT) -->
+    <link rel="stylesheet" href="../../css/styles.css">
+    
+    <style>
+        /* ==========================================
+           TAMBAHAN KHUSUS HALAMAN UAS PPL MANDIRI
+           ========================================== */
+        .uas-main { padding: 7rem 0 4rem; position: relative; z-index: 1; }
+        .uas-hero { max-width: 820px; margin: 0 auto 3rem; text-align: center; }
+        .uas-hero h1 { margin: 1rem 0; font-family: var(--font-heading); font-size: clamp(2.2rem, 6vw, 4.2rem); line-height: 1.1; color: var(--color-text); }
+        .uas-hero h1 span { color: var(--color-primary); position: relative; display: inline-block; }
+        .uas-hero h1 span::after { content: ''; position: absolute; bottom: 4px; left: 0; right: 0; height: 4px; background: var(--color-accent-border); border-radius: 2px; opacity: 0.25; }
+        [data-theme="dark"] .uas-hero h1 span { color: var(--color-secondary); }
+        .uas-hero p { max-width: 620px; margin: 0 auto 1.25rem; color: var(--color-text-light); font-size: 1.05rem; }
+        .uas-hero .btn { margin-top: .5rem; }
+
+        .uas-subnav { display: flex; flex-wrap: wrap; justify-content: center; gap: .55rem; max-width: 900px; margin: 0 auto 3rem; padding: 1rem 1.25rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); box-shadow: var(--glass-shadow); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .uas-subnav a { display: inline-flex; align-items: center; gap: .45rem; padding: .5rem 1rem; border-radius: var(--radius-pill); color: var(--color-text); font-size: .82rem; font-weight: 500; text-decoration: none; border: 1px solid transparent; transition: var(--transition-soft); }
+        .uas-subnav a:hover { background: var(--color-accent-glow); color: var(--color-primary); border-color: var(--color-accent-border-light); }
+        .uas-subnav a i { color: var(--color-secondary); font-size: .7rem; }
+
+        .uas-section { margin: 4rem 0; scroll-margin-top: 6rem; }
+        .uas-section .section-heading { margin-bottom: 2rem; }
+        .uas-card { padding: 2rem 2.25rem; border-radius: var(--radius-lg); background: var(--glass-bg); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); transition: var(--transition-smooth); color: var(--color-text); }
+        .uas-card:hover { border-color: var(--color-secondary); box-shadow: var(--shadow-lg); }
+        .uas-card h3 { margin: 1.5rem 0 .75rem; color: var(--color-primary); font-family: var(--font-heading); font-size: 1.2rem; }
+        .uas-card h3:first-child { margin-top: 0; }
+        [data-theme="dark"] .uas-card h3 { color: var(--color-secondary); }
+        .uas-card p, .uas-card li { color: var(--color-text); line-height: 1.8; }
+        .uas-card ul { padding-left: 1.25rem; margin: .5rem 0 .75rem; }
+        .uas-card ul li { margin-bottom: .4rem; }
+
+        .uas-identity { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem 1.75rem; margin: .5rem 0 1rem; }
+        .uas-identity > div { display: grid; grid-template-columns: minmax(7rem, .8fr) 1.2fr; gap: .75rem; align-items: baseline; padding: .5rem 0; border-bottom: 1px dashed var(--glass-border); }
+        .uas-identity dt { color: var(--color-secondary); font-weight: 600; font-size: .85rem; letter-spacing: .02em; }
+        .uas-identity dd { color: var(--color-text); font-size: .92rem; }
+
+        .uas-info-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem 1.5rem; padding: 1rem 1.25rem; margin: .5rem 0 1.5rem; background: var(--color-accent-glow); border-radius: var(--radius-md); border: 1px solid var(--color-accent-border-light); }
+        .uas-info-grid p { margin: 0; font-size: .92rem; }
+        .uas-info-grid strong { color: var(--color-primary); margin-right: .35rem; }
+        [data-theme="dark"] .uas-info-grid strong { color: var(--color-secondary); }
+
+        .uas-resource-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: .75rem 0 1.5rem; }
+        .uas-resource { display: flex; flex-direction: column; padding: 1.15rem 1.25rem; border-radius: var(--radius-md); background: var(--color-accent-glow); border: 1px solid var(--color-accent-border-light); transition: var(--transition-soft); }
+        .uas-resource:hover { transform: translateY(-3px); border-color: var(--color-secondary); box-shadow: var(--shadow-md); }
+        .uas-resource .icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: var(--radius-sm); background: var(--glass-bg); color: var(--color-primary); font-size: 1.1rem; margin-bottom: .85rem; }
+        [data-theme="dark"] .uas-resource .icon { color: var(--color-secondary); }
+        .uas-resource h4 { margin: 0 0 .35rem; font-family: var(--font-heading); font-size: 1rem; color: var(--color-text); }
+        .uas-resource .btn { margin-top: .85rem; align-self: flex-start; font-size: .8rem; padding: .5rem 1.15rem; }
+
+        .uas-video { width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius-md); overflow: hidden; background: #000; border: 1px solid var(--glass-border); box-shadow: var(--shadow-md); margin-bottom: 1.25rem; }
+        .uas-video video, .uas-video iframe { width: 100%; height: 100%; display: block; border: 0; }
+
+        .uas-table-wrap { width: 100%; margin: .75rem 0 1rem; overflow-x: auto; border: 1px solid var(--glass-border); border-radius: var(--radius-md); }
+        .uas-table { width: 100%; min-width: 580px; border-collapse: collapse; color: var(--color-text); }
+        .uas-table th, .uas-table td { padding: .8rem 1rem; text-align: left; border-bottom: 1px solid var(--glass-border); font-size: .9rem; }
+        .uas-table th { background: var(--color-accent-glow); color: var(--color-primary); font-weight: 700; }
+        [data-theme="dark"] .uas-table th { color: var(--color-secondary); }
+        .uas-table tbody tr:last-child td { border-bottom: 0; }
+
+        /* Grid sejajar untuk card teks + pratinjau dokumen/gambar */
+        .uas-doc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: stretch; width: 100%; }
+        .uas-doc-col { display: flex; flex-direction: column; height: 100%; }
+        .uas-doc-card { flex-grow: 1; display: flex; flex-direction: column; margin: 0; padding: 0; overflow: hidden; height: 100%; }
+        .uas-doc-card .doc-body { padding: 1.5rem 1.25rem; flex-grow: 1; }
+        .uas-doc-preview { flex-grow: 1; position: relative; width: 100%; min-height: 300px; }
+        .uas-doc-preview iframe, .uas-doc-preview img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; object-fit: cover; display: block; }
+        .uas-doc-caption { padding: .75rem; background: rgba(0,0,0,0.05); font-size: .85rem; text-align: center; font-style: italic; flex-shrink: 0; color: var(--color-text); }
+
+        .uas-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; }
+        .uas-gallery-item { margin: 0; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--glass-border); background: var(--glass-bg); }
+        .uas-gallery-item img { width: 100%; height: 200px; object-fit: cover; display: block; }
+        .uas-gallery-item figcaption { padding: .65rem .85rem; font-size: .82rem; font-style: italic; color: var(--color-text); text-align: center; }
+
+        .uas-timeline { list-style: none; padding-left: 0; margin: .5rem 0 0; }
+        .uas-timeline li { position: relative; padding-left: 1.5rem; margin-bottom: .75rem; }
+        .uas-timeline li::before { content: ''; position: absolute; left: 0; top: .55rem; width: .55rem; height: .55rem; border-radius: 50%; background: var(--color-secondary); }
+
+        .uas-formula { font-family: monospace; background: var(--color-accent-glow); border: 1px solid var(--color-accent-border-light); border-radius: var(--radius-sm); padding: .6rem .9rem; font-size: .88rem; color: var(--color-text); }
+
+        @media (max-width: 820px) {
+            .uas-identity, .uas-info-grid { grid-template-columns: 1fr; }
+            .uas-card { padding: 1.5rem 1.25rem; }
+            .uas-doc-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .uas-main { padding-top: 5.5rem; }
+            .uas-hero h1 { font-size: 1.9rem; }
+            .uas-hero p { font-size: .95rem; }
+            .uas-subnav { padding: .75rem; }
+            .uas-section { margin: 3rem 0; }
+            .uas-card { padding: 1.25rem 1rem; }
+        }
+    </style>
+    
+    <!-- PATH JS DIPERBAIKI (NAIK 2 TINGKAT) -->
+    <script src="../../js/script.js" defer></script>
+</head>
+<body>
+    <div class="bg-layer" aria-hidden="true">
+        <div class="blob"></div><div class="blob"></div><div class="blob"></div><div class="blob"></div>
+        <div class="hexagon-grid">
+            <div class="hexagon"></div><div class="hexagon"></div><div class="hexagon"></div>
+            <div class="hexagon"></div><div class="hexagon"></div><div class="hexagon"></div>
+            <div class="hexagon"></div><div class="hexagon"></div><div class="hexagon"></div>
+        </div>
+    </div>
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar" id="siteHeader">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Faridatul Badriyah</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navLinks">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <!-- LINK NAVBAR DIPERBAIKI (NAIK 2 TINGKAT) -->
+                    <li><a href="../../index.html#home" class="nav-link">Beranda</a></li>
+                    <li><a href="../../pages/tentang-saya.html" class="nav-link">Tentang Saya</a></li>
+                    <li><a href="../../index.html#skills" class="nav-link">Keterampilan</a></li>
+                    <li class="dropdown">
+                        <a href="../../index.html#projects" class="nav-link dropdown-toggle" aria-expanded="false" aria-controls="projectMenu"><span>Proyek</span> <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu" id="projectMenu">
+                            <li><a href="../../semester1.html" class="dropdown-link">Semester 1</a></li>
+                            <li><a href="../../semester2.html" class="dropdown-link">Semester 2</a></li>
+                            <li><a href="../../semester-1/pplterbimbing.html" class="dropdown-link">PPL Terbimbing</a></li>
+                            <li><a href="../ppl-mandiri.html" class="dropdown-link">PPL Mandiri</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../refleksi-ppg.html" class="nav-link">Refleksi PPG</a></li>
+                    <li><a href="../../inovasi.html" class="nav-link">Inovasi</a></li>
+                    <li><button class="theme-toggle" id="themeToggle" type="button" title="Aktifkan mode gelap" aria-label="Aktifkan mode gelap"><i class="fas fa-moon" aria-hidden="true"></i></button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ MAIN ============ -->
+    <main class="uas-main">
+        <div class="container">
+
+            <header class="uas-hero">
+                <span class="badge">UAS | PPL MANDIRI</span>
+                <h1>Praktik Mengajar <span>Mandiri Terbaik</span></h1>
+                <p>Dokumentasi dan analisis praktik mengajar mandiri terbaik dari Siklus 2–4 sebagai penugasan UAS mata kuliah PPL Mandiri.</p>
+                <!-- LINK KEMBALI KE PPL MANDIRI (NAIK 1 TINGKAT SAJA KARENA MASIH DI FOLDER YANG SAMA) -->
+                <a class="btn btn-primary" href="../ppl-mandiri.html">
+                    <i class="fas fa-arrow-left"></i> Kembali ke PPL Mandiri
+                </a>
+            </header>
+
+            <nav class="uas-subnav" aria-label="Navigasi bagian halaman">
+                <a href="#pendahuluan"><i class="fas fa-circle"></i> Pendahuluan</a>
+                <a href="#perencanaan"><i class="fas fa-circle"></i> Perencanaan</a>
+                <a href="#video"><i class="fas fa-circle"></i> Video</a>
+                <a href="#analisis"><i class="fas fa-circle"></i> Analisis &amp; Refleksi</a>
+                <a href="#penutup"><i class="fas fa-circle"></i> Penutup</a>
+            </nav>
+
+            <!-- ============ PENDAHULUAN ============ -->
+            <section class="uas-section" id="pendahuluan" aria-labelledby="pendahuluan-heading">
+                <div class="section-heading">
+                    <span class="eyebrow">E-PORTFOLIO 2</span>
+                    <h2 id="pendahuluan-heading">Pendahuluan</h2>
+                    <p>Identitas, tujuan penyusunan, dan gambaran singkat praktik mengajar mandiri yang didokumentasikan.</p>
+                </div>
+
+                <article class="uas-card">
+                    <h3>Identitas Mahasiswa</h3>
+                    <dl class="uas-identity">
+                        <div><dt>Nama</dt><dd>Faridatul Badriyah</dd></div>
+                        <div><dt>NIM</dt><dd>253153743889</dd></div>
+                        <div><dt>Program Studi</dt><dd>PPG Prajabatan Informatika</dd></div>
+                        <div><dt>Sekolah PPL</dt><dd>SMPN 18 Malang</dd></div>
+                        <div><dt>Guru Pamong</dt><dd>Ratna Agustyasari, S.Pd</dd></div>
+                        <div><dt>Dosen Pembimbing</dt><dd>Dyah Lestari, S.T., M.Eng.</dd></div>
+                    </dl>
+
+                    <p>Praktik mengajar mandiri yang didokumentasikan dalam laman ini berfokus pada Siklus 2, yaitu pembelajaran materi <strong>Pengenalan Fungsi Dasar Microsoft Excel (SUM, AVERAGE, MIN, MAX, COUNT)</strong> di kelas VIII/Fase D SMPN 18 Malang. Pembelajaran dilaksanakan pada 14 September 2026 selama 1 × 2 JP (80 menit) dengan model <em>Discovery Learning</em>, yang mengajak murid membandingkan perhitungan manual dengan perhitungan menggunakan fungsi Excel melalui tantangan "Siapa yang Lebih Cepat?". Praktik ini dipilih sebagai praktik terbaik karena berhasil memadukan visual digital (PPT), praktik langsung di komputer, dan aktivitas kolaboratif dalam pengolahan data nilai ujian.</p>
+                </article>
+            </section>
+
+            <!-- ============ PERENCANAAN ============ -->
+            <section class="uas-section" id="perencanaan" aria-labelledby="perencanaan-heading">
+                <div class="section-heading">
+                    <span class="eyebrow">PERANGKAT PEMBELAJARAN</span>
+                    <h2 id="perencanaan-heading">Produk Perencanaan Pembelajaran Terbaik</h2>
+                </div>
+
+                <article class="uas-card">
+                    <div class="uas-info-grid">
+                        <p><strong>Siklus:</strong> Siklus 2</p>
+                        <p><strong>Mata pelajaran:</strong> Informatika</p>
+                        <p><strong>Materi:</strong> Pengenalan Fungsi Dasar Excel (SUM, AVERAGE, MIN, MAX, COUNT)</p>
+                        <p><strong>Kelas:</strong> VIII / Fase D</p>
+                        <p><strong>Alokasi waktu:</strong> 1 × 2 JP (80 menit)</p>
+                        <p><strong>Model pembelajaran:</strong> Discovery Learning</p>
+                    </div>
+
+                    <h3>Produk Perencanaan</h3>
+                    <div class="uas-resource-grid">
+                        <article class="uas-resource">
+                            <div class="icon"><i class="fas fa-file-lines"></i></div>
+                            <h4>Modul Ajar / RPP</h4>
+                            <a class="btn btn-primary" href="https://drive.google.com/file/d/1cjdGiW6AB7hmkHrS12CKRPqDTrdtQzgJ/view?usp=drive_link" target="_blank" rel="noopener"><i class="fab fa-google-drive" aria-hidden="true"></i> Buka Modul</a>
+                        </article>
+                        <article class="uas-resource">
+                            <div class="icon"><i class="fas fa-book-open"></i></div>
+                            <h4>Bahan Ajar (PPT)</h4>
+                            <a class="btn btn-primary" href="https://drive.google.com/file/d/12x41QWrgldA10bKBHUdsCWOEknpQm6w5/view?usp=drive_link" target="_blank" rel="noopener"><i class="fab fa-google-drive" aria-hidden="true"></i> Buka Bahan</a>
+                        </article>
+                        <article class="uas-resource">
+                            <div class="icon"><i class="fas fa-clipboard-list"></i></div>
+                            <h4>LKPD</h4>
+                            <a class="btn btn-primary" href="https://drive.google.com/file/d/1u8sx-oVmKr8UddDUMgLPSCzogRMz3lES/view?usp=drive_link" target="_blank" rel="noopener"><i class="fab fa-google-drive" aria-hidden="true"></i> Buka LKPD</a>
+                        </article>
+                        <article class="uas-resource">
+                            <div class="icon"><i class="fas fa-chart-simple"></i></div>
+                            <h4>Instrumen Asesmen</h4>
+                            <a class="btn btn-primary" href="https://tally.so/r/eqVK0l" target="_self">Lihat Instrumen</a>
+                        </article>
+                    </div>
+
+                    <!-- Pratinjau RPP + analisis berdampingan -->
+                    <div class="uas-doc-grid">
+                        <div class="uas-doc-col">
+                            <article class="uas-card uas-doc-card">
+                                <div class="doc-body">
+                                    <h3 style="margin-top:0;">Analisis Rancangan</h3>
+                                    <p><strong>Alasan pemilihan model &amp; pendekatan.</strong> Model <em>Discovery Learning</em> dipilih karena materi fungsi Excel menuntut murid menemukan sendiri pola hubungan antara data, range sel, dan hasil perhitungan. Tantangan "Siapa yang Lebih Cepat?" membandingkan hitung manual dan Excel menjadi pemicu rasa ingin tahu serta bukti nyata efisiensi fungsi.</p>
+                                    <p><strong>Penyesuaian dengan karakteristik &amp; kebutuhan murid.</strong> Rancangan disesuaikan untuk pemula: konsep <em>range</em> dikenalkan lebih dahulu sebelum penulisan sintaks fungsi, dan lima fungsi disampaikan bertahap agar tidak membebani murid kelas VIII.</p>
+                                    <p><strong>Kesesuaian media, LKPD, dan asesmen.</strong> PPT "Mari Berkenalan dengan 5 Asisten Super dari Excel!", LKPD Misi Fungsi Dasar Excel, dan data nilai ujian saling mendukung tujuan pembelajaran praktik langsung di komputer.</p>
+                                    <p><strong>Keterkaitan dengan Capaian Pembelajaran.</strong> Rancangan ini mendukung CP Fase D pada elemen keterampilan pengolahan data, khususnya penggunaan aplikasi pengolah angka untuk mengolah dan menyajikan data secara efisien.</p>
+                                    <p><strong>Catatan perbaikan.</strong> Alokasi 80 menit dinilai terlalu padat untuk orientasi, demonstrasi, praktik mandiri, dan refleksi, sehingga perlu penyesuaian prioritas aktivitas.</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="uas-doc-col">
+                            <article class="uas-card uas-doc-card">
+                                <div class="uas-doc-preview">
+                                    <iframe src="https://drive.google.com/file/d/1cjdGiW6AB7hmkHrS12CKRPqDTrdtQzgJ/preview" title="Pratinjau RPP Siklus 2" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                </div>
+                                <div class="uas-doc-caption">Dokumen Rencana Pelaksanaan Pembelajaran (RPP) Siklus 2.</div>
+                            </article>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- ============ VIDEO ============ -->
+            <section class="uas-section" id="video" aria-labelledby="video-heading">
+                <div class="section-heading">
+                    <span class="eyebrow">DOKUMENTASI PRAKTIK</span>
+                    <h2 id="video-heading">Video Pelaksanaan Pembelajaran</h2>
+                </div>
+
+                <article class="uas-card">
+                    <div class="uas-video">
+                        <iframe 
+                            width="100%" 
+                            height="100%" 
+                            src="https://www.youtube.com/embed/3w-96mEo6nQ" 
+                            title="Video Praktik Mengajar Siklus 2" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <h3>Deskripsi Kegiatan</h3>
+                    <ul>
+                        <li><strong>Pembuka:</strong> Orientasi, apersepsi tentang pengolahan data, penyampaian tujuan pembelajaran, serta tantangan "Siapa yang Lebih Cepat?" untuk membandingkan hitung manual dan Excel. Guru juga menetapkan aturan penggunaan HP agar fokus pada praktik di laptop.</li>
+                        <li><strong>Inti:</strong> Demonstrasi pengenalan konsep <em>range</em> sel, dilanjutkan pemodelan sintaks fungsi SUM, AVERAGE, MIN, MAX, dan COUNT secara bertahap. Murid kemudian mempraktikkan langsung di Microsoft Excel menggunakan LKPD Misi Fungsi Dasar Excel dan data nilai ujian secara kolaboratif.</li>
+                        <li><strong>Penutup:</strong> Klarifikasi kesalahan umum (terutama penulisan tanda titik dua ":" pada range), refleksi singkat murid, dan posttest untuk mengukur pemahaman.</li>
+                    </ul>
+
+                    <h3>Analisis Pelaksanaan</h3>
+                    <ul>
+                        <li><strong>Kesesuaian dengan rencana:</strong> Pembelajaran berjalan sesuai rancangan <em>Discovery Learning</em>, namun sesi refleksi penutup terbatas karena padatnya alokasi waktu 80 menit.</li>
+                        <li><strong>Keterlibatan murid:</strong> Murid antusias mengikuti tantangan dan aktif mencoba fungsi pada LKPD; pendekatan personal dan pemberian tantangan berhasil menjaga keterlibatan.</li>
+                        <li><strong>Pengelolaan kelas:</strong> Kelas kondusif, tetapi pengawasan penggunaan HP di awal pembelajaran perlu diperketat agar tidak mengalihkan fokus dari praktik di laptop.</li>
+                        <li><strong>Penggunaan media:</strong> PPT visual dan praktik langsung di komputer berhasil memadukan pemahaman konsep dan keterampilan teknis.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <!-- ============ ANALISIS & REFLEKSI ============ -->
+            <section class="uas-section" id="analisis" aria-labelledby="analisis-heading">
+                <div class="section-heading">
+                    <span class="eyebrow">REFLEKSI PEMBELAJARAN</span>
+                    <h2 id="analisis-heading">Analisis dan Refleksi</h2>
+                    <p>Ketercapaian tujuan, keberhasilan, kendala, pembelajaran yang diperoleh, dan rencana perbaikan.</p>
+                </div>
+
+                <article class="uas-card">
+                    <h3>Ketercapaian Tujuan Pembelajaran</h3>
+                    <p>Berdasarkan hasil praktik dan asesmen LKPD, murid mampu menuliskan fungsi SUM, AVERAGE, MIN, MAX, dan COUNT beserta range sel dengan tepat, serta memperoleh hasil perhitungan data yang akurat. Sebagian besar murid mencapai tujuan pembelajaran, dengan catatan kesalahan umum pada penulisan tanda titik dua (:) yang perlu diantisipasi melalui demonstrasi eksplisit.</p>
+
+                    <div class="uas-table-wrap">
+                        <table class="uas-table">
+                            <thead>
+                                <tr>
+                                    <th>Aspek</th>
+                                    <th>Indikator</th>
+                                    <th>Hasil</th>
+                                    <th>Keterangan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ketepatan Penulisan Fungsi SUM &amp; AVERAGE</td>
+                                    <td>Menuliskan fungsi SUM dan AVERAGE beserta range sel dengan sangat tepat dan mandiri.</td>
+                                    <td>Tercapai</td>
+                                    <td>Mayoritas murid menuliskan sintaks dengan benar setelah demonstrasi.</td>
+                                </tr>
+                                <tr>
+                                    <td>Ketepatan Penulisan Fungsi MIN, MAX &amp; COUNT</td>
+                                    <td>Menuliskan fungsi MIN, MAX, dan COUNT dengan sangat tepat untuk mencari nilai ekstrem secara mandiri.</td>
+                                    <td>Tercapai</td>
+                                    <td>Sebagian murid masih keliru pada penulisan tanda titik dua (:).</td>
+                                </tr>
+                                <tr>
+                                    <td>Hasil Perhitungan Data pada LKPD</td>
+                                    <td>Seluruh hasil kalkulasi data pada LKPD 100% tepat dan akurat.</td>
+                                    <td>Tercapai</td>
+                                    <td>Hasil kerja murid menunjukkan kalkulasi yang akurat.</td>
+                                </tr>
+                                <tr>
+                                    <td>Kerapian &amp; Efisiensi Waktu</td>
+                                    <td>Selesai sebelum batas waktu dengan format tabel yang rapi dan presisi.</td>
+                                    <td>Cukup tercapai</td>
+                                    <td>Waktu terbatas sehingga sesi refleksi penutup kurang maksimal.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Rubrik Keterampilan</h3>
+                    <div class="uas-table-wrap">
+                        <table class="uas-table">
+                            <thead><tr><th>Aspek</th><th>Indikator</th></tr></thead>
+                            <tbody>
+                                <tr><td>Ketepatan Penulisan Fungsi SUM &amp; AVERAGE</td><td>Menuliskan fungsi SUM dan AVERAGE beserta range sel dengan sangat tepat dan mandiri.</td></tr>
+                                <tr><td>Ketepatan Penulisan Fungsi MIN, MAX &amp; COUNT</td><td>Menuliskan fungsi MIN, MAX, dan COUNT dengan sangat tepat untuk mencari nilai ekstrem secara mandiri.</td></tr>
+                                <tr><td>Hasil Perhitungan Data pada LKPD</td><td>Seluruh hasil kalkulasi data pada LKPD 100% tepat dan akurat.</td></tr>
+                                <tr><td>Kerapian &amp; Efisiensi Waktu</td><td>Selesai sebelum batas waktu dengan format tabel yang rapi dan presisi.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 id="instrumen">Rumus Nilai</h3>
+                    <p class="uas-formula">Nilai Keterampilan = (Skor Perolehan ÷ Skor Maksimal) × 100</p>
+                    <p class="uas-formula">Nilai Akhir = (Nilai Pengetahuan × 50%) + (Nilai Keterampilan × 50%)</p>
+
+                    <h3>Keberhasilan</h3>
+                    <ul>
+                        <li>Kelas kondusif berkat pendekatan personal dan pemberian tantangan "Siapa yang Lebih Cepat?".</li>
+                        <li>Murid mampu mempraktikkan lima fungsi dasar Excel secara langsung dan memperoleh hasil kalkulasi yang akurat pada LKPD.</li>
+                        <li>Media PPT visual dan aktivitas praktik langsung berhasil menjaga keterlibatan murid.</li>
+                    </ul>
+
+                    <h3>Kendala</h3>
+                    <ul>
+                        <li>Alokasi waktu 80 menit terlalu padat untuk orientasi, demonstrasi, praktik mandiri, dan refleksi.</li>
+                        <li>Pengawasan penggunaan HP di awal pembelajaran belum optimal sehingga berpotensi mengalihkan fokus.</li>
+                        <li>Murid sering keliru pada penulisan sintaks fungsi dan tanda titik dua (:) karena demonstrasi eksplisit masih terbatas.</li>
+                        <li>Kesiapan perangkat dan koneksi internet menjadi kendala teknis yang mungkin muncul.</li>
+                    </ul>
+
+                    <h3>Pembelajaran yang Diperoleh</h3>
+                    <ul>
+                        <li>Pentingnya manajemen waktu dan penguasaan kelas yang ketat dalam pembelajaran praktik berbasis komputer.</li>
+                        <li>Konsep <em>range</em> perlu dikenalkan sebelum sintaks fungsi agar pemula tidak kebingungan.</li>
+                        <li>Aturan perangkat (HP) harus ditetapkan di awal pembelajaran, bukan di tengah kegiatan.</li>
+                        <li>Demonstrasi bertahap dan pemodelan sintaks fungsi meningkatkan ketepatan kerja murid.</li>
+                    </ul>
+
+                    <h3>Rencana Perbaikan / Tindak Lanjut</h3>
+                    <ul>
+                        <li>Menetapkan aturan penggunaan HP sejak awal pembelajaran dan membatasinya hanya untuk pretest/posttest.</li>
+                        <li>Memodelkan sintaks fungsi dan tanda titik dua (:) secara bertahap dengan demonstrasi eksplisit.</li>
+                        <li>Menggunakan daftar cek waktu agar sesi refleksi penutup tetap terlaksana meskipun waktu terbatas.</li>
+                        <li>Menyiapkan tangkapan layar materi sebagai cadangan jika proyektor atau laptop bermasalah.</li>
+                        <li>Mengumpulkan refleksi singkat murid serta masukan dari Guru Pamong dan DPL untuk perbaikan rancangan berikutnya.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <!-- ============ DOKUMENTASI ============ -->
+            <section class="uas-section" id="dokumentasi" aria-labelledby="dokumentasi-heading">
+                <div class="section-heading">
+                    <span class="eyebrow">DOKUMENTASI</span>
+                    <h2 id="dokumentasi-heading">Dokumentasi Kegiatan</h2>
+                </div>
+                <div class="uas-gallery">
+                    <figure class="uas-gallery-item">
+                        <img src="../../assets/images/Siklus 2.1 1.jpeg" alt="Dokumentasi pertanyaan pemantik" loading="lazy">
+                        <figcaption>Tahap Praktik Mengerjakan LKPD Microsoft Excel</figcaption>
+                    </figure>
+                    <figure class="uas-gallery-item">
+                        <img src="../../assets/images/lkpds2.1.png" alt="Dokumentasi murid berlatih Excel" loading="lazy">
+                        <figcaption>LKPD</figcaption>
+                    </figure>
+                    <figure class="uas-gallery-item">
+                        <img src="../../assets/images/Hasil kerja siswa s2.png" alt="Dokumentasi hasil LKPD" loading="lazy">
+                        <figcaption>Hasil kerja murid</figcaption>
+                    </figure>
+                    <figure class="uas-gallery-item">
+                        <img src="../../assets/images/Siklus 2.1 2.jpeg" alt="Tangkapan layar praktik mengajar Siklus 2" loading="lazy">
+                        <figcaption>Tangkapan layar pelaksanaan praktik mengajar Siklus 2.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- ============ PENUTUP ============ -->
+            <section class="uas-section" id="penutup" aria-labelledby="penutup-heading">
+                <div class="section-heading">
+                    <span class="eyebrow">PENUTUP</span>
+                    <h2 id="penutup-heading">Penutup</h2>
+                </div>
+
+                <article class="uas-card">
+                    <h3>Kesimpulan</h3>
+                    <p>Praktik mengajar mandiri Siklus 2 pada materi Pengenalan Fungsi Dasar Excel menunjukkan bahwa penerapan <em>Discovery Learning</em> dengan tantangan "Siapa yang Lebih Cepat?" berhasil meningkatkan antusiasme dan keterampilan murid dalam mengolah data menggunakan SUM, AVERAGE, MIN, MAX, dan COUNT. Meskipun tujuan pembelajaran tercapai, praktik ini juga mengungkap perlunya perbaikan pada manajemen waktu, pengawasan perangkat, dan demonstrasi sintaks fungsi agar pembelajaran berikutnya lebih efektif. Praktik ini menjadi pengalaman berharga yang menegaskan pentingnya perencanaan yang matang dan refleksi berkelanjutan dalam pembelajaran Informatika.</p>
+
+                    <h3>Pengembangan Kompetensi sebagai Calon Guru</h3>
+                    <p>Melalui praktik ini, saya mengembangkan kompetensi pedagogik dalam merancang dan mengelola pembelajaran praktik berbasis komputer, kompetensi profesional dalam penguasaan materi fungsi Excel, serta kompetensi sosial dan kepribadian melalui pendekatan personal kepada murid dan koordinasi dengan Guru Pamong serta DPL. Ke depannya, saya akan terus berlatih menyusun alokasi waktu yang realistis, memodelkan instruksi teknis secara bertahap, dan memastikan sesi refleksi penutup tetap terlaksana untuk mengukur pemahaman murid secara akurat.</p>
+                </article>
+            </section>
+
+        </div>
+    </main>
+
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h2>E-Portofolio Farida</h2>
+                    <p>Dokumentasi perjalanan dan pengembangan profesional Faridatul Badriyah sebagai mahasiswa PPG Prajabatan Informatika.</p>
+                </div>
+
+                <div>
+                    <h3>Informasi Kontak</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>faridatul.badriyah.2531537@students.um.ac.id</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>253153743889</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-university"></i>
+                        <span>Universitas Negeri Malang</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Navigasi</h3>
+                    <div class="footer-links">
+                        <!-- LINK FOOTER DIPERBAIKI (NAIK 2 TINGKAT) -->
+                        <a href="../../index.html#home">Beranda</a>
+                        <a href="../../pages/tentang-saya.html">Tentang Saya</a>
+                        <a href="../../index.html#skills">Keterampilan</a>
+                        <a href="../../index.html#projects">Proyek</a>
+                        <a href="../../refleksi-ppg.html">Refleksi PPG</a>
+                        <a href="../../inovasi.html">Inovasi</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>PPG</h3>
+                    <div class="footer-links">
+                        <!-- LINK FOOTER DIPERBAIKI (NAIK 2 TINGKAT) -->
+                        <a href="../../semester-1/pplterbimbing.html">PPL Terbimbing</a>
+                        <a href="../ppl-mandiri.html">PPL Mandiri</a>
+                        <a href="../../semester1.html">Semester 1</a>
+                        <a href="../../semester2.html">Semester 2</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2024</span> Faridatul Badriyah • PPG E-Portofolio</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JIKA INGIN MENGGUNAKAN JS TAMBAHAN UNTUK DROPDOWN (OPSIONAL KARENA SUDAH ADA DI script.js) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+
+            if (dropdownToggle && dropdownMenu) {
+                dropdownToggle.addEventListener('click', function(e) {
+                    // Hanya jalan di mode mobile, di desktop sudah dihandle script.js
+                    if (window.matchMedia('(max-width: 640px)').matches) {
+                        e.preventDefault();
+                        dropdownMenu.classList.toggle('open');
+                        dropdownToggle.classList.toggle('active');
+                    }
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (dropdownToggle && !dropdownToggle.closest('.dropdown').contains(e.target)) {
+                        dropdownMenu.classList.remove('open');
+                        dropdownToggle.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
